@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Abderraouf Portfolio</title>
+
+    <!-- الخطوط العصرية -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ملف التصميم -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- مكتبة الأنيميشن ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+<!-- القائمة العلوية -->
+<header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="projects-section">
+    <h1>My Projects</h1>
+
+    <!-- مشروع 1 -->
+    <div class="project-card">
+        <h2>LDR Sensor Project</h2>
+        <div class="project-images">
+            <img src="../images/ldr-real.jpg" alt="LDR Real Photo">
+            <img src="../images/ldr-sim.jpg" alt="LDR Simulation">
+        </div>
+        <p>Light detection system using ESP32 with sensor and LED output.</p>
+    </div>
+
+    <!-- مشروع 2 -->
+    <div class="project-card">
+        <h2>Motor Control Project</h2>
+        <div class="project-images">
+            <img src="../images/motor-real.jpg" alt="Motor Real Photo">
+            <img src="../images/motor-sim.jpg" alt="Motor Simulation">
+        </div>
+        <p>Motor speed control using ESP32 and driver circuits.</p>
+    </div>
+
+    <!-- مشروع 3 -->
+    <div class="project-card">
+        <h2>PID Control Project</h2>
+        <div class="project-images">
+            <img src="../images/pid-real.jpg" alt="PID Real Photo">
+            <img src="../images/pid-sim.jpg" alt="PID Simulation">
+        </div>
+        <p>PID controller applied on submarine model for stability and precision.</p>
+    </div>
+</section>
+
+<!-- أنيميشن -->
+<script>
+    ScrollReveal().reveal('.project-card', { 
+        duration: 1000, 
+        origin: 'bottom', 
+        distance: '50px', 
+        interval: 200 
+    });
+</script>
+
+</body>
+</html>
