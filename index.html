@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Abderraouf Portfolio</title>
 
+    <!-- الخطوط العصرية -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ملف التصميم -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- مكتبة الأنيميشن ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
 <body>
 
-    <h1>My Portfolio</h1>
+<!-- القائمة العلوية -->
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/projects.html">Projects</a>
+        <a href="pages/cv.html">CV</a>
+        <a href="pages/contact.html">Contact</a>
+    </nav>
+</header>
 
-    <h2>About Me</h2>
-    <p>
-        Hello, my name is Abderraouf.
-        I am an electronics student.
-        I work on ESP32 and analog circuits.
-    </p>
-
-    <h2>Projects</h2>
-
-    <div class="project">
-    <h3>LDR Project</h3>
-    <p>Light detection using LDR sensor.</p>
+<!-- الصفحة الرئيسية -->
+<section class="home">
+    <div class="intro">
+        <h1>Hello, I'm Abderraouf</h1>
+        <p>Electronics Student | ESP32 & Analog Circuits Projects</p>
+        <a href="pages/projects.html" class="btn">View My Projects</a>
     </div>
+    <div class="home-image">
+        <img src="images/profile.jpg" alt="Profile Photo">
+    </div>
+</section>
 
-    <div class="project">
-    <h3>Motor Project</h3>
-    <p>Motor control using ESP32.</p>
-    </div>>
+<!-- أنيميشن عند التمرير -->
+<script>
+    ScrollReveal().reveal('.intro', { duration: 1000, origin: 'left', distance: '50px', delay: 200 });
+    ScrollReveal().reveal('.home-image', { duration: 1000, origin: 'right', distance: '50px', delay: 400 });
+</script>
 
 </body>
 </html>
