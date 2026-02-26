@@ -18,32 +18,94 @@
 <!-- القائمة العلوية -->
 <header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="pages/about.html">About</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="pages/cv.html">CV</a>
-        <a href="pages/contact.html">Contact</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <!-- الصفحة الرئيسية -->
-<section class="home">
+<section class="home" id="home">
     <div class="intro">
         <h1>Hello, I'm Abderraouf</h1>
         <p>Electronics Student | ESP32 & Analog Circuits Projects</p>
-        <a href="pages/projects.html" class="btn">View My Projects</a>
+        <a href="#projects" class="btn">View My Projects</a>
     </div>
     <div class="home-image">
         <img src="images/profile.jpg" alt="Profile Photo">
     </div>
 </section>
 
+<!-- About Me -->
+<section class="about" id="about">
+    <h1>About Me</h1>
+    <div class="about-content">
+        <img src="images/profile.jpg" alt="Profile Photo">
+        <p>Hello! I'm Abderraouf, an electronics student passionate about ESP32, analog circuits, and innovative projects. I enjoy creating practical electronics systems and learning new technologies every day.</p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section" id="projects">
+    <h1>My Projects</h1>
+
+    <!-- مشروع 1 -->
+    <div class="project-card">
+        <h2>LDR Sensor Project</h2>
+        <div class="project-images">
+            <img src="images/ldr-real.jpg" alt="LDR Real Photo">
+            <img src="images/ldr-sim.jpg" alt="LDR Simulation">
+        </div>
+        <p>Light detection system using ESP32 with sensor and LED output.</p>
+    </div>
+
+    <!-- مشروع 2 -->
+    <div class="project-card">
+        <h2>Motor Control Project</h2>
+        <div class="project-images">
+            <img src="images/motor-real.jpg" alt="Motor Real Photo">
+            <img src="images/motor-sim.jpg" alt="Motor Simulation">
+        </div>
+        <p>Motor speed control using ESP32 and driver circuits.</p>
+    </div>
+
+    <!-- مشروع 3 -->
+    <div class="project-card">
+        <h2>PID Control Project</h2>
+        <div class="project-images">
+            <img src="images/pid-real.jpg" alt="PID Real Photo">
+            <img src="images/pid-sim.jpg" alt="PID Simulation">
+        </div>
+        <p>PID controller applied on submarine model for stability and precision.</p>
+    </div>
+</section>
+
+<!-- CV Section -->
+<section class="cv-section" id="cv">
+    <h1>My CV</h1>
+    <p>Download my CV here:</p>
+    <a href="files/Abderraouf_CV.pdf" class="btn">Download CV</a>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <h1>Contact Me</h1>
+    <p>Email: abderraouf@example.com</p>
+    <p>GitHub: <a href="https://github.com/abderraoufbrada" target="_blank">abderraoufbrada</a></p>
+</section>
+
 <!-- أنيميشن عند التمرير -->
 <script>
     ScrollReveal().reveal('.intro', { duration: 1000, origin: 'left', distance: '50px', delay: 200 });
     ScrollReveal().reveal('.home-image', { duration: 1000, origin: 'right', distance: '50px', delay: 400 });
+
+    ScrollReveal().reveal('.about-content', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
+    ScrollReveal().reveal('.project-card', { duration: 1000, origin: 'bottom', distance: '50px', interval: 200 });
+    ScrollReveal().reveal('.cv-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
+    ScrollReveal().reveal('.contact-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
 </script>
 
 </body>
 </html>
-
