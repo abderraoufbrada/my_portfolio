@@ -1,34 +1,86 @@
+/* الخطوط الأساسية */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a1f44; /* أزرق بحري */
+    color: #ffffff;
 }
 
-h1 {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin: 0;
+/* القائمة العلوية */
+header {
+    background-color: #021124;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
-h2 {
-    color: #333;
-    margin-left: 20px;
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
-p {
-    margin-left: 20px;
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-h3 {
-    margin-left: 20px;
+header nav a:hover {
+    color: #00bfff; /* تأثير أزرق فاتح عند المرور */
 }
 
-.project {
-    background-color: white;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+/* الصفحة الرئيسية */
+.home {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px; /* لتجنب تداخل القائمة */
+}
+
+.home .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.home .intro p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #00bfff;
+    color: #021124;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0095cc;
+}
+
+/* صورة الملف الشخصي */
+.home-image img {
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid #00bfff;
+}
+
+/* Responsive */
+@media(max-width: 900px){
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-image img {
+        margin-top: 20px;
+    }
 }
