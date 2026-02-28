@@ -28,4 +28,16 @@ el.style.opacity = "0";
 el.style.transform = "translateY(50px)";
 el.style.transition = "1s";
 
+
 });
+function openModal(id){
+
+document.getElementById(id).style.display = "block";
+
+}
+
+function closeModal(id){
+
+document.getElementById(id).style.display = "none";
+
+}
