@@ -10,6 +10,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 </head>
+    <div id="programming" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('programming')">&times;</span>
+
+<h1>Programming Skills</h1>
+
+<div class="modal-skill">
+
+<h2>Python</h2>
+
+<div class="bar">
+<div class="level python">80%</div>
+</div>
+
+<p>Data analysis and automation</p>
+
+</div>
+
+
+<div class="modal-skill">
+
+<h2>C Programming</h2>
+
+<div class="bar">
+<div class="level c">70%</div>
+</div>
+
+<p>Embedded systems</p>
+
+</div>
+
+
+<div class="modal-skill">
+
+<h2>Arduino</h2>
+
+<div class="bar">
+<div class="level arduino">85%</div>
+</div>
+
+<p>ESP32 projects</p>
+
+</div>
+
+</div>
+</div>
 <body>
 
 <!-- NAVBAR -->
@@ -87,24 +135,19 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 <div class="skills-container">
 
-<div class="skill-card">
+<div class="skill-card" onclick="openModal('programming')">
 <h2>Programming</h2>
-<p>C / Python / Arduino</p>
+<p>Python, C, Arduino</p>
 </div>
 
-<div class="skill-card">
+<div class="skill-card" onclick="openModal('electronics')">
 <h2>Electronics</h2>
 <p>Analog Circuits</p>
 </div>
 
-<div class="skill-card">
+<div class="skill-card" onclick="openModal('simulation')">
 <h2>Simulation</h2>
-<p>LTSpice / Proteus</p>
-</div>
-
-<div class="skill-card">
-<h2>Hardware</h2>
-<p>ESP32 / Sensors</p>
+<p>LTSpice</p>
 </div>
 
 </div>
@@ -194,5 +237,6 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 </body>
 </html>
+
 
 
