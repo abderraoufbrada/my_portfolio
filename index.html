@@ -1,111 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Abderraouf Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineer Portfolio</title>
 
-    <!-- الخطوط العصرية -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <!-- ملف التصميم -->
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <!-- مكتبة الأنيميشن ScrollReveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-<!-- القائمة العلوية -->
+<!-- NAVBAR -->
 <header>
+    <div class="logo">ENG.</div>
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<!-- الصفحة الرئيسية -->
-<section class="home" id="home">
-    <div class="intro">
-        <h1>Hello, I'm Abderraouf</h1>
-        <p>Electronics Student | ESP32 & Analog Circuits Projects</p>
-        <a href="#projects" class="btn">View My Projects</a>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <h1>Hello I'm</h1>
+        <h2>John Engineer</h2>
+        <p>Electronics Engineer | Embedded Systems | Analog Design</p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">My Projects</a>
+            <a href="#" class="btn-outline">Download CV</a>
+        </div>
     </div>
-    <div class="home-image">
-        <img src="images/profile.jpg" alt="Profile Photo">
+
+    <div class="hero-image">
+        <img src="images/profile.jpg">
     </div>
+
 </section>
 
-<!-- About Me -->
+
+
+<!-- ABOUT -->
 <section class="about" id="about">
-    <h1>About Me</h1>
-    <div class="about-content">
-        <img src="images/profile.jpg" alt="Profile Photo">
-        <p>Hello! I'm Abderraouf, an electronics student passionate about ESP32, analog circuits, and innovative projects. I enjoy creating practical electronics systems and learning new technologies every day.</p>
-    </div>
+
+<h1>About Me</h1>
+
+<div class="about-container">
+
+<div class="about-img">
+<img src="images/profile2.jpg">
+</div>
+
+<div class="about-text">
+<p>
+I am an electronics engineer passionate about embedded systems,
+control systems and analog circuits.
+
+I enjoy building real world projects and learning new technologies.
+</p>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- Projects Section -->
-<section class="projects-section" id="projects">
-    <h1>My Projects</h1>
 
-    <!-- مشروع 1 -->
-    <div class="project-card">
-        <h2>LDR Sensor Project</h2>
-        <div class="project-images">
-            <img src="images/ldr-real.jpg" alt="LDR Real Photo">
-            <img src="images/ldr-sim.jpg" alt="LDR Simulation">
-        </div>
-        <p>Light detection system using ESP32 with sensor and LED output.</p>
-    </div>
 
-    <!-- مشروع 2 -->
-    <div class="project-card">
-        <h2>Motor Control Project</h2>
-        <div class="project-images">
-            <img src="images/motor-real.jpg" alt="Motor Real Photo">
-            <img src="images/motor-sim.jpg" alt="Motor Simulation">
-        </div>
-        <p>Motor speed control using ESP32 and driver circuits.</p>
-    </div>
+<!-- SKILLS -->
+<section class="skills" id="skills">
 
-    <!-- مشروع 3 -->
-    <div class="project-card">
-        <h2>PID Control Project</h2>
-        <div class="project-images">
-            <img src="images/pid-real.jpg" alt="PID Real Photo">
-            <img src="images/pid-sim.jpg" alt="PID Simulation">
-        </div>
-        <p>PID controller applied on submarine model for stability and precision.</p>
-    </div>
+<h1>Skills</h1>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<h2>Programming</h2>
+<p>C / Python / Arduino</p>
+</div>
+
+<div class="skill-card">
+<h2>Electronics</h2>
+<p>Analog Circuits</p>
+</div>
+
+<div class="skill-card">
+<h2>Simulation</h2>
+<p>LTSpice / Proteus</p>
+</div>
+
+<div class="skill-card">
+<h2>Hardware</h2>
+<p>ESP32 / Sensors</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- CV Section -->
-<section class="cv-section" id="cv">
-    <h1>My CV</h1>
-    <p>Download my CV here:</p>
-    <a href="files/Abderraouf_CV.pdf" class="btn">Download CV</a>
+
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+<h1>Projects</h1>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<img src="images/project1.jpg">
+
+<h2>Smart Light</h2>
+
+<p>LDR based automatic lighting system</p>
+
+</div>
+
+<div class="project-card">
+
+<img src="images/project2.jpg">
+
+<h2>Motor Control</h2>
+
+<p>ESP32 Motor Control System</p>
+
+</div>
+
+<div class="project-card">
+
+<img src="images/project3.jpg">
+
+<h2>PID Control</h2>
+
+<p>Control System Project</p>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- Contact Section -->
-<section class="contact-section" id="contact">
-    <h1>Contact Me</h1>
-    <p>Email: abderraouf@example.com</p>
-    <p>GitHub: <a href="https://github.com/abderraoufbrada" target="_blank">abderraoufbrada</a></p>
+
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+<h1>Gallery</h1>
+
+<div class="gallery-container">
+
+<img src="images/g1.jpg">
+<img src="images/g2.jpg">
+<img src="images/g3.jpg">
+<img src="images/g4.jpg">
+
+</div>
+
 </section>
 
-<!-- أنيميشن عند التمرير -->
-<script>
-    ScrollReveal().reveal('.intro', { duration: 1000, origin: 'left', distance: '50px', delay: 200 });
-    ScrollReveal().reveal('.home-image', { duration: 1000, origin: 'right', distance: '50px', delay: 400 });
 
-    ScrollReveal().reveal('.about-content', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
-    ScrollReveal().reveal('.project-card', { duration: 1000, origin: 'bottom', distance: '50px', interval: 200 });
-    ScrollReveal().reveal('.cv-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
-    ScrollReveal().reveal('.contact-section', { duration: 1000, origin: 'bottom', distance: '50px', delay: 200 });
-</script>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h1>Contact</h1>
+
+<div class="contact-container">
+
+<p>Email: engineer@email.com</p>
+<p>Github: github.com/engineer</p>
+
+</div>
+
+</section>
+
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
