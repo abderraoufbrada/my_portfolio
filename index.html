@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Engineer Portfolio</title>
 
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- MODAL -->
-<div id="programming" class="modal">
-    <div class="modal-content">
+<!-- ================= MODAL ================= -->
+<div id="programming" class="modal" onclick="closeModal('programming')">
+    <div class="modal-content" onclick="event.stopPropagation()">
 
         <span class="close" onclick="closeModal('programming')">&times;</span>
 
@@ -48,21 +60,23 @@
     </div>
 </div>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header>
     <div class="logo">ENG.</div>
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="pages/projects.html">Projects</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-text">
         <h1>Hello I'm</h1>
@@ -70,8 +84,8 @@
         <p>Electronics Engineer | Embedded Systems | Analog Design</p>
 
         <div class="buttons">
-            <a href="#projects" class="btn">My Projects</a>
-            <a href="#" class="btn-outline">Download CV</a>
+            <a href="pages/projects.html" class="btn">My Projects</a>
+            <a href="assets/Abderraouf_CV.pdf" class="btn-outline" download>Download CV</a>
         </div>
     </div>
 
@@ -81,7 +95,7 @@
 
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 <section class="about" id="about">
 
 <h1>About Me</h1>
@@ -107,7 +121,7 @@ I enjoy building real world projects and continuously learning new technologies.
 
 </section>
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 <section class="skills" id="skills">
 
 <h1>Skills</h1>
@@ -133,36 +147,40 @@ I enjoy building real world projects and continuously learning new technologies.
 
 </section>
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
 <section class="projects" id="projects">
 
 <h1>Projects</h1>
 
 <div class="project-container">
 
-<div class="project-card">
-<img src="images/project1.jpg" alt="">
-<h2>Smart Light</h2>
-<p>LDR based automatic lighting system</p>
+<a href="pages/project1.html" class="project-card">
+    <img src="images/project1.jpg" alt="">
+    <h2>Smart Light</h2>
+    <p>LDR based automatic lighting system</p>
+</a>
+
+<a href="pages/project2.html" class="project-card">
+    <img src="images/project2.jpg" alt="">
+    <h2>Motor Control</h2>
+    <p>ESP32 Motor Control System</p>
+</a>
+
+<a href="pages/project3.html" class="project-card">
+    <img src="images/project3.jpg" alt="">
+    <h2>PID Control</h2>
+    <p>Control System Project</p>
+</a>
+
 </div>
 
-<div class="project-card">
-<img src="images/project2.jpg" alt="">
-<h2>Motor Control</h2>
-<p>ESP32 Motor Control System</p>
-</div>
-
-<div class="project-card">
-<img src="images/project3.jpg" alt="">
-<h2>PID Control</h2>
-<p>Control System Project</p>
-</div>
-
+<div style="text-align:center; margin-top:30px;">
+    <a href="pages/projects.html" class="btn">View All Projects</a>
 </div>
 
 </section>
 
-<!-- GALLERY -->
+<!-- ================= GALLERY ================= -->
 <section class="gallery" id="gallery">
 
 <h1>Gallery</h1>
@@ -176,32 +194,28 @@ I enjoy building real world projects and continuously learning new technologies.
 
 </section>
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <section class="contact" id="contact">
 
 <h1>Contact</h1>
 
 <div class="contact-container">
 
-    <!-- Email -->
     <div class="contact-card">
         <i class="fas fa-envelope"></i>
         <p><a href="mailto:abderraoufbrada.05@email.com">abderraoufbrada.05@email.com</a></p>
     </div>
 
-    <!-- Phone -->
     <div class="contact-card">
         <i class="fas fa-phone"></i>
         <p><a href="tel:+213551828186">+213 551 828 186</a></p>
     </div>
 
-    <!-- LinkedIn -->
     <div class="contact-card">
         <i class="fab fa-linkedin"></i>
-        <p><a href="https://www.linkedin.com/in/abderraouf-brada-16bab632a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
+        <p><a href="https://www.linkedin.com/" target="_blank">LinkedIn Profile</a></p>
     </div>
 
-    <!-- Location -->
     <div class="contact-card">
         <i class="fas fa-map-marker-alt"></i>
         <p>Algeria</p>
@@ -210,6 +224,8 @@ I enjoy building real world projects and continuously learning new technologies.
 </div>
 
 </section>
+
+<!-- ================= SCRIPT ================= -->
 <script src="script.js"></script>
 
 </body>
