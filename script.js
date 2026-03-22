@@ -1,67 +1,65 @@
-// =======================
-// ScrollReveal Animation
-// =======================
-ScrollReveal().reveal('.project-icon', {
-    duration: 1000,
-    distance: '60px',
-    origin: 'bottom',
-    interval: 150,
-    easing: 'ease-in-out',
-    reset: false
-});
-
-
-// =======================
-// Smooth Scroll Animation
-// =======================
-const elements = document.querySelectorAll("section");
+// ===============================
+// SCROLL REVEAL (SMOOTH & STABLE)
+// ===============================
+const sections = document.querySelectorAll("section");
 
 function revealOnScroll() {
-    elements.forEach(el => {
-        let position = el.getBoundingClientRect().top;
-        let screenPosition = window.innerHeight / 1.2;
+    sections.forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight * 0.85;
 
         if (position < screenPosition) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
+            section.classList.add("show");
         }
     });
 }
 
+// Run on scroll + first load
 window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
 
-// =======================
-// Initial State
-// =======================
-elements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(50px)";
-    el.style.transition = "all 1s ease";
-});
-
-
-// =======================
-// Modal Functions
-// =======================
+// ===============================
+// MODAL FUNCTIONS
+// ===============================
 function openModal(id) {
-    document.getElementById(id).style.display = "flex";
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "flex";
+    }
 }
 
 function closeModal(id) {
-    document.getElementById(id).style.display = "none";
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
 
-// =======================
-// Close modal when clicking outside
-// =======================
-window.onclick = function(event) {
-    const modals = document.querySelectorAll(".modal");
-
-    modals.forEach(modal => {
+// ===============================
+// CLOSE MODAL WHEN CLICK OUTSIDE
+// ===============================
+window.addEventListener("click", function(event) {
+    document.querySelectorAll(".modal").forEach(modal => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     });
-};
+});
+
+
+// ===============================
+// OPTIONAL: NAVBAR SCROLL EFFECT
+// ===============================
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.style.background = "rgba(0,0,0,0.6)";
+        header.style.backdropFilter = "blur(20px)";
+    } else {
+        header.style.background = "rgba(0,0,0,0.3)";
+        header.style.backdropFilter = "blur(15px)";
+    }
+});
