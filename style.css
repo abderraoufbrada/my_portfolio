@@ -241,60 +241,66 @@ transform:scale(1.1);
 }
 
 /* CONTACT */
+/* CONTACT */
 .contact{
-padding:100px;
-text-align:center;
-background:rgba(0,0,0,0.4);
+    padding:100px;
+    text-align:center;
+    background:rgba(0,0,0,0.4);
 }
 
 .contact-container{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
 }
 
-/* CONTACT CARDS */
 .contact-card{
-background: rgba(255,255,255,0.08);
-backdrop-filter: blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-padding:30px;
-border-radius:20px;
-width:220px;
-transition:0.4s;
-cursor:pointer;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:20px;
+    width:220px;
+    transition:0.4s;
+    cursor:pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* ICON STYLE */
 .contact-card i{
-font-size:40px;
-margin-bottom:15px;
-color:cyan;
-transition:0.4s;
+    font-size:40px;
+    margin-bottom:15px;
+    color:cyan;
+    transition:0.4s;
 }
 
-/* TEXT */
 .contact-card p{
-font-size:14px;
-opacity:0.8;
+    font-size:14px;
+    opacity:0.8;
 }
 
-/* HOVER EFFECT 🔥 */
+/* HOVER EFFECT */
 .contact-card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 20px 50px rgba(0,255,255,0.4);
-background: rgba(255,255,255,0.15);
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 20px 50px rgba(0,255,255,0.4);
+    background: rgba(255,255,255,0.15);
 }
 
-/* ICON ANIMATION */
 .contact-card:hover i{
-transform:scale(1.2) rotate(5deg);
-color:white;
+    transform:scale(1.2) rotate(5deg);
+    color:white;
 }
 
+/* ✅ LINK STYLE INSIDE CARDS */
+.contact-card a{
+    color:white;
+    text-decoration:none;
+}
+
+.contact-card a:hover{
+    color:cyan;
+}
 /* FLOAT ANIMATION */
 @keyframes float{
 0%{transform:translateY(0);}
