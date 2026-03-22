@@ -1,74 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Projects | Abderraouf Portfolio</title>
-
-    <!-- الخطوط العصرية -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- ملف التصميم -->
-    <link rel="stylesheet" href="../style.css">
-
-    <!-- مكتبة الأنيميشن ScrollReveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-<body>
-
-<!-- القائمة العلوية -->
-<header>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="cv.html">CV</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
 <section class="projects-section">
     <h1>My Projects</h1>
 
-    <!-- مشروع 1 -->
-    <div class="project-card">
-        <h2>LDR Sensor Project</h2>
-        <div class="project-images">
-            <img src="../images/ldr-real.jpg" alt="LDR Real Photo">
-            <img src="../images/ldr-sim.jpg" alt="LDR Simulation">
-        </div>
-        <p>Light detection system using ESP32 with sensor and LED output.</p>
-    </div>
+    <div class="projects-grid">
 
-    <!-- مشروع 2 -->
-    <div class="project-card">
-        <h2>Motor Control Project</h2>
-        <div class="project-images">
-            <img src="../images/motor-real.jpg" alt="Motor Real Photo">
-            <img src="../images/motor-sim.jpg" alt="Motor Simulation">
-        </div>
-        <p>Motor speed control using ESP32 and driver circuits.</p>
-    </div>
+        <a href="project1.html" class="project-icon">
+            <img src="../images/icons/ldr.png" alt="LDR">
+            <h3>LDR Sensor</h3>
+        </a>
 
-    <!-- مشروع 3 -->
-    <div class="project-card">
-        <h2>PID Control Project</h2>
-        <div class="project-images">
-            <img src="../images/pid-real.jpg" alt="PID Real Photo">
-            <img src="../images/pid-sim.jpg" alt="PID Simulation">
-        </div>
-        <p>PID controller applied on submarine model for stability and precision.</p>
+        <a href="project2.html" class="project-icon">
+            <img src="../images/icons/motor.png" alt="Motor">
+            <h3>Motor Control</h3>
+        </a>
+
+        <a href="project3.html" class="project-icon">
+            <img src="../images/icons/pid.png" alt="PID">
+            <h3>PID Controller</h3>
+        </a>
+
+        <a href="project4.html" class="project-icon">
+            <img src="../images/icons/robot.png" alt="Robot">
+            <h3>Line Follower</h3>
+        </a>
+
+        <a href="project5.html" class="project-icon">
+            <img src="../images/icons/iot.png" alt="IoT">
+            <h3>IoT Monitoring</h3>
+        </a>
+
+        <a href="project6.html" class="project-icon">
+            <img src="../images/icons/smart-home.png" alt="Smart Home">
+            <h3>Smart Home</h3>
+        </a>
+
+        <a href="project7.html" class="project-icon">
+            <img src="../images/icons/power.png" alt="Power">
+            <h3>Power Supply</h3>
+        </a>
+
+        <a href="project8.html" class="project-icon">
+            <img src="../images/icons/simulation.png" alt="Simulation">
+            <h3>LTspice Simulation</h3>
+        </a>
+
+        <a href="project9.html" class="project-icon">
+            <img src="../images/icons/ai.png" alt="AI">
+            <h3>AI Vision</h3>
+        </a>
+
     </div>
 </section>
-
-<!-- أنيميشن -->
-<script>
-    ScrollReveal().reveal('.project-card', { 
-        duration: 1000, 
-        origin: 'bottom', 
-        distance: '50px', 
-        interval: 200 
-    });
-</script>
-
-</body>
-</html>
