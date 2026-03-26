@@ -12,8 +12,8 @@ html{
 
 /* ================= BODY ================= */
 body{
-    background: 
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    background:
+    linear-gradient(rgba(10,10,20,0.9), rgba(10,10,20,0.95)),
     url("wp12508836-electronics-4k-wallpapers.jpg");
 
     background-size: cover;
@@ -33,6 +33,34 @@ h1,h2{
 img{
     max-width:100%;
     display:block;
+}
+
+/* ================= SMOOTH SECTION TRANSITION ================= */
+section{
+    position:relative;
+    padding:100px 50px;
+
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Fade between sections */
+section::before{
+    content:"";
+    position:absolute;
+    top:-100px;
+    left:0;
+    width:100%;
+    height:100px;
+    background:linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+    pointer-events:none;
+}
+
+/* Active section */
+section.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* ================= NAVBAR ================= */
@@ -154,9 +182,8 @@ nav a:hover::after{
 
 /* ================= ABOUT ================= */
 .about{
-    padding:100px 50px;
     text-align:center;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
 }
 
 .about-container{
@@ -175,9 +202,8 @@ nav a:hover::after{
 
 /* ================= SKILLS ================= */
 .skills{
-    padding:100px;
     text-align:center;
-    background: linear-gradient(135deg,#141e30,#243b55);
+    background: linear-gradient(135deg, rgba(20,30,48,0.6), rgba(36,59,85,0.6));
 }
 
 .skills-container{
@@ -250,9 +276,8 @@ nav a:hover::after{
 
 /* ================= GALLERY ================= */
 .gallery{
-    padding:100px;
     text-align:center;
-    background: linear-gradient(135deg,#232526,#414345);
+    background: linear-gradient(135deg, rgba(35,37,38,0.6), rgba(65,67,69,0.6));
 }
 
 .gallery-container{
@@ -273,9 +298,8 @@ nav a:hover::after{
 
 /* ================= CONTACT ================= */
 .contact{
-    padding:100px;
     text-align:center;
-    background:rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
 }
 
 .contact-container{
@@ -341,16 +365,4 @@ nav a:hover::after{
     0%{transform:translateY(0);}
     50%{transform:translateY(-15px);}
     100%{transform:translateY(0);}
-}
-
-/* SCROLL ANIMATION FIX */
-section{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 0.8s ease;
-}
-
-section.show{
-    opacity:1;
-    transform:translateY(0);
 }
