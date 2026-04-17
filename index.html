@@ -1,232 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Engineer Portfolio</title>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-<style>
-html {
-    scroll-behavior: smooth;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen | Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-<!-- ================= MODAL ================= -->
-<div id="programming" class="modal" onclick="closeModal('programming')">
-    <div class="modal-content" onclick="event.stopPropagation()">
-
-        <span class="close" onclick="closeModal('programming')">&times;</span>
-
-        <h1>Programming Skills</h1>
-
-        <div class="modal-skill">
-            <h2>Python</h2>
-            <div class="bar">
-                <div class="level python">80%</div>
-            </div>
-            <p>Data analysis and automation</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">AC.</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#internships">Internships</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
-        <div class="modal-skill">
-            <h2>C Programming</h2>
-            <div class="bar">
-                <div class="level c">70%</div>
-            </div>
-            <p>Embedded systems</p>
-        </div>
-
-        <div class="modal-skill">
-            <h2>Arduino</h2>
-            <div class="bar">
-                <div class="level arduino">85%</div>
-            </div>
-            <p>ESP32 projects</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- ================= NAVBAR ================= -->
-<header>
-    <div class="logo">ENG.</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="pages/projects.html">Projects</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
     </nav>
-</header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="home">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-        <h1>Hello I'm</h1>
-        <h2>Abderraouf Brada</h2>
-        <p>Electronics Engineer | Embedded Systems | Analog Design</p>
-
-        <div class="buttons">
-            <a href="pages/projects.html" class="btn">My Projects</a>
-            <a href="assets/Abderraouf_CV.pdf" class="btn-outline" download>Download CV</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="overlay"></div>
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920" alt="Engineering Background">
         </div>
-    </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="glitch" data-text="Alex Chen">Alex Chen</h1>
+                <h2 class="typing-text">Mechanical Engineering Student</h2>
+                <p class="hero-desc">Innovating solutions through design, analysis, and creative engineering thinking.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll to explore</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="hero-image">
-        <img src="06d96f55-2167-4320-996e-1036fd936f8b.png" alt="profile">
-    </div>
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Passionate About <span class="highlight">Engineering Excellence</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600" alt="Profile">
+                        <div class="experience-badge">
+                            <span class="years">4+</span>
+                            <span class="text">Years<br>Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>Building the Future, One Design at a Time</h3>
+                    <p>I'm a final-year Mechanical Engineering student with a passion for sustainable design and innovative manufacturing. My journey began with LEGO mechanisms and evolved into complex CAD modeling and finite element analysis.</p>
+                    <p>Currently focusing on robotics and automation, I bring a unique blend of theoretical knowledge and hands-on prototyping experience.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Internships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="12">0</span>
+                            <span class="stat-label">Awards</span>
+                        </div>
+                    </div>
+                    <a href="#cv" class="btn btn-primary">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- Featured Projects Preview -->
+    <section class="featured-projects section-padding bg-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="projects.html#project1" class="view-project">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Robotics</span>
+                        <h3>Autonomous Navigation Robot</h3>
+                        <p>SLAM-based mobile robot with computer vision</p>
+                    </div>
+                </div>
+                <div class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=800" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="projects.html#project2" class="view-project">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">CAD Design</span>
+                        <h3>Turbine Blade Optimization</h3>
+                        <p>CFD analysis and topology optimization</p>
+                    </div>
+                </div>
+                <div class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="projects.html#project3" class="view-project">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">IoT</span>
+                        <h3>Smart Manufacturing Monitor</h3>
+                        <p>Real-time production analytics system</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="projects.html" class="btn btn-outline-light">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= ABOUT ================= -->
-<section class="about" id="about">
+    <!-- Internships Section -->
+    <section id="internships" class="internships section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Internships & <span class="highlight">Experience</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Summer 2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Mechanical Engineering Intern</h3>
+                            <span class="company">Tesla, Inc.</span>
+                        </div>
+                        <p>Worked on battery thermal management systems, optimizing cooling efficiency by 15% through CFD simulations and prototype testing.</p>
+                        <div class="timeline-tags">
+                            <span>CFD</span>
+                            <span>Thermal Systems</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Winter 2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Design Engineer Intern</h3>
+                            <span class="company">Boeing</span>
+                        </div>
+                        <p>Assisted in structural analysis of aircraft components using ANSYS and MATLAB. Reduced material weight by 8% while maintaining safety factors.</p>
+                        <div class="timeline-tags">
+                            <span>FEA</span>
+                            <span>MATLAB</span>
+                            <span>Aerospace</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Summer 2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Research Assistant</h3>
+                            <span class="company">University Lab</span>
+                        </div>
+                        <p>Developed control algorithms for robotic manipulators. Published 1 paper on trajectory optimization in IEEE conference.</p>
+                        <div class="timeline-tags">
+                            <span>Robotics</span>
+                            <span>Python</span>
+                            <span>Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1>About Me</h1>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding bg-gradient">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                    <h3>CAD & Design</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">SolidWorks</span>
+                            <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">AutoCAD</span>
+                            <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">CATIA</span>
+                            <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Fusion 360</span>
+                            <div class="progress-bar"><div class="progress" data-width="88%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Analysis Tools</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">ANSYS</span>
+                            <div class="progress-bar"><div class="progress" data-width="92%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">MATLAB</span>
+                            <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Abaqus</span>
+                            <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">CFD (Fluent)</span>
+                            <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <span class="skill-name">Python</span>
+                            <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">C/C++</span>
+                            <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">Arduino</span>
+                            <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <span class="skill-name">ROS</span>
+                            <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-cloud">
+                <span class="tag">3D Printing</span>
+                <span class="tag">CNC Machining</span>
+                <span class="tag">Welding</span>
+                <span class="tag">GD&T</span>
+                <span class="tag">DFM</span>
+                <span class="tag">Lean Manufacturing</span>
+                <span class="tag">Six Sigma</span>
+                <span class="tag">Project Management</span>
+            </div>
+        </div>
+    </section>
 
-<div class="about-container">
+    <!-- CV Section -->
+    <section id="cv" class="cv section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Resume</span>
+                <h2 class="section-title">Curriculum <span class="highlight">Vitae</span></h2>
+            </div>
+            <div class="cv-container">
+                <div class="cv-preview">
+                    <div class="cv-page">
+                        <div class="cv-header">
+                            <h2>Alex Chen</h2>
+                            <p>Mechanical Engineering Student</p>
+                        </div>
+                        <div class="cv-section">
+                            <h3>Education</h3>
+                            <div class="cv-item">
+                                <h4>B.S. Mechanical Engineering</h4>
+                                <p class="cv-date">2022 - 2026 | GPA: 3.8/4.0</p>
+                                <p>University of Engineering, Honors Program</p>
+                            </div>
+                        </div>
+                        <div class="cv-section">
+                            <h3>Experience</h3>
+                            <div class="cv-item">
+                                <h4>Mechanical Engineering Intern - Tesla</h4>
+                                <p class="cv-date">Summer 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-actions">
+                    <h3>Download Full CV</h3>
+                    <p>Get my complete resume with detailed project descriptions, certifications, and references.</p>
+                    <div class="cv-buttons">
+                        <a href="#" class="btn btn-primary" onclick="downloadCV()">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="#" class="btn btn-outline" onclick="viewCV()">
+                            <i class="fas fa-eye"></i> View Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="about-img">
-<img src="circuit-board-close-up-with-different-components.jpg" alt="about">
-</div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding bg-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Work <span class="highlight">Together</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>alex.chen@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Your Email</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required>
+                            <label for="subject">Subject</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="about-text">
-<p>
-I am an electronics engineer passionate about embedded systems,
-control systems and analog circuits.
-</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">AC.</div>
+                <p>&copy; 2025 Alex Chen. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart"></i> and Engineering Precision</p>
+            </div>
+        </div>
+    </footer>
 
-<p>
-I enjoy building real world projects and continuously learning new technologies.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section class="skills" id="skills">
-
-<h1>Skills</h1>
-
-<div class="skills-container">
-
-<div class="skill-card" onclick="openModal('programming')">
-<h2>Programming</h2>
-<p>Python, C, Arduino</p>
-</div>
-
-<div class="skill-card">
-<h2>Electronics</h2>
-<p>Analog Circuits</p>
-</div>
-
-<div class="skill-card">
-<h2>Simulation</h2>
-<p>LTSpice</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section class="projects" id="projects">
-
-<h1>Projects</h1>
-
-<div class="project-container">
-
-<a href="pages/project1.html" class="project-card">
-    <img src="images/project1.jpg" alt="">
-    <h2>Smart Light</h2>
-    <p>LDR based automatic lighting system</p>
-</a>
-
-<a href="pages/project2.html" class="project-card">
-    <img src="images/project2.jpg" alt="">
-    <h2>Motor Control</h2>
-    <p>ESP32 Motor Control System</p>
-</a>
-
-<a href="pages/project3.html" class="project-card">
-    <img src="images/project3.jpg" alt="">
-    <h2>PID Control</h2>
-    <p>Control System Project</p>
-</a>
-
-</div>
-
-<div style="text-align:center; margin-top:30px;">
-    <a href="pages/projects.html" class="btn">View All Projects</a>
-</div>
-
-</section>
-
-<!-- ================= GALLERY ================= -->
-<section class="gallery" id="gallery">
-
-<h1>Gallery</h1>
-
-<div class="gallery-container">
-<img src="images/g1.jpg" alt="">
-<img src="images/g2.jpg" alt="">
-<img src="images/g3.jpg" alt="">
-<img src="images/g4.jpg" alt="">
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
-
-<h1>Contact</h1>
-
-<div class="contact-container">
-
-    <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <p><a href="mailto:abderraoufbrada.05@email.com">abderraoufbrada.05@email.com</a></p>
-    </div>
-
-    <div class="contact-card">
-        <i class="fas fa-phone"></i>
-        <p><a href="tel:+213551828186">+213 551 828 186</a></p>
-    </div>
-
-    <div class="contact-card">
-        <i class="fab fa-linkedin"></i>
-        <p><a href="https://www.linkedin.com/" target="_blank">LinkedIn Profile</a></p>
-    </div>
-
-    <div class="contact-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>Algeria</p>
-    </div>
-
-</div>
-
-</section>
-
-<!-- ================= SCRIPT ================= -->
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
