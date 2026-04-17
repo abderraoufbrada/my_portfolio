@@ -1,52 +1,227 @@
-<section class="projects-section">
-    <h1>My Projects</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Alex Chen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <div class="projects-grid">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">AC.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#internships">Internships</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#cv">CV</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
-        <a href="" class="project-icon">
-            <img src="../images/icons/ldr.png" alt="LDR">
-            <h3>LDR Sensor</h3>
-        </a>
+    <!-- Projects Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920" alt="Projects Background">
+            <div class="overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <h1>My Projects</h1>
+            <p>A showcase of engineering innovation and technical excellence</p>
+        </div>
+    </section>
 
-        <a href="project2.html" class="project-icon">
-            <img src="../images/icons/motor.png" alt="Motor">
-            <h3>Motor Control</h3>
-        </a>
+    <!-- Projects Filter -->
+    <section class="projects-filter section-padding-sm">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+                <button class="filter-btn" data-filter="cad">CAD Design</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+            </div>
+        </div>
+    </section>
 
-        <a href="project1.html" class="project-icon">
-            <img src="../images/icons/pid.png" alt="PID">
-            <h3>PID Controller</h3>
-        </a>
+    <!-- Projects Grid -->
+    <section class="projects-page section-padding">
+        <div class="container">
+            <div class="projects-masonry">
+                <!-- Project 1 -->
+                <div class="project-item" data-category="robotics" id="project1">
+                    <div class="project-card-large">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200" alt="Robot Project">
+                            </div>
+                            <div class="thumbnail-grid">
+                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=300" alt="Thumb 1">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300" alt="Thumb 2">
+                                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=300" alt="Thumb 3">
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Robotics</span>
+                            <h2>Autonomous Navigation Robot</h2>
+                            <p class="project-summary">A fully autonomous mobile robot capable of SLAM (Simultaneous Localization and Mapping) with integrated computer vision for obstacle detection and path planning.</p>
+                            
+                            <div class="project-specs">
+                                <div class="spec">
+                                    <span class="spec-label">Duration</span>
+                                    <span class="spec-value">6 months</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-label">Team Size</span>
+                                    <span class="spec-value">4 members</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-label">Role</span>
+                                    <span class="spec-value">Lead Designer</span>
+                                </div>
+                            </div>
 
-        <a href="project4.html" class="project-icon">
-            <img src="../images/icons/robot.png" alt="Robot">
-            <h3>Line Follower</h3>
-        </a>
+                            <div class="project-description">
+                                <h3>Project Overview</h3>
+                                <p>This project involved designing and building a mobile robot from scratch, including mechanical design, electronics integration, and software development. The robot uses ROS (Robot Operating System) for navigation and OpenCV for computer vision tasks.</p>
+                                
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li>Real-time SLAM using LiDAR and RGB-D camera</li>
+                                    <li>Autonomous path planning with A* algorithm</li>
+                                    <li>Obstacle avoidance using ultrasonic sensors</li>
+                                    <li>Remote monitoring via web interface</li>
+                                    <li>8-hour battery life with automatic docking</li>
+                                </ul>
 
-        <a href="project5.html" class="project-icon">
-            <img src="../images/icons/iot.png" alt="IoT">
-            <h3>IoT Monitoring</h3>
-        </a>
+                                <h3>Technologies Used</h3>
+                                <div class="tech-tags">
+                                    <span>ROS</span>
+                                    <span>Python</span>
+                                    <span>OpenCV</span>
+                                    <span>Arduino</span>
+                                    <span>SolidWorks</span>
+                                    <span>3D Printing</span>
+                                </div>
+                            </div>
 
-        <a href="project6.html" class="project-icon">
-            <img src="../images/icons/smart-home.png" alt="Smart Home">
-            <h3>Smart Home</h3>
-        </a>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+                                <a href="#" class="btn btn-outline"><i class="fas fa-file-pdf"></i> View Report</a>
+                                <a href="#" class="btn btn-outline"><i class="fas fa-video"></i> Demo Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <a href="project7.html" class="project-icon">
-            <img src="../images/icons/power.png" alt="Power">
-            <h3>Power Supply</h3>
-        </a>
+                <!-- Project 2 -->
+                <div class="project-item" data-category="cad" id="project2">
+                    <div class="project-card-large">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1200" alt="Turbine Project">
+                            </div>
+                            <div class="thumbnail-grid">
+                                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=300" alt="Thumb 1">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300" alt="Thumb 2">
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=300" alt="Thumb 3">
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">CAD Design</span>
+                            <h2>Turbine Blade Optimization</h2>
+                            <p class="project-summary">Topology optimization and CFD analysis of a gas turbine blade to improve efficiency and reduce material usage by 20%.</p>
+                            
+                            <div class="project-specs">
+                                <div class="spec">
+                                    <span class="spec-label">Duration</span>
+                                    <span class="spec-value">4 months</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-label">Software</span>
+                                    <span class="spec-value">ANSYS, SolidWorks</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-label">Result</span>
+                                    <span class="spec-value">18% Efficiency Gain</span>
+                                </div>
+                            </div>
 
-        <a href="project8.html" class="project-icon">
-            <img src="../images/icons/simulation.png" alt="Simulation">
-            <h3>LTspice Simulation</h3>
-        </a>
+                            <div class="project-description">
+                                <h3>Project Overview</h3>
+                                <p>Using generative design and topology optimization techniques, I redesigned a conventional turbine blade to reduce weight while maintaining structural integrity and improving aerodynamic performance.</p>
+                                
+                                <h3>Methodology</h3>
+                                <ul>
+                                    <li>Parametric modeling in SolidWorks</li>
+                                    <li>CFD simulation in ANSYS Fluent</li>
+                                    <li>Topology optimization using Altair Inspire</li>
+                                    <li>FEA validation under thermal and mechanical loads</li>
+                                    <li>Prototyping via metal 3D printing</li>
+                                </ul>
 
-        <a href="project9.html" class="project-icon">
-            <img src="../images/icons/ai.png" alt="AI">
-            <h3>AI Vision</h3>
-        </a>
+                                <h3>Key Results</h3>
+                                <div class="results-grid">
+                                    <div class="result-card">
+                                        <span class="result-number">18%</span>
+                                        <span class="result-label">Efficiency Increase</span>
+                                    </div>
+                                    <div class="result-card">
+                                        <span class="result-number">22%</span>
+                                        <span class="result-label">Weight Reduction</span>
+                                    </div>
+                                    <div class="result-card">
+                                        <span class="result-number">15%</span>
+                                        <span class="result-label">Cost Savings</span>
+                                    </div>
+                                </div>
+                            </div>
 
-    </div>
-</section>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-cube"></i> CAD Files</a>
+                                <a href="#" class="btn btn-outline"><i class="fas fa-chart-line"></i> Analysis Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item" data-category="iot" id="project3">
+                    <div class="project-card-large">
+                        <div class="project-gallery">
+                            <div class="main-image">
+                                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200" alt="IoT Project">
+                            </div>
+                            <div class="thumbnail-grid">
+                                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=300" alt="Thumb 1">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300" alt="Thumb 2">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=300" alt="Thumb 3">
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">IoT</span>
+                            <h2>Smart Manufacturing Monitor</h2>
+                            <p class="project-summary">Industrial IoT system for real-time monitoring of manufacturing equipment with predictive maintenance capabilities.</p>
+                            
+                            <div class="project-specs">
+                                <div class="spec">
+                                    <span class="spec-label">Duration</span>
+                                    <span class="spec-value">5 months</span>
+                                </div>
+                                <div class="spec">
+                                    <span class="spec-label">Platform</span>
+                                    <span class="spec-value">AWS IoT, React</span>
+                                </div
