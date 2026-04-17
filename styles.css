@@ -1,16 +1,17 @@
 /* ===== CSS VARIABLES & RESET ===== */
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    --accent-color: #06b6d4;
+
+    --primary-color: #10b981;        /* Emerald */
+    --secondary-color: #34d399;      /* Light Green */
+    --accent-color: #0ea5e9;
     --dark-bg: #0f172a;
     --darker-bg: #020617;
     --card-bg: #1e293b;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-    --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --gradient-2: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+    --gradient-1: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    --gradient-2: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
