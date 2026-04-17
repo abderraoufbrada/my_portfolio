@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Alex Chen</title>
+    <title>Projects | Alex Chen - Engineering Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -32,196 +33,208 @@
         </div>
     </nav>
 
-    <!-- Projects Header -->
-    <section class="page-header">
-        <div class="page-header-bg">
-            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920" alt="Projects Background">
-            <div class="overlay"></div>
-        </div>
-        <div class="page-header-content">
-            <h1>My Projects</h1>
-            <p>A showcase of engineering innovation and technical excellence</p>
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="hero-content">
+            <span class="section-tag">Portfolio</span>
+            <h1 class="glitch" data-text="My Projects">My Projects</h1>
+            <p class="hero-desc">Explore my engineering projects ranging from robotics to sustainable design</p>
         </div>
     </section>
 
-    <!-- Projects Filter -->
-    <section class="projects-filter section-padding-sm">
+    <!-- Projects Filter & Grid -->
+    <section class="section-padding bg-dark">
         <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="robotics">Robotics</button>
                 <button class="filter-btn" data-filter="cad">CAD Design</button>
                 <button class="filter-btn" data-filter="iot">IoT</button>
-                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="mechanical">Mechanical</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Grid -->
-    <section class="projects-page section-padding">
-        <div class="container">
-            <div class="projects-masonry">
+            <div class="projects-page-grid">
                 <!-- Project 1 -->
-                <div class="project-item" data-category="robotics" id="project1">
-                    <div class="project-card-large">
-                        <div class="project-gallery">
-                            <div class="main-image">
-                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200" alt="Robot Project">
-                            </div>
-                            <div class="thumbnail-grid">
-                                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=300" alt="Thumb 1">
-                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300" alt="Thumb 2">
-                                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=300" alt="Thumb 3">
-                            </div>
+                <div class="project-extended" data-category="robotics">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" alt="Autonomous Robot">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>Robotics</span>
+                            <span>2025</span>
+                            <span>Team Project</span>
                         </div>
-                        <div class="project-details">
-                            <span class="project-category">Robotics</span>
-                            <h2>Autonomous Navigation Robot</h2>
-                            <p class="project-summary">A fully autonomous mobile robot capable of SLAM (Simultaneous Localization and Mapping) with integrated computer vision for obstacle detection and path planning.</p>
-                            
-                            <div class="project-specs">
-                                <div class="spec">
-                                    <span class="spec-label">Duration</span>
-                                    <span class="spec-value">6 months</span>
-                                </div>
-                                <div class="spec">
-                                    <span class="spec-label">Team Size</span>
-                                    <span class="spec-value">4 members</span>
-                                </div>
-                                <div class="spec">
-                                    <span class="spec-label">Role</span>
-                                    <span class="spec-value">Lead Designer</span>
-                                </div>
-                            </div>
-
-                            <div class="project-description">
-                                <h3>Project Overview</h3>
-                                <p>This project involved designing and building a mobile robot from scratch, including mechanical design, electronics integration, and software development. The robot uses ROS (Robot Operating System) for navigation and OpenCV for computer vision tasks.</p>
-                                
-                                <h3>Key Features</h3>
-                                <ul>
-                                    <li>Real-time SLAM using LiDAR and RGB-D camera</li>
-                                    <li>Autonomous path planning with A* algorithm</li>
-                                    <li>Obstacle avoidance using ultrasonic sensors</li>
-                                    <li>Remote monitoring via web interface</li>
-                                    <li>8-hour battery life with automatic docking</li>
-                                </ul>
-
-                                <h3>Technologies Used</h3>
-                                <div class="tech-tags">
-                                    <span>ROS</span>
-                                    <span>Python</span>
-                                    <span>OpenCV</span>
-                                    <span>Arduino</span>
-                                    <span>SolidWorks</span>
-                                    <span>3D Printing</span>
-                                </div>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
-                                <a href="#" class="btn btn-outline"><i class="fas fa-file-pdf"></i> View Report</a>
-                                <a href="#" class="btn btn-outline"><i class="fas fa-video"></i> Demo Video</a>
-                            </div>
+                        <h3>Autonomous Navigation Robot</h3>
+                        <p>Developed a SLAM-based mobile robot capable of autonomous navigation in dynamic environments. Implemented computer vision for object detection and path planning algorithms for obstacle avoidance. The robot achieved 95% accuracy in navigation tasks and won 2nd place in the National Robotics Competition.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>ROS</span>
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>LiDAR</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-item" data-category="cad" id="project2">
-                    <div class="project-card-large">
-                        <div class="project-gallery">
-                            <div class="main-image">
-                                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1200" alt="Turbine Project">
-                            </div>
-                            <div class="thumbnail-grid">
-                                <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=300" alt="Thumb 1">
-                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300" alt="Thumb 2">
-                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=300" alt="Thumb 3">
-                            </div>
+                <div class="project-extended" data-category="cad">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=800" alt="Turbine Design">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>CAD/CFD</span>
+                            <span>2025</span>
+                            <span>Research</span>
                         </div>
-                        <div class="project-details">
-                            <span class="project-category">CAD Design</span>
-                            <h2>Turbine Blade Optimization</h2>
-                            <p class="project-summary">Topology optimization and CFD analysis of a gas turbine blade to improve efficiency and reduce material usage by 20%.</p>
-                            
-                            <div class="project-specs">
-                                <div class="spec">
-                                    <span class="spec-label">Duration</span>
-                                    <span class="spec-value">4 months</span>
-                                </div>
-                                <div class="spec">
-                                    <span class="spec-label">Software</span>
-                                    <span class="spec-value">ANSYS, SolidWorks</span>
-                                </div>
-                                <div class="spec">
-                                    <span class="spec-label">Result</span>
-                                    <span class="spec-value">18% Efficiency Gain</span>
-                                </div>
-                            </div>
-
-                            <div class="project-description">
-                                <h3>Project Overview</h3>
-                                <p>Using generative design and topology optimization techniques, I redesigned a conventional turbine blade to reduce weight while maintaining structural integrity and improving aerodynamic performance.</p>
-                                
-                                <h3>Methodology</h3>
-                                <ul>
-                                    <li>Parametric modeling in SolidWorks</li>
-                                    <li>CFD simulation in ANSYS Fluent</li>
-                                    <li>Topology optimization using Altair Inspire</li>
-                                    <li>FEA validation under thermal and mechanical loads</li>
-                                    <li>Prototyping via metal 3D printing</li>
-                                </ul>
-
-                                <h3>Key Results</h3>
-                                <div class="results-grid">
-                                    <div class="result-card">
-                                        <span class="result-number">18%</span>
-                                        <span class="result-label">Efficiency Increase</span>
-                                    </div>
-                                    <div class="result-card">
-                                        <span class="result-number">22%</span>
-                                        <span class="result-label">Weight Reduction</span>
-                                    </div>
-                                    <div class="result-card">
-                                        <span class="result-number">15%</span>
-                                        <span class="result-label">Cost Savings</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#" class="btn btn-primary"><i class="fas fa-cube"></i> CAD Files</a>
-                                <a href="#" class="btn btn-outline"><i class="fas fa-chart-line"></i> Analysis Report</a>
-                            </div>
+                        <h3>Turbine Blade Optimization</h3>
+                        <p>Conducted comprehensive CFD analysis and topology optimization of wind turbine blades to maximize efficiency. Reduced material usage by 20% while increasing power output by 12%. Used ANSYS for simulation and SolidWorks for parametric modeling and generative design.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>ANSYS</span>
+                            <span>SolidWorks</span>
+                            <span>CFD</span>
+                            <span>Optimization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> Research Paper</a>
+                            <a href="#"><i class="fas fa-images"></i> Gallery</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-item" data-category="iot" id="project3">
-                    <div class="project-card-large">
-                        <div class="project-gallery">
-                            <div class="main-image">
-                                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200" alt="IoT Project">
-                            </div>
-                            <div class="thumbnail-grid">
-                                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=300" alt="Thumb 1">
-                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300" alt="Thumb 2">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=300" alt="Thumb 3">
-                            </div>
+                <div class="project-extended" data-category="iot">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800" alt="IoT System">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>IoT</span>
+                            <span>2024</span>
+                            <span>Industry 4.0</span>
                         </div>
-                        <div class="project-details">
-                            <span class="project-category">IoT</span>
-                            <h2>Smart Manufacturing Monitor</h2>
-                            <p class="project-summary">Industrial IoT system for real-time monitoring of manufacturing equipment with predictive maintenance capabilities.</p>
-                            
-                            <div class="project-specs">
-                                <div class="spec">
-                                    <span class="spec-label">Duration</span>
-                                    <span class="spec-value">5 months</span>
-                                </div>
-                                <div class="spec">
-                                    <span class="spec-label">Platform</span>
-                                    <span class="spec-value">AWS IoT, React</span>
-                                </div
+                        <h3>Smart Manufacturing Monitor</h3>
+                        <p>Designed and implemented an IoT-based real-time monitoring system for manufacturing equipment. Features include predictive maintenance alerts, energy consumption analytics, and OEE (Overall Equipment Effectiveness) tracking. Reduced downtime by 30% in pilot deployment.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>Arduino</span>
+                            <span>Node.js</span>
+                            <span>MQTT</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-video"></i> Demo Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-extended" data-category="mechanical">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800" alt="Suspension System">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>Mechanical</span>
+                            <span>2024</span>
+                            <span>SAE Competition</span>
+                        </div>
+                        <h3>Formula SAE Suspension System</h3>
+                        <p>Led the design and manufacturing of the suspension system for our university's Formula SAE car. Performed kinematic analysis, stress simulations, and physical testing. The car placed top 10 in the design event at the international competition.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>CATIA</span>
+                            <span>FEA</span>
+                            <span>CNC Machining</span>
+                            <span>Composite Materials</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-car"></i> Competition Details</a>
+                            <a href="#"><i class="fas fa-drafting-compass"></i> Design Files</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-extended" data-category="robotics">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800" alt="Robotic Arm">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>Robotics</span>
+                            <span>2024</span>
+                            <span>Automation</span>
+                        </div>
+                        <h3>6-DOF Robotic Arm Controller</h3>
+                        <p>Built a 6-degree-of-freedom robotic arm with custom inverse kinematics controller. Implemented trajectory planning and force feedback control. The system can perform pick-and-place operations with 0.1mm precision and is compatible with various end-effectors.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>Inverse Kinematics</span>
+                            <span>C++</span>
+                            <span>3D Printing</span>
+                            <span>Control Systems</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-youtube"></i> Demo Video</a>
+                            <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-extended" data-category="mechanical">
+                    <div class="project-extended-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800" alt="Solar Vehicle">
+                    </div>
+                    <div class="project-extended-content">
+                        <div class="project-meta">
+                            <span>Sustainable</span>
+                            <span>2023</span>
+                            <span>Solar Challenge</span>
+                        </div>
+                        <h3>Solar-Powered Vehicle</h3>
+                        <p>Designed and built a solar-powered vehicle for the World Solar Challenge. Optimized aerodynamics achieving a drag coefficient of 0.12. Integrated MPPT charge controller and lightweight composite chassis. Traveled 3000km across Australia on solar power alone.</p>
+                        <div class="timeline-tags" style="margin-bottom: 1.5rem;">
+                            <span>Aerodynamics</span>
+                            <span>Solar Energy</span>
+                            <span>Carbon Fiber</span>
+                            <span>Electronics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-sun"></i> Race Blog</a>
+                            <a href="#"><i class="fas fa-trophy"></i> Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); text-align: center;">
+        <div class="container">
+            <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem;">Have a Project in Mind?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">I'm always open to discussing new projects and opportunities.</p>
+            <a href="index.html#contact" class="btn" style="background: white; color: var(--primary-color);">Let's Talk</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Alex Chen. Built with passion and engineering precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
