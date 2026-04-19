@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
 
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-brand">AB.</div> <ul class="nav-links">
+        <div class="nav-brand">AB.</div>
+        <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
             <li><a href="#internships">Internships</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#timeline">Journey</a></li>
+            <li><a href="#publications">Research</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -29,6 +34,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
             <div class="overlay"></div>
@@ -54,6 +60,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about section-padding">
         <div class="container">
             <div class="section-header">
@@ -74,6 +81,26 @@
                     <h3>Engineering the Invisible World</h3>
                     <p>I am an Engineering student specializing in Micro & Nanosensors and Electrical Measurements. My work focuses on bridging the gap between physical hardware and digital intelligence.</p>
                     <p>Currently deeply involved in developing <strong>Digital Twins</strong> for satellite components and implementing physics-informed machine learning for predictive maintenance.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Nano-scale Characterization</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-satellite"></i>
+                            <span>Aerospace Systems</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>Sensor Design</span>
+                        </div>
+                    </div>
+
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number" data-target="10">0</span>
@@ -94,9 +121,99 @@
         </div>
     </section>
 
-    <section class="featured-projects section-padding bg-dark">
+    <!-- Internships Section -->
+    <section id="internships" class="internships section-padding bg-dark">
         <div class="container">
             <div class="section-header light">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Professional <span class="highlight">Internships</span></h2>
+            </div>
+            <div class="internships-grid">
+                <div class="internship-card">
+                    <div class="internship-header">
+                        <div class="internship-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <div class="internship-meta">
+                            <span class="internship-date">Jun 2025 - Aug 2025</span>
+                            <span class="internship-type">Research Internship</span>
+                        </div>
+                    </div>
+                    <h3>ASAL - Algerian Space Agency</h3>
+                    <p class="internship-role">Digital Twin & Predictive Maintenance Engineer</p>
+                    <ul class="internship-details">
+                        <li>Developed Digital Twin models for satellite component degradation analysis</li>
+                        <li>Implemented Miner's Rule cumulative damage models for fatigue life prediction</li>
+                        <li>Designed LSTM neural networks for time-series failure prediction</li>
+                        <li>Created physics-informed ML pipelines for aerospace telemetry data</li>
+                    </ul>
+                    <div class="internship-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>MATLAB</span>
+                        <span>Digital Twins</span>
+                    </div>
+                </div>
+
+                <div class="internship-card">
+                    <div class="internship-header">
+                        <div class="internship-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="internship-meta">
+                            <span class="internship-date">Jan 2025 - Mar 2025</span>
+                            <span class="internship-type">Engineering Internship</span>
+                        </div>
+                    </div>
+                    <h3>MicroElectronics Research Lab</h3>
+                    <p class="internship-role">Nano-sensor Characterization Specialist</p>
+                    <ul class="internship-details">
+                        <li>Characterized MEMS sensors using atomic force microscopy (AFM)</li>
+                        <li>Developed automated measurement protocols for piezoelectric materials</li>
+                        <li>Designed PCB layouts for low-noise signal acquisition systems</li>
+                        <li>Analyzed impedance spectra for dielectric material properties</li>
+                    </ul>
+                    <div class="internship-tags">
+                        <span>MEMS</span>
+                        <span>AFM</span>
+                        <span>PCB Design</span>
+                        <span>Impedance Analysis</span>
+                    </div>
+                </div>
+
+                <div class="internship-card">
+                    <div class="internship-header">
+                        <div class="internship-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="internship-meta">
+                            <span class="internship-date">Summer 2024</span>
+                            <span class="internship-type">Technical Internship</span>
+                        </div>
+                    </div>
+                    <h3>Electrical Measurements Lab</h3>
+                    <p class="internship-role">Instrumentation & Control Engineer</p>
+                    <ul class="internship-details">
+                        <li>Calibrated high-precision multimeters and oscilloscopes</li>
+                        <li>Developed LabVIEW interfaces for automated testing procedures</li>
+                        <li>Implemented noise reduction techniques for sensitive measurements</li>
+                        <li>Documented ISO 17025 compliant measurement uncertainty budgets</li>
+                    </ul>
+                    <div class="internship-tags">
+                        <span>LabVIEW</span>
+                        <span>Instrumentation</span>
+                        <span>Calibration</span>
+                        <span>ISO 17025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects section-padding">
+        <div class="container">
+            <div class="section-header">
                 <span class="section-tag">Portfolio</span>
                 <h2 class="section-title">Technical <span class="highlight">Highlights</span></h2>
             </div>
@@ -111,9 +228,15 @@
                     <div class="project-info">
                         <span class="project-category">AI & Simulation</span>
                         <h3>Satellite Digital Twin</h3>
-                        <p>Predictive maintenance using Miner’s Rule and LSTM.</p>
+                        <p>Predictive maintenance using Miner's Rule and LSTM neural networks for aerospace component degradation analysis.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>MATLAB</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="project-card" data-tilt>
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800" alt="Nano-sensors">
@@ -124,20 +247,458 @@
                     <div class="project-info">
                         <span class="project-category">Measurements</span>
                         <h3>Universal Stress Lab</h3>
-                        <p>Interactive GUI for electronic component analysis.</p>
+                        <p>Interactive GUI for electronic component analysis with real-time impedance monitoring and stress testing.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>PyQt</span>
+                            <span>Arduino</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800" alt="Nano Materials">
+                        <div class="project-overlay">
+                            <a href="projects.html#materials" class="view-project">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Materials Science</span>
+                        <h3>Graphene Sensor Array</h3>
+                        <p>Design and fabrication of graphene-based chemical sensors with integrated readout circuitry.</p>
+                        <div class="project-tech">
+                            <span>CAD</span>
+                            <span>Lithography</span>
+                            <span>SPICE</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="text-center">
-                <a href="projects.html" class="btn btn-outline-light">View All Projects</a>
+                <a href="projects.html" class="btn btn-outline">View All Projects</a>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding bg-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Expertise</span>
+                <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming & Data</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MATLAB</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C/C++</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">TensorFlow / Keras</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PyTorch</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Scikit-learn</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Signal Processing</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-microscope"></i> Nano & Hardware</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MEMS Design (COMSOL)</span>
+                                <span class="skill-level">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PCB Design (KiCad/Altium)</span>
+                                <span class="skill-level">78%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Instrumentation</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Cleanroom Protocols</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-cube"></i> Simulation & CAD</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">COMSOL Multiphysics</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">ANSYS</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">AutoCAD / SolidWorks</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">LabVIEW</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3 class="tech-stack-title">Tools & Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-item" title="Python">
+                        <i class="devicon-python-plain"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item" title="TensorFlow">
+                        <i class="devicon-tensorflow-original"></i>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="tech-item" title="MATLAB">
+                        <i class="fas fa-calculator"></i>
+                        <span>MATLAB</span>
+                    </div>
+                    <div class="tech-item" title="Arduino">
+                        <i class="devicon-arduino-plain"></i>
+                        <span>Arduino</span>
+                    </div>
+                    <div class="tech-item" title="Git">
+                        <i class="devicon-git-plain"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item" title="Linux">
+                        <i class="devicon-linux-plain"></i>
+                        <span>Linux</span>
+                    </div>
+                    <div class="tech-item" title="Docker">
+                        <i class="devicon-docker-plain"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-item" title="Jupyter">
+                        <i class="devicon-jupyter-plain"></i>
+                        <span>Jupyter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Education Section -->
+    <section id="timeline" class="timeline section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Education & <span class="highlight">Experience</span></h2>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Master's in Micro & Nanosensors Engineering</h3>
+                        <p class="timeline-place">University of Science and Technology Houari Boumediene (USTHB)</p>
+                        <p>Specializing in electrical measurements, sensor design, and nano-scale characterization techniques.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Summer 2025</span>
+                        <h3>Research Intern - ASAL</h3>
+                        <p class="timeline-place">Algerian Space Agency</p>
+                        <p>Digital Twin development for satellite predictive maintenance using physics-informed neural networks.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2023</span>
+                        <h3>Bachelor's in Electronics Engineering</h3>
+                        <p class="timeline-place">USTHB - Algiers</p>
+                        <p>Foundation in analog/digital electronics, signal processing, and embedded systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>IEEE Student Member</h3>
+                        <p class="timeline-place">IEEE USTHB Student Branch</p>
+                        <p>Active member participating in workshops on sensor technologies and IoT applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Publications Section -->
+    <section id="publications" class="publications section-padding bg-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Research</span>
+                <h2 class="section-title">Publications & <span class="highlight">Research</span></h2>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-status">In Preparation</span>
+                        <h3>Physics-Informed LSTM for Satellite Component Degradation Prediction</h3>
+                        <p class="publication-authors">A. Brada, et al.</p>
+                        <p class="publication-desc">Novel approach combining Miner's Rule with deep learning for aerospace predictive maintenance.</p>
+                        <div class="publication-tags">
+                            <span>Digital Twins</span>
+                            <span>Deep Learning</span>
+                            <span>Aerospace</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-status">Conference Paper</span>
+                        <h3>Automated Impedance Analysis System for MEMS Characterization</h3>
+                        <p class="publication-authors">A. Brada, et al.</p>
+                        <p class="publication-desc">Design of automated measurement platform for frequency-dependent impedance spectroscopy of micro-sensors.</p>
+                        <div class="publication-tags">
+                            <span>MEMS</span>
+                            <span>Impedance</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV / Resume Download Section -->
+    <section id="cv" class="cv-section section-padding">
+        <div class="container">
+            <div class="cv-content">
+                <div class="cv-text">
+                    <h2>Download My <span class="highlight">Resume</span></h2>
+                    <p>Get a comprehensive overview of my skills, experience, and education. Available in English and French.</p>
+                    <div class="cv-buttons">
+                        <a href="cv-abderraouf-brada-en.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> English CV
+                        </a>
+                        <a href="cv-abderraouf-brada-fr.pdf" class="btn btn-outline" download>
+                            <i class="fas fa-download"></i> French CV
+                        </a>
+                    </div>
+                </div>
+                <div class="cv-preview">
+                    <div class="cv-document">
+                        <div class="cv-page">
+                            <div class="cv-header-mock">
+                                <div class="cv-name-mock">Abderraouf Brada</div>
+                                <div class="cv-line-mock"></div>
+                                <div class="cv-line-mock short"></div>
+                            </div>
+                            <div class="cv-sections-mock">
+                                <div class="cv-section-mock"></div>
+                                <div class="cv-section-mock"></div>
+                                <div class="cv-section-mock"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding bg-dark">
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>I'm always interested in discussing new projects, research opportunities, or collaborations in nano-technology and AI.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:abderraouf.brada@email.com">abderraouf.brada@email.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span>Algiers, Algeria</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <span class="contact-label">University</span>
+                                <span>USTHB, Algiers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" title="ResearchGate">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder="Your Name">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder="Your Email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required placeholder="Subject">
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">AB.</div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-researchgate"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2026 Abderraouf Brada. All rights reserved.</p>
                 <p>Designed with Engineering Precision</p>
             </div>
