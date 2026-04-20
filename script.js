@@ -549,3 +549,61 @@ window.addEventListener('scroll', debounce(() => {
 
 console.log('%c🌊 Abderraouf Brada Portfolio Loaded', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
 console.log('%cNano Technology Engineering | Digital Twins | Predictive Maintenance', 'color: #06b6d4; font-size: 12px;');
+
+// ============================================
+// INTERNSHIP MODAL FUNCTIONS
+// ============================================
+
+function openInternshipModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeInternshipModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+function changeGalleryImage(thumb) {
+    // Remove active class from all thumbs
+    document.querySelectorAll('.gallery-thumbs img').forEach(img => {
+        img.classList.remove('active');
+    });
+    
+    // Add active class to clicked thumb
+    thumb.classList.add('active');
+    
+    // Change main image
+    const mainImg = document.getElementById('gallery-main-img');
+    if (mainImg) {
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+            mainImg.src = thumb.src;
+            mainImg.alt = thumb.alt;
+            mainImg.style.opacity = '1';
+        }, 200);
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.internship-modal.active').forEach(modal => {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+});
+
+// Prevent modal content clicks from closing the modal
+document.querySelectorAll('.modal-container').forEach(container => {
+    container.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
