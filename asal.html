@@ -1,0 +1,215 @@
+<!-- ASAL Internship Detail Modal -->
+<div id="asal-modal" class="internship-modal">
+    <div class="modal-backdrop" onclick="closeInternshipModal('asal-modal')"></div>
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeInternshipModal('asal-modal')">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+            <div class="modal-logo">
+                <img src="asal.png" 
+                     alt="ASAL Logo">
+            </div>
+            <div class="modal-title-group">
+                <h2>ASAL — Algerian Space Agency</h2>
+                <p class="modal-subtitle">AI Incubator | ENSIA, Sidi Abdellah</p>
+                <div class="modal-meta-badges">
+                    <span class="badge"><i class="far fa-calendar"></i> Mar 24 – Apr 09, 2026</span>
+                    <span class="badge"><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</span>
+                    <span class="badge"><i class="fas fa-user-tie"></i> Supervisors: Dr. Larabi, Ms. Abbedou</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Photo Gallery Grid -->
+            <div class="modal-gallery">
+                <div class="gallery-main">
+                    <img src="photo_2026-04-20_22-33-08.jpg" 
+                         alt="Alsat-2B Satellite" id="gallery-main-img">
+                </div>
+                <div class="gallery-thumbs">
+                    <img src="photo_2026-04-20_22-33-08.jpg" 
+                         alt="Alsat-2B" onclick="changeGalleryImage(this)" class="active">
+                  
+                    <div class="gallery-placeholder" onclick="alert('Add your CESTS visit photo here')">
+                        <i class="fas fa-camera"></i>
+                        <span>CESTS Visit</span>
+                    </div>
+                    <div class="gallery-placeholder" onclick="alert('Add your team/lab photo here')">
+                        <i class="fas fa-users"></i>
+                        <span>Team Photo</span>
+                    </div>
+                    <div class="gallery-placeholder" onclick="alert('Add your certificate photo here')">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Overview -->
+            <div class="modal-section">
+                <h3><i class="fas fa-info-circle"></i> Overview</h3>
+                <p>Two-week research immersion at the <strong>Artificial Intelligence Incubator</strong> of Algeria's national space agency, 
+                hosted at ENSIA. The internship bridged academic training with applied AI research in space and aerial imagery analysis, 
+                combining structured courses, hands-on laboratory work, and an independent technical project.</p>
+            </div>
+            
+            <!-- Key Achievements -->
+            <div class="modal-section">
+                <h3><i class="fas fa-trophy"></i> Key Contributions</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4>MOT Pipeline Development</h4>
+                        <p>Architected a complete multi-object tracking system achieving <strong>32.9% MOTA</strong> and 
+                        <strong>49% IDF1</strong> on the challenging VisDrone-MOT benchmark using YOLO detection + BoTSORT tracking.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-brain"></i></div>
+                        <h4>Domain Adaptation</h4>
+                        <p>Solved the critical domain-gap problem between ground-level and aerial imagery through a custom 
+                        3-stage training strategy with Mosaic augmentation and resolution enhancement.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-satellite-dish"></i></div>
+                        <h4>Ground Station Visit</h4>
+                        <p>Conducted discovery visit to <strong>CESTS Ouled Fayet</strong>, observing Alcomsat-1 operations, 
+                        antenna management, spectrum allocation, and broadcast services.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Remote Sensing Analysis</h4>
+                        <p>Built NDVI temporal analysis maps (2000–2020) via Google Earth Engine and implemented 
+                        semi-supervised land cover classification with noisy label robustness.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Details -->
+            <div class="modal-section">
+                <h3><i class="fas fa-cogs"></i> Technical Stack & Methodologies</h3>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h4>Detection & Tracking</h4>
+                        <div class="tech-items">
+                            <span>YOLO (Custom Trained)</span>
+                            <span>BoTSORT</span>
+                            <span>Kalman Filter</span>
+                            <span>Deep Re-ID</span>
+                            <span>Hungarian Algorithm</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>ML & Data</h4>
+                        <div class="tech-items">
+                            <span>PyTorch</span>
+                            <span>OpenCV</span>
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                            <span>Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Remote Sensing</h4>
+                        <div class="tech-items">
+                            <span>Google Earth Engine</span>
+                            <span>Landsat Imagery</span>
+                            <span>NDVI Analysis</span>
+                            <span>Spectral Indices</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <h4>Dataset</h4>
+                        <div class="tech-items">
+                            <span>VisDrone-MOT</span>
+                            <span>288 Video Clips</span>
+                            <span>261,908 Frames</span>
+                            <span>10 Object Classes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Table -->
+            <div class="modal-section">
+                <h3><i class="fas fa-chart-bar"></i> Performance Metrics</h3>
+                <div class="metrics-table-wrapper">
+                    <table class="metrics-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Our Result</th>
+                                <th>State-of-the-Art (FOLT)</th>
+                                <th>Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>MOTA</strong></td>
+                                <td class="result-highlight">32.9%</td>
+                                <td>42.1%</td>
+                                <td>VisDrone-MOT benchmark</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IDF1</strong></td>
+                                <td class="result-highlight">49.0%</td>
+                                <td>56.9%</td>
+                                <td>Identity preservation score</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ID Switches</strong></td>
+                                <td>949</td>
+                                <td>~600</td>
+                                <td>Lower is better</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="metrics-note"><i class="fas fa-info-circle"></i> Results are consistent with the established difficulty of VisDrone 
+                    and represent meaningful improvement over near-zero out-of-the-box pre-trained model performance.</p>
+                </div>
+            </div>
+            
+            <!-- Courses -->
+            <div class="modal-section">
+                <h3><i class="fas fa-book-open"></i> Training & Courses</h3>
+                <div class="courses-list">
+                    <div class="course-item">
+                        <div class="course-num">01</div>
+                        <div class="course-info">
+                            <h4>Remote Sensing Fundamentals</h4>
+                            <p>Passive vs. active sensing, spectral signatures, spatial/spectral/temporal/radiometric resolution, 
+                            NDVI computation, satellite orbit mechanics (LEO vs. GEO).</p>
+                        </div>
+                    </div>
+                    <div class="course-item">
+                        <div class="course-num">02</div>
+                        <div class="course-info">
+                            <h4>Foundations of Artificial Intelligence</h4>
+                            <p>Supervised/unsupervised/semi-supervised learning, CNNs vs. fully-connected networks, 
+                            transfer learning, active learning, reinforcement learning, model evaluation strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ASAL Context -->
+            <div class="modal-section asal-context">
+                <h3><i class="fas fa-building"></i> About ASAL</h3>
+                <p>The <strong>Algerian Space Agency (ASAL)</strong> is Algeria's national public space institution, established in 2002. 
+                It operates the <strong>ALSAT</strong> Earth observation constellation and <strong>Alcomsat-1</strong> communications satellite. 
+                Key centers include CTS (Arzew), CDS (Bir El-Djir), CAS (Algiers), CESTS (Ouled Fayet), and the new Bougzoul Space Telecommunications Centre.</p>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <a href="/mnt/agents/upload/main.pdf" target="_blank" class="btn-modal btn-primary">
+                <i class="fas fa-file-pdf"></i> View Full Report (PDF)
+            </a>
+            <button class="btn-modal btn-secondary" onclick="closeInternshipModal('asal-modal')">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+</div>
