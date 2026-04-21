@@ -1784,17 +1784,19 @@ body {
 /* asal interenship start*/
 
 /* ============================================
-   INTERNSHIP CARDS - ENHANCED DESIGN
+   INTERNSHIP MINI CARDS - COMPACT GRID
    ============================================ */
 
 .internships-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
     margin-top: 3rem;
+    align-items: stretch;
 }
 
-.internship-card {
+/* Mini Card */
+.mini-card {
     background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
     border-radius: 20px;
     overflow: hidden;
@@ -1804,13 +1806,13 @@ body {
     position: relative;
 }
 
-.internship-card:hover {
+.mini-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 212, 255, 0.1);
     border-color: rgba(0, 212, 255, 0.3);
 }
 
-.internship-card::before {
+.mini-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1820,6 +1822,7 @@ body {
     background: linear-gradient(90deg, #00d4ff, #7b2cbf, #00d4ff);
     background-size: 200% 100%;
     animation: shimmer 3s infinite;
+    z-index: 2;
 }
 
 @keyframes shimmer {
@@ -1827,242 +1830,181 @@ body {
     100% { background-position: 200% 0; }
 }
 
-/* Visual Header with Logo + Image */
-.internship-visual {
+/* Visual Header */
+.mini-card-visual {
     position: relative;
-    height: 200px;
+    height: 160px;
     overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-.internship-logo-container {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 10;
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 50%;
-    padding: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.internship-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-.internship-image-preview {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.preview-img {
+.mini-card-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.internship-card:hover .preview-img {
+.mini-card:hover .mini-card-visual img {
     transform: scale(1.1);
 }
 
-.image-overlay {
+/* Logo Badge */
+.mini-card-logo {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.internship-card:hover .image-overlay {
-    opacity: 1;
-}
-
-.view-more {
-    color: #00d4ff;
-    font-weight: 600;
-    font-size: 0.9rem;
+    bottom: -28px;
+    left: 1.2rem;
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    justify-content: center;
+    z-index: 10;
+    border: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.mini-card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Content Area */
-.internship-content {
-    padding: 1.5rem;
+.mini-card-content {
+    padding: 2.2rem 1.3rem 1.3rem;
 }
 
-.internship-header-row {
+/* Meta Row */
+.mini-card-meta {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.internship-meta {
-    display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
     flex-wrap: wrap;
 }
 
-.internship-meta span {
-    font-size: 0.8rem;
+.mini-card-meta span {
+    font-size: 0.78rem;
     color: #8892b0;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.internship-meta i {
+.mini-card-meta i {
     color: #00d4ff;
+    font-size: 0.8rem;
 }
 
-.internship-org {
-    font-size: 1.3rem;
+/* Organization Name */
+.mini-card-org {
+    font-size: 1.15rem;
     color: #e6f1ff;
     margin-bottom: 0.3rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-.internship-org i {
+/* Role */
+.mini-card-role {
     color: #00d4ff;
-    font-size: 1.1rem;
-}
-
-.internship-role {
-    color: #00d4ff;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     opacity: 0.9;
-}
-
-/* Quick Highlights */
-.internship-highlights {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0, 212, 255, 0.1);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    color: #00d4ff;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-}
-
-.highlight-item i {
-    font-size: 0.75rem;
-}
-
-/* Details List */
-.internship-details {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.2rem 0;
-}
-
-.internship-details li {
-    color: #a8b2d1;
-    font-size: 0.9rem;
-    padding: 6px 0;
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.5;
-}
-
-.internship-details li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: #00d4ff;
-    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 /* Tags */
-.internship-tags {
+.mini-card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 1rem;
+    gap: 6px;
+    margin-bottom: 0.9rem;
 }
 
-.internship-tags span {
-    padding: 4px 12px;
+.tag-mini {
+    padding: 3px 10px;
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
 }
 
-.tag-primary {
+.tag-mini.primary {
     background: rgba(0, 212, 255, 0.15);
     color: #00d4ff;
     border: 1px solid rgba(0, 212, 255, 0.3);
 }
 
-.tag-secondary {
+.tag-mini.secondary {
     background: rgba(123, 44, 191, 0.15);
     color: #c084fc;
     border: 1px solid rgba(123, 44, 191, 0.3);
 }
 
-.tag-tertiary {
+.tag-mini.tertiary {
     background: rgba(255, 255, 255, 0.05);
     color: #8892b0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Footer Hint */
-.internship-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 1rem;
-    margin-top: 0.5rem;
+/* Highlights Row */
+.mini-card-highlights {
+    display: flex;
+    gap: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-wrap: wrap;
 }
 
-.click-hint {
-    color: #64ffda;
-    font-size: 0.85rem;
-    font-weight: 500;
+.highlight-mini {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    transition: gap 0.3s ease;
+    gap: 5px;
+    background: rgba(0, 212, 255, 0.08);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    color: #00d4ff;
+    border: 1px solid rgba(0, 212, 255, 0.15);
 }
 
-.click-hint i {
-    transition: transform 0.3s ease;
+.highlight-mini i {
+    font-size: 0.75rem;
 }
 
-.internship-card:hover .click-hint i {
-    transform: translateX(5px);
+/* Click Hint */
+.mini-card-hint {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.mini-card:hover .mini-card-hint {
+    opacity: 1;
+}
+
+.mini-card-hint i {
+    color: #00d4ff;
+    font-size: 0.85rem;
 }
 
 /* ============================================
-   MODAL STYLES
+   MODAL STYLES (UNCHANGED)
    ============================================ */
 
 .internship-modal {
@@ -2549,6 +2491,12 @@ body {
         width: 100%;
         justify-content: center;
     }
-}  
-/*  asal interenship end */
+}
 
+@media (min-width: 769px) and (max-width: 1200px) {
+    .internships-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* asal interenship end */
