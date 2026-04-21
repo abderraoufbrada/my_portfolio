@@ -116,7 +116,7 @@
         </div>
     </section>
 
-    <!--<!-- Internships Section -->
+  <!-- Internships Section -->
 <section id="internships" class="internships section-padding bg-dark">
     <div class="container">
         <div class="section-header light">
@@ -124,10 +124,10 @@
             <h2 class="section-title">Professional <span class="highlight">Internships</span></h2>
         </div>
         
-              <div class="internships-grid">
+        <div class="internships-grid">
             
             <!-- MINI CARD 1: ASAL -->
-            <article class="mini-card" onclick="openInternshipModal('asal.html')">
+            <article class="mini-card" onclick="loadInternshipModal('internships/asal.html')">
                 <div class="mini-card-visual">
                     <img src="photo_2026-04-20_22-33-08.jpg" alt="Alsat-2B Satellite">
                 </div>
@@ -156,42 +156,45 @@
                 </div>
             </article>
 
-            <!-- MINI CARD 2: Add your next internship here -->
-            <!-- Copy the mini-card block above and change content -->
-
-                  <article class="mini-card" onclick="openInternshipModal('bomar-company')">
+            <!-- MINI CARD 2: BOMAR -->
+            <article class="mini-card" onclick="loadInternshipModal('internships/bomar.html')">
                 <div class="mini-card-visual">
-                    <img src="photo_2026-04-21_20-13-53.jpg" alt="Alsat-2B Satellite">
+                    <img src="photo_2026-04-21_20-13-53.jpg" alt="BOMAR Project">
                 </div>
                 <div class="mini-card-logo">
-                    <img src="asal.png" alt="ASAL Logo">
+                    <img src="bomar-logo.png" alt="BOMAR Logo">  <!-- CHANGE LOGO -->
                 </div>
                 <div class="mini-card-content">
                     <div class="mini-card-meta">
-                        <span><i class="far fa-calendar-alt"></i> Mar–Apr 2026</span>
-                        <span><i class="fas fa-graduation-cap"></i> Research</span>
+                        <span><i class="far fa-calendar-alt"></i> Dates</span>  <!-- CHANGE -->
+                        <span><i class="fas fa-briefcase"></i> Type</span>     <!-- CHANGE -->
                     </div>
-                    <h3 class="mini-card-org">bomar</h3>
-                    <p class="mini-card-role">AI & Computer Vision — UAV Multi-Object Tracking</p>
+                    <h3 class="mini-card-org">BOMAR</h3>
+                    <p class="mini-card-role">Your Role Description</p>  <!-- CHANGE -->
                     <div class="mini-card-tags">
-                        <span class="tag-mini primary">Python</span>
-                        <span class="tag-mini primary">PyTorch</span>
-                        <span class="tag-mini">YOLO</span>
-                        <span class="tag-mini">OpenCV</span>
-                        <span class="tag-mini">GEE</span>
+                        <span class="tag-mini primary">Tech1</span>  <!-- CHANGE -->
+                        <span class="tag-mini primary">Tech2</span> <!-- CHANGE -->
+                        <span class="tag-mini">Tech3</span>        <!-- CHANGE -->
                     </div>
                     <div class="mini-card-highlights">
-                        <span class="highlight-mini"><i class="fas fa-eye"></i> CV</span>
-                        <span class="highlight-mini"><i class="fas fa-drone"></i> UAV</span>
-                        <span class="highlight-mini"><i class="fas fa-globe-africa"></i> Remote</span>
+                        <span class="highlight-mini"><i class="fas fa-star"></i> Highlight1</span>  <!-- CHANGE -->
+                        <span class="highlight-mini"><i class="fas fa-star"></i> Highlight2</span>  <!-- CHANGE -->
                     </div>
                 </div>
             </article>
 
+        </div> <!-- end internships-grid -->
+        
+        <!-- SINGLE MODAL CONTAINER (reused for all internships) -->
+        <div id="internship-modal" class="internship-modal">
+            <div class="modal-backdrop" onclick="closeInternshipModal()"></div>
+            <div class="modal-container" id="modal-content">
+                <!-- Content loaded here by JavaScript -->
+            </div>
         </div>
-    </div>
-
-
+        
+    </div> <!-- end container -->
+</section>
 
               
     </section>
