@@ -86,7 +86,7 @@ if (window.innerWidth > 768) {
     });
 
     // Cursor grow on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .internship-card, .skill-category, .tech-item');
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .mini-card, .skill-category, .tech-item');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
@@ -105,7 +105,7 @@ if (window.innerWidth > 768) {
 }
 
 // ===== SCROLL REVEAL ANIMATION =====
-const revealElements = document.querySelectorAll('.reveal, .project-card, .internship-card, .skill-category, .timeline-item, .publication-card, .tech-item');
+const revealElements = document.querySelectorAll('.reveal, .project-card, .mini-card, .skill-category, .timeline-item, .publication-card, .tech-item');
 
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
@@ -184,7 +184,6 @@ const animateCounters = () => {
             setTimeout(animateCounters, 20);
         } else {
             counter.innerText = target;
-            // Add glow effect when complete
             counter.style.textShadow = '0 0 20px rgba(56, 189, 248, 0.5)';
         }
     });
@@ -260,18 +259,15 @@ if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
-        // Loading state
         submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.8';
         
         setTimeout(() => {
-            // Success state with marine green
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             submitBtn.style.background = 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)';
             submitBtn.style.boxShadow = '0 10px 30px rgba(20, 184, 166, 0.3)';
             
-            // Reset form
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.background = '';
@@ -290,7 +286,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 80;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -360,7 +356,6 @@ const createParticles = () => {
             particle.draw();
         });
         
-        // Connect particles
         particles.forEach((a, index) => {
             particles.slice(index + 1).forEach(b => {
                 const dx = a.x - b.x;
@@ -385,7 +380,6 @@ const createParticles = () => {
     animate();
 };
 
-// Initialize particles on load
 if (window.innerWidth > 768) {
     createParticles();
 }
@@ -400,7 +394,6 @@ window.addEventListener('load', () => {
         }, 500);
     }
     
-    // Trigger initial animations
     revealOnScroll();
 });
 
@@ -509,7 +502,6 @@ class TextScramble {
     }
 }
 
-// Apply scramble effect to section titles on hover
 document.querySelectorAll('.section-title').forEach(title => {
     const fx = new TextScramble(title);
     const originalText = title.innerText;
@@ -522,7 +514,7 @@ document.querySelectorAll('.section-title').forEach(title => {
 // ===== MARINE GLOW EFFECT ON SCROLL =====
 const addMarineGlow = () => {
     const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    const hue = 190 + (scrollPercent * 20); // Shift from cyan to teal
+    const hue = 190 + (scrollPercent * 20);
     document.documentElement.style.setProperty('--primary-color', `hsl(${hue}, 90%, 50%)`);
 };
 
@@ -541,7 +533,6 @@ const debounce = (func, wait) => {
     };
 };
 
-// Apply debouncing to scroll events
 window.addEventListener('scroll', debounce(() => {
     revealOnScroll();
     animateTimeline();
@@ -551,35 +542,52 @@ console.log('%c🌊 Abderraouf Brada Portfolio Loaded', 'color: #0ea5e9; font-si
 console.log('%cNano Technology Engineering | Digital Twins | Predictive Maintenance', 'color: #06b6d4; font-size: 12px;');
 
 // ============================================
-// INTERNSHIP MODAL FUNCTIONS
+// UPDATED INTERNSHIP MODAL FUNCTIONS
 // ============================================
 
-function openInternshipModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
+// Load internship modal content from external HTML file
+async function loadInternshipModal(filePath) {
+    const modal = document.getElementById('internship-modal');
+    const container = document.getElementById('modal-content');
+    
+    if (!modal || !container) {
+        console.error('Modal container not found. Make sure you have: <div id="internship-modal"> with <div id="modal-content"> inside');
+        return;
+    }
+    
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`Failed to load ${filePath}`);
+        const html = await response.text();
+        container.innerHTML = html;
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+    } catch (error) {
+        console.error('Error loading internship:', error);
+        alert('Failed to load internship details. Please check the file path.');
     }
 }
 
-function closeInternshipModal(modalId) {
-    const modal = document.getElementById(modalId);
+function closeInternshipModal() {
+    const modal = document.getElementById('internship-modal');
     if (modal) {
         modal.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
+        document.body.style.overflow = '';
+        // Clear content after animation
+        setTimeout(() => {
+            const container = document.getElementById('modal-content');
+            if (container) container.innerHTML = '';
+        }, 300);
     }
 }
 
 function changeGalleryImage(thumb) {
-    // Remove active class from all thumbs
     document.querySelectorAll('.gallery-thumbs img').forEach(img => {
         img.classList.remove('active');
     });
     
-    // Add active class to clicked thumb
     thumb.classList.add('active');
     
-    // Change main image
     const mainImg = document.getElementById('gallery-main-img');
     if (mainImg) {
         mainImg.style.opacity = '0';
@@ -594,16 +602,14 @@ function changeGalleryImage(thumb) {
 // Close modal on Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-        document.querySelectorAll('.internship-modal.active').forEach(modal => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        closeInternshipModal();
     }
 });
 
 // Prevent modal content clicks from closing the modal
-document.querySelectorAll('.modal-container').forEach(container => {
-    container.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
+    const container = document.getElementById('modal-content');
+    if (container && container.contains(e.target)) {
         e.stopPropagation();
-    });
+    }
 });
