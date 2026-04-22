@@ -613,3 +613,32 @@ document.addEventListener('click', function(e) {
         e.stopPropagation();
     }
 });
+
+
+// Visit Modal Functions
+function loadVisitModal(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('visit-modal-content').innerHTML = html;
+            document.getElementById('visit-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        })
+        .catch(error => {
+            console.error('Error loading visit details:', error);
+            // Fallback content
+            document.getElementById('visit-modal-content').innerHTML = `
+                <div style="padding: 3rem; text-align: center;">
+                    <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: #ff6b6b; margin-bottom: 1rem;"></i>
+                    <h3>Content Loading...</h3>
+                    <p>Details for this visit will be available soon.</p>
+                </div>
+            `;
+            document.getElementById('visit-modal').classList.add('active');
+        });
+}
+
+function closeVisitModal() {
+    document.getElementById('visit-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
