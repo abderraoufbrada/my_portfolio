@@ -1,0 +1,212 @@
+<!-- PVD Research Center Visit Details -->
+<div class="visit-detail-header">
+    <img src="../images/pvd-lab-wide.jpg" alt="PVD Laboratory">
+    <div class="visit-detail-overlay">
+        <span class="visit-detail-tag">Discovery & Practice</span>
+        <h1>Physical Vapor Deposition (PVD) Laboratory</h1>
+        <p class="visit-detail-meta">
+            <i class="far fa-calendar-alt"></i> March 2026 &nbsp;|&nbsp;
+            <i class="fas fa-map-marker-alt"></i> Research Center Name &nbsp;|&nbsp;
+            <i class="far fa-clock"></i> 2 Weeks
+        </p>
+    </div>
+</div>
+
+<div class="visit-detail-body">
+    
+    <div class="visit-detail-section">
+        <h2><i class="fas fa-bullseye"></i> Objective</h2>
+        <p>Discover and practice thin-film deposition techniques used in semiconductor manufacturing, optical coatings, and surface engineering applications.</p>
+    </div>
+
+    <div class="visit-detail-section">
+        <h2><i class="fas fa-tasks"></i> Activities & Techniques Learned</h2>
+        <ul class="visit-detail-list">
+            <li><strong>Evaporation PVD:</strong> Thermal evaporation of metals (Al, Au, Cr) in high vacuum</li>
+            <li><strong>Sputtering:</strong> DC and RF magnetron sputtering for compound materials</li>
+            <li><strong>System Operation:</strong> Vacuum pump operation, base pressure achievement, gas flow control</li>
+            <li><strong>Film Characterization:</strong> Thickness measurement, adhesion testing, optical inspection</li>
+            <li><strong>Safety Protocols:</strong> Handling high-voltage systems, cryogenic liquids, toxic materials</li>
+        </ul>
+    </div>
+
+    <div class="visit-detail-section">
+        <h2><i class="fas fa-flask"></i> Equipment Used</h2>
+        <div class="equipment-grid">
+            <div class="equipment-item">
+                <i class="fas fa-atom"></i>
+                <span>Electron Beam Evaporator</span>
+            </div>
+            <div class="equipment-item">
+                <i class="fas fa-magnet"></i>
+                <span>Magnetron Sputtering System</span>
+            </div>
+            <div class="equipment-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Quartz Crystal Monitor</span>
+            </div>
+            <div class="equipment-item">
+                <i class="fas fa-microscope"></i>
+                <span>Optical Microscope</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="visit-detail-section">
+        <h2><i class="fas fa-lightbulb"></i> Key Takeaways</h2>
+        <p>This hands-on experience deepened my understanding of thin-film physics and the critical parameters controlling deposition quality. I gained practical skills in vacuum technology and appreciation for precision manufacturing in research environments.</p>
+    </div>
+
+    <div class="visit-detail-gallery">
+        <h2><i class="fas fa-images"></i> Gallery</h2>
+        <div class="gallery-grid">
+            <img src="../photos/pvd1.jpg" alt="Vacuum Chamber">
+            <img src="../photos/pvd2.jpg" alt="Control Panel">
+            <img src="../photos/pvd3.jpg" alt="Sample Preparation">
+        </div>
+    </div>
+
+</div>
+
+<div class="visit-detail-footer">
+    <button onclick="closeVisitModal()" class="btn-close-modal">
+        <i class="fas fa-times"></i> Close
+    </button>
+</div>
+
+<style>
+.visit-detail-header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+.visit-detail-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visit-detail-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,26,46,0.95) 0%, rgba(26,26,46,0.5) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    color: #fff;
+}
+.visit-detail-tag {
+    display: inline-block;
+    background: #00d4aa;
+    color: #000;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+.visit-detail-overlay h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.visit-detail-meta {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+.visit-detail-body {
+    padding: 2rem;
+}
+.visit-detail-section {
+    margin-bottom: 2rem;
+}
+.visit-detail-section h2 {
+    color: #00d4aa;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.visit-detail-section h2 i {
+    font-size: 1.1rem;
+}
+.visit-detail-list {
+    list-style: none;
+    padding: 0;
+}
+.visit-detail-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+.visit-detail-list li::before {
+    content: '▸';
+    color: #00d4aa;
+    font-weight: bold;
+}
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.equipment-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+}
+.equipment-item i {
+    font-size: 2rem;
+    color: #00d4aa;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+.visit-detail-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+.btn-close-modal {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.btn-close-modal:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #00d4aa;
+}
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .visit-detail-overlay h1 {
+        font-size: 1.5rem;
+    }
+}
+</style>
