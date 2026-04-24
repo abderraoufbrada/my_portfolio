@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G7e Torpedo CAD Model | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #00d4aa;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4aa;
+        }
+
+        /* Hero Section */
+        .project-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4aa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .project-header {
+            margin-bottom: 3rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #00d4aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        /* Main Content Grid */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .thumb:hover,
+        .thumb.active {
+            border-color: #00d4aa;
+            opacity: 1;
+        }
+
+        /* Description Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: #00d4aa;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: #00d4aa;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00d4aa;
+            color: #00d4aa;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(0, 212, 170, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #00d4aa;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 170, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 170, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        
+        <div class="project-header">
+            <span class="project-tag">CAD & Mechanical Design</span>
+            <h1 class="project-title">G7e Electric Torpedo</h1>
+            <p class="project-subtitle">
+                Historical 3D reconstruction of the G7e electric torpedo using parametric modeling in Autodesk Fusion 360. 
+                Focused on mechanical accuracy, surface continuity, and historical fidelity.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="project-content">
+        <div class="main-column">
+            <!-- Image Gallery -->
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200" 
+                     alt="G7e Torpedo CAD Model" class="main-image" id="mainImage">
+                
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=200" 
+                         class="thumb active" onclick="changeImage(this)" alt="View 1">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="View 2">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="View 3">
+                    <!-- Add more thumbnails when you have actual images -->
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="section">
+                <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+                <p>
+                    The <strong>G7e</strong> was a historically significant electric torpedo used during World War II, 
+                    renowned for its reduced wake signature and stealth operation compared to compressed-air counterparts. 
+                    Powered by lead-acid batteries, it represented a major advancement in underwater weapon technology.
+                </p>
+                <p>
+                    This personal CAD modeling project involved recreating the external geometry and structural layout 
+                    of the G7e torpedo in <strong>Autodesk Fusion 360</strong>. The design process prioritized 
+                    proportional accuracy, axial symmetry, and mechanical realism based on publicly available 
+                    historical references and technical documentation.
+                </p>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="section">
+                <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
+                <p>
+                    The modeling process was structured around parametric design principles, allowing for iterative 
+                    refinement of dimensions and features. Key technical aspects included:
+                </p>
+                <ul>
+                    <li>Parametric sketching of the cylindrical hull profile with historical dimension constraints</li>
+                    <li>Complex multi-body assembly of warhead, battery section, motor housing, and propeller</li>
+                    <li>Surface continuity analysis for hydrodynamic nose cone and tail cone transitions</li>
+                    <li>Detailed propeller geometry with proper blade pitch and hub alignment</li>
+                    <li>Reference-based proportion scaling for mechanical realism</li>
+                </ul>
+            </div>
+
+            <!-- Skills Developed -->
+            <div class="section">
+                <h2><i class="fas fa-chart-line"></i> Skills & Competencies</h2>
+                <p>
+                    Through this project, I significantly improved my proficiency in several key areas of CAD design:
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                        <h4>Parametric Modeling</h4>
+                        <p>Constraint-driven design with fully editable feature history</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                        <h4>Complex Assemblies</h4>
+                        <p>Multi-component cylindrical assemblies with mating constraints</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-bezier-curve"></i></div>
+                        <h4>Surface Continuity</h4>
+                        <p>G2 curvature alignment for smooth aerodynamic surfaces</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Visualization</h4>
+                        <p>Advanced rendering and mechanical visualization techniques</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenges -->
+            <div class="section">
+                <h2><i class="fas fa-mountain"></i> Design Challenges</h2>
+                <p>
+                    Reconstructing a historical weapon system from limited public-domain references presented 
+                    several unique challenges:
+                </p>
+                <ul>
+                    <li><strong>Reference Scarcity:</strong> Limited high-resolution technical drawings required cross-referencing multiple sources</li>
+                    <li><strong>Proportional Accuracy:</strong> Balancing historical accuracy with practical modeling constraints</li>
+                    <li><strong>Surface Quality:</strong> Achieving Class-A surface continuity on compound curvature sections</li>
+                    <li><strong>Assembly Complexity:</strong> Managing inter-part references in a long, slender cylindrical form factor</li>
+                </ul>
+            </div>
+
+            <!-- Future Work -->
+            <div class="section">
+                <h2><i class="fas fa-rocket"></i> Future Improvements</h2>
+                <p>
+                    I am continuously refining this model with planned enhancements:
+                </p>
+                <ul>
+                    <li>Internal component modeling (battery banks, electric motor, guidance mechanisms)</li>
+                    <li>FEA simulation for hydrodynamic flow analysis</li>
+                    <li>Technical drawing package with GD&T annotations</li>
+                    <li>3D printing feasibility study for scaled physical prototype</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Project Info -->
+            <div class="info-card">
+                <h3>Project Details</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Category</span>
+                    <span class="detail-value">CAD Design</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Software</span>
+                    <span class="detail-value">Fusion 360</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Type</span>
+                    <span class="detail-value">Personal Project</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value" style="color: #00d4aa;">In Progress</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Year</span>
+                    <span class="detail-value">2026</span>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="info-card">
+                <h3>Technologies</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Fusion 360</span>
+                    <span class="tech-tag">Parametric CAD</span>
+                    <span class="tech-tag">Surface Modeling</span>
+                    <span class="tech-tag">Assembly Design</span>
+                    <span class="tech-tag">Mechanical Drafting</span>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="info-card">
+                <h3>Resources</h3>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-cube"></i> View 3D Model
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> Design Files
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Technical Report
+                    </a>
+                </div>
+            </div>
+
+            <!-- Related Projects -->
+            <div class="info-card">
+                <h3>Related Work</h3>
+                <div class="detail-row" style="cursor: pointer;" onclick="window.location.href='graphene-sensor.html'">
+                    <span class="detail-value" style="font-size: 0.9rem;">Graphene Sensor Array</span>
+                    <i class="fas fa-arrow-right" style="color: #00d4aa;"></i>
+                </div>
+                <div class="detail-row" style="cursor: pointer;" onclick="window.location.href='pcb-design.html'">
+                    <span class="detail-value" style="font-size: 0.9rem;">High-Speed PCB Layout</span>
+                    <i class="fas fa-arrow-right" style="color: #00d4aa;"></i>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Image Gallery
+        function changeImage(thumb) {
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+            document.getElementById('mainImage').src = thumb.src.replace('w=200', 'w=1200');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
