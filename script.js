@@ -642,3 +642,53 @@ function closeVisitModal() {
     document.getElementById('visit-modal').classList.remove('active');
     document.body.style.overflow = '';
 }
+// Accordion Toggle Function
+function toggleAccordion(trigger) {
+    const item = trigger.parentElement;
+    const isActive = item.classList.contains('active');
+
+    // Close all other accordion items
+    document.querySelectorAll('.accordion-item').forEach(acc => {
+        acc.classList.remove('active');
+    });
+
+    // Toggle current item
+    if (!isActive) {
+        item.classList.add('active');
+    }
+}
+
+// Close accordion when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.accordion-item')) {
+        document.querySelectorAll('.accordion-item').forEach(acc => {
+            acc.classList.remove('active');
+        });
+    }
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(2, 6, 23, 0.9)';
+        navbar.style.padding = '0.8rem 5%';
+    } else {
+        navbar.style.background = 'rgba(2, 6, 23, 0.7)';
+        navbar.style.padding = '1.2rem 5%';
+    }
+});
