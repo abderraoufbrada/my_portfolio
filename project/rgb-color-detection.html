@@ -1,1 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Detection System | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #00d4aa;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4aa;
+        }
+
+        /* Hero Section */
+        .project-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4aa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .project-header {
+            margin-bottom: 3rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #00d4aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        /* Main Content Grid */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Description Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: #00d4aa;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d1d1e0;
+            margin: 1rem 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: #00d4aa;
+            color: #000;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        
+        <div class="project-header">
+            <span class="project-tag">Embedded Systems & IoT</span>
+            <h1 class="project-title">RGB Color Detection System</h1>
+            <p class="project-subtitle">
+                A custom-built color identification system utilizing sequential LED illumination and an LDR sensor 
+                to determine object color based on reflected light intensity. Includes a 3D mechanical layout designed in Fusion 360.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="project-content">
+        <div class="main-column">
+            <!-- Project Image -->
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200" 
+                     alt="RGB Color Detection System" class="main-image">
+            </div>
+
+            <!-- Overview -->
+            <div class="section">
+                <h2><i class="fas fa-microchip"></i> Project Overview</h2>
+                <p>
+                    This project focuses on a cost-effective alternative to dedicated RGB sensors. Instead of using a specialized IC like the TCS3200, 
+                    the system employs a <strong>Red, Green, and Blue LED array</strong> paired with a single <strong>LDR (Light Dependent Resistor)</strong>. 
+                </p>
+                <p>
+                    By sequentially pulsing each LED and measuring the analog response on the ESP32's ADC, the system identifies the dominant wavelength 
+                    reflected by an object. This "ground-up" approach emphasizes sensor physics and analog signal integration.
+                </p>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="section">
+                <h2><i class="fas fa-code"></i> Technical Approach</h2>
+                <p>
+                    The firmware is written in C++ for the ESP32. It follows a specific logic cycle to ensure accuracy:
+                </p>
+                <ul>
+                    <li><strong>Sequential Pulsing:</strong> To avoid light mixing, only one color LED is active during each ADC reading.</li>
+                    <li><strong>LDR Stabilization:</strong> A short delay (100ms) is implemented between the LED activation and the sensor reading to allow the LDR to reach its photo-conductive steady state.</li>
+                    <li><strong>Comparative Logic:</strong> The three readings are compared to find the highest value (lowest resistance), indicating the primary reflected color.</li>
+                </ul>
+            </div>
+
+            <!-- Firmware Section -->
+            <div class="section">
+                <h2><i class="fas fa-terminal"></i> Firmware Snippet</h2>
+                <div class="code-block">
+<pre>
+// Sample ESP32 Logic for Color Detection
+void loop() {
+  digitalWrite(redLed, HIGH);
+  delay(100);
+  redValue = analogRead(ldrPin);
+  digitalWrite(redLed, LOW);
+
+  digitalWrite(greenLed, HIGH);
+  delay(100);
+  greenValue = analogRead(ldrPin);
+  digitalWrite(greenLed, LOW);
+
+  // ... Logic for Blue and comparison follows
+}
+</pre>
+                </div>
+            </div>
+
+            <!-- CAD/Mechanical -->
+            <div class="section">
+                <h2><i class="fas fa-drafting-compass"></i> Mechanical Design</h2>
+                <p>
+                    To ensure optimal sensor performance, I designed a <strong>3D conceptual layout in Autodesk Fusion 360</strong>. 
+                    The design features a specific component alignment to minimize ambient light interference and ensure that 
+                    reflected light from the object is directed precisely toward the LDR's surface.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="info-card">
+                <h3>Project Details</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Hardware</span>
+                    <span class="detail-value">ESP32, LDR, LEDs</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Software</span>
+                    <span class="detail-value">Arduino IDE</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CAD Tool</span>
+                    <span class="detail-value">Fusion 360</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Year</span>
+                    <span class="detail-value">2026</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Technologies</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Embedded C++</span>
+                    <span class="tech-tag">ADC Sampling</span>
+                    <span class="tech-tag">IoT</span>
+                    <span class="tech-tag">Parametric Design</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Resources</h3>
+                <div class="project-links">
+                    <a href="https://lnkd.in/dP2tPxKe" class="btn btn-primary">
+                        <i class="fab fa-linkedin"></i> View Post
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> Code Repository
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
