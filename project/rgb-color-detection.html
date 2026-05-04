@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB Color Detection System | Portfolio</title>
+    <title>Turbofan Digital Twin | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -142,6 +142,30 @@
             display: block;
         }
 
+        .gallery-thumbs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .thumb:hover,
+        .thumb.active {
+            border-color: #00d4aa;
+            opacity: 1;
+        }
+
         /* Description Sections */
         .section {
             background: rgba(255, 255, 255, 0.03);
@@ -183,18 +207,6 @@
             position: absolute;
             left: 0;
             color: #00d4aa;
-        }
-
-        .code-block {
-            background: #1e1e2e;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #d1d1e0;
-            margin: 1rem 0;
         }
 
         /* Sidebar */
@@ -257,6 +269,12 @@
             font-size: 0.9rem;
         }
 
+        .project-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
         .btn {
             display: flex;
             align-items: center;
@@ -277,10 +295,61 @@
             color: #000;
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00d4aa;
+            color: #00d4aa;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(0, 212, 170, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #00d4aa;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin: 0;
         }
 
         /* Responsive */
@@ -288,9 +357,36 @@
             .project-content {
                 grid-template-columns: 1fr;
             }
+
             .sidebar {
                 position: static;
             }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 170, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 170, 0.5);
         }
     </style>
 </head>
@@ -315,11 +411,11 @@
         </a>
         
         <div class="project-header">
-            <span class="project-tag">Embedded Systems & IoT</span>
-            <h1 class="project-title">RGB Color Detection System</h1>
+            <span class="project-tag">AI & Predictive Maintenance</span>
+            <h1 class="project-title">Turbofan Digital Twin</h1>
             <p class="project-subtitle">
-                A custom-built color identification system utilizing sequential LED illumination and an LDR sensor 
-                to determine object color based on reflected light intensity. Includes a 3D mechanical layout designed in Fusion 360.
+                A high-fidelity Digital Twin framework for RUL prediction using LSTM architectures. 
+                Integrating physical laws and data-driven insights to model engine degradation in real-time.
             </p>
         </div>
     </section>
@@ -327,87 +423,110 @@
     <!-- Main Content -->
     <div class="project-content">
         <div class="main-column">
-            <!-- Project Image -->
+            <!-- Image Gallery -->
             <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200" 
-                     alt="RGB Color Detection System" class="main-image">
+                <img src="https://images.unsplash.com/photo-1544385311-6677f50a894a?auto=format&fit=crop&w=1200" 
+                     alt="LSTM Prediction Plot" class="main-image" id="mainImage">
+                
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1544385311-6677f50a894a?auto=format&fit=crop&w=200" 
+                         class="thumb active" onclick="changeImage(this)" alt="RUL Prediction Graph">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="Neural Network Architecture">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="Turbofan Dataset Analysis">
+                </div>
             </div>
 
             <!-- Overview -->
             <div class="section">
                 <h2><i class="fas fa-microchip"></i> Project Overview</h2>
                 <p>
-                    This project focuses on a cost-effective alternative to dedicated RGB sensors. Instead of using a specialized IC like the TCS3200, 
-                    the system employs a <strong>Red, Green, and Blue LED array</strong> paired with a single <strong>LDR (Light Dependent Resistor)</strong>. 
+                    This project focuses on the development of a <strong>Digital Twin</strong> for mechanical systems, specifically targeting turbofan engines. By utilizing the <strong>C-MAPSS dataset</strong>, the system simulates complex degradation patterns to predict the <strong>Remaining Useful Life (RUL)</strong> of critical components.
                 </p>
                 <p>
-                    By sequentially pulsing each LED and measuring the analog response on the ESP32's ADC, the system identifies the dominant wavelength 
-                    reflected by an object. This "ground-up" approach emphasizes sensor physics and analog signal integration.
+                    The architecture employs a deep learning approach where <strong>Long Short-Term Memory (LSTM)</strong> networks process time-series sensor data. Unlike standard black-box models, this twin treats simulation data as "ground truth," allowing for robust stress testing and fault signature recognition under varying operational conditions.
                 </p>
             </div>
 
-            <!-- Technical Implementation -->
+            <!-- Technical Details -->
             <div class="section">
-                <h2><i class="fas fa-code"></i> Technical Approach</h2>
+                <h2><i class="fas fa-code-branch"></i> Technical Pipeline</h2>
                 <p>
-                    The firmware is written in C++ for the ESP32. It follows a specific logic cycle to ensure accuracy:
+                    The development pipeline is designed for modularity, separating anomaly detection from RUL estimation to ensure diagnostic precision:
                 </p>
                 <ul>
-                    <li><strong>Sequential Pulsing:</strong> To avoid light mixing, only one color LED is active during each ADC reading.</li>
-                    <li><strong>LDR Stabilization:</strong> A short delay (100ms) is implemented between the LED activation and the sensor reading to allow the LDR to reach its photo-conductive steady state.</li>
-                    <li><strong>Comparative Logic:</strong> The three readings are compared to find the highest value (lowest resistance), indicating the primary reflected color.</li>
+                    <li><strong>Data Engineering:</strong> Processing FD001-FD004 datasets with advanced normalization and sliding window sequences.</li>
+                    <li><strong>Architecture:</strong> Deep Stacked LSTMs integrated with Reinforcement Learning for adaptive thresholding.</li>
+                    <li><strong>Ground Truth Integration:</strong> Using physical models (like Arrhenius stress models) to validate AI predictions.</li>
+                    <li><strong>Fault Signatures:</strong> Implementing specific recognition patterns to distinguish between normal wear and abrupt failure.</li>
                 </ul>
             </div>
 
-            <!-- Firmware Section -->
+            <!-- Skills Developed -->
             <div class="section">
-                <h2><i class="fas fa-terminal"></i> Firmware Snippet</h2>
-                <div class="code-block">
-<pre>
-// Sample ESP32 Logic for Color Detection
-void loop() {
-  digitalWrite(redLed, HIGH);
-  delay(100);
-  redValue = analogRead(ldrPin);
-  digitalWrite(redLed, LOW);
-
-  digitalWrite(greenLed, HIGH);
-  delay(100);
-  greenValue = analogRead(ldrPin);
-  digitalWrite(greenLed, LOW);
-
-  // ... Logic for Blue and comparison follows
-}
-</pre>
+                <h2><i class="fas fa-brain"></i> Core Competencies</h2>
+                <p>
+                    This project bridges the gap between mechanical engineering and advanced AI:
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4>Time-Series Forecasting</h4>
+                        <p>Handling sequential sensor data for long-term health monitoring</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                        <h4>Digital Twin Logic</h4>
+                        <p>Synchronizing physical simulation with real-time data streams</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-vial"></i></div>
+                        <h4>Physics-Informed ML</h4>
+                        <p>Applying Miner’s Rule and cumulative damage theory to AI training</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Active Learning</h4>
+                        <p>Refining models on "clean" data to identify complex anomalies</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- CAD/Mechanical -->
+            <!-- Challenges -->
             <div class="section">
-                <h2><i class="fas fa-drafting-compass"></i> Mechanical Design</h2>
+                <h2><i class="fas fa-exclamation-triangle"></i> Engineering Challenges</h2>
                 <p>
-                    To ensure optimal sensor performance, I designed a <strong>3D conceptual layout in Autodesk Fusion 360</strong>. 
-                    The design features a specific component alignment to minimize ambient light interference and ensure that 
-                    reflected light from the object is directed precisely toward the LDR's surface.
+                    Modeling failure mechanics in aerospace systems involves navigating high-dimensional uncertainty:
                 </p>
+                <ul>
+                    <li><strong>Domain Shift:</strong> Adapting models across different flight regimes and weather conditions.</li>
+                    <li><strong>Signal Noise:</strong> Extracting meaningful fault signatures from high-frequency sensor noise.</li>
+                    <li><strong>RUL Isolation:</strong> Ensuring life predictions remain independent of transient anomaly classifications.</li>
+                </ul>
             </div>
         </div>
 
         <!-- Sidebar -->
         <aside class="sidebar">
+            <!-- Project Info -->
             <div class="info-card">
                 <h3>Project Details</h3>
                 <div class="detail-row">
-                    <span class="detail-label">Hardware</span>
-                    <span class="detail-value">ESP32, LDR, LEDs</span>
+                    <span class="detail-label">Category</span>
+                    <span class="detail-value">Predictive AI</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Software</span>
-                    <span class="detail-value">Arduino IDE</span>
+                    <span class="detail-label">Dataset</span>
+                    <span class="detail-value">NASA C-MAPSS</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">CAD Tool</span>
-                    <span class="detail-value">Fusion 360</span>
+                    <span class="detail-label">Type</span>
+                    <span class="detail-value">Research Project</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Status</span>
+                    <span class="detail-value" style="color: #00d4aa;">Active</span>
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Year</span>
@@ -415,28 +534,50 @@ void loop() {
                 </div>
             </div>
 
+            <!-- Tech Stack -->
             <div class="info-card">
-                <h3>Technologies</h3>
+                <h3>Tech Stack</h3>
                 <div class="tech-stack">
-                    <span class="tech-tag">Embedded C++</span>
-                    <span class="tech-tag">ADC Sampling</span>
-                    <span class="tech-tag">IoT</span>
-                    <span class="tech-tag">Parametric Design</span>
+                    <span class="tech-tag">Python (PyTorch)</span>
+                    <span class="tech-tag">LSTM / RNN</span>
+                    <span class="tech-tag">Pandas / NumPy</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Reinforcement Learning</span>
                 </div>
             </div>
 
+            <!-- Links -->
             <div class="info-card">
                 <h3>Resources</h3>
                 <div class="project-links">
-                    <a href="https://lnkd.in/dP2tPxKe" class="btn btn-primary">
-                        <i class="fab fa-linkedin"></i> View Post
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-terminal"></i> Run Simulation
                     </a>
                     <a href="#" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> Code Repository
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i> Model Architecture
                     </a>
                 </div>
             </div>
         </aside>
     </div>
+
+    <script>
+        function changeImage(thumb) {
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+            document.getElementById('mainImage').src = thumb.src.replace('w=200', 'w=1200');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
