@@ -3296,3 +3296,13 @@ body {
         margin-left: 1rem;
     }
 }
+
+.btn-view-detail {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;       /* Inherit font from parent */
+    color: inherit;      /* Inherit text color */
+    text-align: left;    /* Align text properly */
+}
