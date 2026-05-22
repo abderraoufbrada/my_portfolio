@@ -1313,107 +1313,73 @@ function showCategories() {
         </div>
     </section>
 
-   <!-- More Section (Workshops, Competitions, etc.) -->
-    <section id="more" class="more section-padding bg-dark">
-        <div class="container">
-            <div class="section-header light">
-                <span class="section-tag">Beyond</span>
-                <h2 class="section-title">More <span class="highlight">Activities</span></h2>
-                <p class="section-subtitle">Workshops, competitions, certifications, and other experiences</p>
-            </div>
-
-            <div class="more-accordion">
-
-  <!-- Category 1: Workshops -->
-
-<div class="accordion-item">
-
-    <button class="accordion-trigger" onclick="toggleAccordion(this)">
-
-        <div class="accordion-icon">
-
-            <i class="fas fa-chalkboard-teacher"></i>
-
+<!-- More Section (Workshops, Competitions, etc.) -->
+<section id="more" class="more section-padding bg-dark">
+    <div class="container">
+        <div class="section-header light">
+            <span class="section-tag">Beyond</span>
+            <h2 class="section-title">More <span class="highlight">Activities</span></h2>
+            <p class="section-subtitle">Workshops, competitions, certifications, and other experiences</p>
         </div>
 
-        <div class="accordion-info">
-
-            <h3>Workshops & Training</h3>
-
-            <span class="accordion-count">1 activity</span>
-
-        </div>
-
-        <div class="accordion-arrow">
-
-            <i class="fas fa-chevron-down"></i>
-
-        </div>
-
-    </button>
-
-    <div class="accordion-content">
-
-        <div class="content-list">
-
-            <div class="content-row">
-
-                <div class="row-date">
-
-                    <span class="row-month">MAR</span>
-
-                    <span class="row-year">2025</span>
-
-                </div>
-
-                <div class="row-visual">
-
-                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=200" alt="Linux Workshop">
-
-                </div>
-
-                <div class="row-details">
-
-                    <h4>Introduction to Linux</h4>
-
-                    <p class="row-org">Hexagon Scientific Community — NSNN, Sidi Abdellah</p>
-
-                    <p class="row-desc">Ubuntu fundamentals covering the command line, package management, and security hardening for scientific workflows.</p>
-
-                    <div class="row-tags">
-
-                        <span>Ubuntu</span>
-
-                        <span>Bash</span>
-
-                        <span>CLI</span>
-
+        <div class="more-accordion">
+            
+            <!-- Category 1: Workshops -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                    <div class="accordion-left">
+                        <div class="accordion-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="accordion-info">
+                            <h3>Workshops & Training</h3>
+                            <span class="accordion-count">1 activity</span>
+                        </div>
                     </div>
-
-                </div>
-
-                <div class="row-action">
-
-                    <!-- Updated Path: Points to the subfolder -->
-
-                   <button onclick="loadVisitModal('more/linux_workshop.html')" class="btn-view-detail">
-    <span class="row-status completed"><i class="fas fa-check-circle"></i> Completed</span>
-</button>
-
                     
-
+                    <div class="accordion-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                
+                <div class="accordion-content">
+                    <div class="content-list">
+                        <!-- Your content remains the same -->
+                        <div class="content-row">
+                            <div class="row-date">
+                                <span class="row-month">MAR</span>
+                                <span class="row-year">2025</span>
+                            </div>
+                            <div class="row-visual">
+                                <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=200" alt="Linux Workshop">
+                            </div>
+                            <div class="row-details">
+                                <h4>Introduction to Linux</h4>
+                                <p class="row-org">Hexagon Scientific Community — NSNN, Sidi Abdellah</p>
+                                <p class="row-desc">Ubuntu fundamentals covering the command line, package management, and security hardening for scientific workflows.</p>
+                                <div class="row-tags">
+                                    <span>Ubuntu</span>
+                                    <span>Bash</span>
+                                    <span>CLI</span>
+                                </div>
+                            </div>
+                            <div class="row-action">
+                                <button onclick="loadVisitModal('more/linux_workshop.html')" class="btn-view-detail">
+                                    <span class="row-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-        </div>
+            <!-- Category 2, 3, 4 ... (Same pattern applied) -->
+            <!-- I'll show one more as example, apply the same structure to all -->
 
-    </div>
-
-</div>
-                <!-- Category 2: Competitions -->
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            <!-- Category 2: Competitions -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                    <div class="accordion-left">
                         <div class="accordion-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -1421,269 +1387,22 @@ function showCategories() {
                             <h3>Competitions & Hackathons</h3>
                             <span class="accordion-count">3 activities</span>
                         </div>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="content-list">
-                            <div class="content-row">
-                                <div class="row-date">
-                                    <span class="row-month">APR</span>
-                                    <span class="row-year">2026</span>
-                                </div>
-                                <div class="row-visual">
-                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=200" alt="Competition">
-                                </div>
-                                <div class="row-details">
-                                    <h4>National IoT Innovation Challenge</h4>
-                                    <p class="row-org">Algerian Ministry of Technology</p>
-                                    <p class="row-desc">Developed a smart agricultural monitoring system using LoRa sensors and edge AI for crop health prediction.</p>
-                                    <div class="row-tags">
-                                        <span>IoT</span>
-                                        <span>Edge AI</span>
-                                        <span>LoRa</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <span class="row-status winner"><i class="fas fa-medal"></i> 2nd Place</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="row-date">
-                                    <span class="row-month">FEB</span>
-                                    <span class="row-year">2026</span>
-                                </div>
-                                <div class="row-visual">
-                                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=200" alt="Hackathon">
-                                </div>
-                                <div class="row-details">
-                                    <h4>Space Apps Hackathon</h4>
-                                    <p class="row-org">NASA Space Apps — Algiers Local Event</p>
-                                    <p class="row-desc">Built a satellite data visualization dashboard for environmental monitoring using NASA Earthdata APIs.</p>
-                                    <div class="row-tags">
-                                        <span>JavaScript</span>
-                                        <span>Data Viz</span>
-                                        <span>APIs</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <span class="row-status finalist"><i class="fas fa-award"></i> Finalist</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="row-date">
-                                    <span class="row-month">DEC</span>
-                                    <span class="row-year">2025</span>
-                                </div>
-                                <div class="row-visual">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200" alt="Competition">
-                                </div>
-                                <div class="row-details">
-                                    <h4>IEEE Xtreme Programming Competition</h4>
-                                    <p class="row-org">IEEE — Global Virtual Event</p>
-                                    <p class="row-desc">24-hour competitive programming solving algorithmic challenges in signal processing and optimization.</p>
-                                    <div class="row-tags">
-                                        <span>Algorithms</span>
-                                        <span>C++</span>
-                                        <span>Optimization</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <span class="row-status completed"><i class="fas fa-check-circle"></i> Participated</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-
-                <!-- Category 3: Certifications -->
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="accordion-info">
-                            <h3>Certifications</h3>
-                            <span class="accordion-count">5 certifications</span>
-                        </div>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="content-list">
-                            <div class="content-row cert-row">
-                                <div class="row-date cert-date">
-                                    <i class="fas fa-award"></i>
-                                    <span class="row-year">2026</span>
-                                </div>
-                                <div class="row-details cert-details">
-                                    <h4>TensorFlow Developer Certificate</h4>
-                                    <p class="row-org">Google / DeepLearning.AI</p>
-                                    <p class="row-desc">Proficiency in building and training neural networks using TensorFlow 2.x for computer vision and NLP tasks.</p>
-                                    <div class="row-tags">
-                                        <span>TensorFlow</span>
-                                        <span>Deep Learning</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <a href="#" class="verify-link"><i class="fas fa-external-link-alt"></i> Verify</a>
-                                </div>
-                            </div>
-
-                            <div class="content-row cert-row">
-                                <div class="row-date cert-date">
-                                    <i class="fas fa-award"></i>
-                                    <span class="row-year">2025</span>
-                                </div>
-                                <div class="row-details cert-details">
-                                    <h4>COMSOL Multiphysics Certified</h4>
-                                    <p class="row-org">COMSOL Inc.</p>
-                                    <p class="row-desc">Finite element modeling and multiphysics simulation for MEMS and semiconductor devices.</p>
-                                    <div class="row-tags">
-                                        <span>FEA</span>
-                                        <span>Multiphysics</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <a href="#" class="verify-link"><i class="fas fa-external-link-alt"></i> Verify</a>
-                                </div>
-                            </div>
-
-                            <div class="content-row cert-row">
-                                <div class="row-date cert-date">
-                                    <i class="fas fa-award"></i>
-                                    <span class="row-year">2025</span>
-                                </div>
-                                <div class="row-details cert-details">
-                                    <h4>Python for Data Science</h4>
-                                    <p class="row-org">IBM / Coursera</p>
-                                    <p class="row-desc">Data analysis, visualization, and machine learning pipelines using Python ecosystem.</p>
-                                    <div class="row-tags">
-                                        <span>Pandas</span>
-                                        <span>Scikit-learn</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <a href="#" class="verify-link"><i class="fas fa-external-link-alt"></i> Verify</a>
-                                </div>
-                            </div>
-
-                            <div class="content-row cert-row">
-                                <div class="row-date cert-date">
-                                    <i class="fas fa-award"></i>
-                                    <span class="row-year">2024</span>
-                                </div>
-                                <div class="row-details cert-details">
-                                    <h4>Embedded Systems Design</h4>
-                                    <p class="row-org">University of Colorado Boulder</p>
-                                    <p class="row-desc">ARM Cortex-M programming, real-time operating systems, and hardware interfacing.</p>
-                                    <div class="row-tags">
-                                        <span>ARM</span>
-                                        <span>RTOS</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <a href="#" class="verify-link"><i class="fas fa-external-link-alt"></i> Verify</a>
-                                </div>
-                            </div>
-
-                            <div class="content-row cert-row">
-                                <div class="row-date cert-date">
-                                    <i class="fas fa-award"></i>
-                                    <span class="row-year">2024</span>
-                                </div>
-                                <div class="row-details cert-details">
-                                    <h4>LabVIEW Core 1 & 2</h4>
-                                    <p class="row-org">National Instruments</p>
-                                    <p class="row-desc">Graphical programming for test and measurement systems, data acquisition, and instrument control.</p>
-                                    <div class="row-tags">
-                                        <span>LabVIEW</span>
-                                        <span>DAQ</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <a href="#" class="verify-link"><i class="fas fa-external-link-alt"></i> Verify</a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="accordion-arrow">
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                </button>
+                <div class="accordion-content">
+                    <!-- Keep your existing content -->
+                    ... (your existing competition items) ...
                 </div>
-
-                <!-- Category 4: Volunteering & Leadership -->
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
-                        <div class="accordion-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="accordion-info">
-                            <h3>Volunteering & Leadership</h3>
-                            <span class="accordion-count">2 activities</span>
-                        </div>
-                        <div class="accordion-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="content-list">
-                            <div class="content-row">
-                                <div class="row-date">
-                                    <span class="row-month">PRES</span>
-                                    <span class="row-year">2025+</span>
-                                </div>
-                                <div class="row-visual">
-                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=200" alt="Volunteering">
-                                </div>
-                                <div class="row-details">
-                                    <h4>IEEE USTHB Student Branch — Technical Lead</h4>
-                                    <p class="row-org">IEEE USTHB</p>
-                                    <p class="row-desc">Organizing technical workshops, mentoring junior members, and coordinating sensor technology seminars.</p>
-                                    <div class="row-tags">
-                                        <span>Leadership</span>
-                                        <span>Mentoring</span>
-                                        <span>Events</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <span class="row-status ongoing"><i class="fas fa-clock"></i> Ongoing</span>
-                                </div>
-                            </div>
-
-                            <div class="content-row">
-                                <div class="row-date">
-                                    <span class="row-month">OCT</span>
-                                    <span class="row-year">2025</span>
-                                </div>
-                                <div class="row-visual">
-                                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=200" alt="Volunteering">
-                                </div>
-                                <div class="row-details">
-                                    <h4>STEM Outreach — High School Mentoring</h4>
-                                    <p class="row-org">Nano-Edu Initiative</p>
-                                    <p class="row-desc">Volunteer mentor introducing nanotechnology concepts to high school students through hands-on demonstrations.</p>
-                                    <div class="row-tags">
-                                        <span>Education</span>
-                                        <span>Outreach</span>
-                                        <span>Nano</span>
-                                    </div>
-                                </div>
-                                <div class="row-action">
-                                    <span class="row-status completed"><i class="fas fa-check-circle"></i> Completed</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
 
-</body>
-</html>
+            <!-- Repeat the same pattern for Certifications and Volunteering -->
+
+        </div>
+    </div>
+</section>
 
     <!-- CV / Resume Download Section -->
     <section id="cv" class="cv-section section-padding">
