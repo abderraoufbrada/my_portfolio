@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cereal Crop Identification via Phenological Fingerprinting | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: #00d4aa;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #00d4aa;
+        }
+        /* Hero Section */
+        .project-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4aa;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+        .back-link:hover {
+            gap: 1rem;
+        }
+        .project-header {
+            margin-bottom: 3rem;
+        }
+        .project-tag {
+            display: inline-block;
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .project-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #00d4aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .project-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+        /* Main Content Grid */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+        }
+        /* Image Gallery */
+        .gallery {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .main-image {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-thumbs {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+        .thumb:hover,
+        .thumb.active {
+            border-color: #00d4aa;
+            opacity: 1;
+        }
+        /* Description Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #00d4aa;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+        }
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-card h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        .detail-value {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            border-color: rgba(0, 212, 170, 0.3);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            color: #00d4aa;
+            margin-bottom: 0.75rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            .project-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">AB.</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+       
+        <div class="project-header">
+            <span class="project-tag">AI & Remote Sensing</span>
+            <h1 class="project-title">Cereal Crop Identification via Phenological Fingerprinting</h1>
+            <p class="project-subtitle">
+                Monitoring cereal crop health using Sentinel-2 satellite imagery, NDVI time-series analysis, and Random Forest classification on a 10×10 grid.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="project-content">
+        <div class="main-column">
+            <!-- Image Gallery -->
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1625246333192-1d3d4a2c3b3e?auto=format&fit=crop&w=1200" 
+                     alt="NDVI Time Series Analysis" class="main-image" id="mainImage">
+               
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1625246333192-1d3d4a2c3b3e?auto=format&fit=crop&w=200" 
+                         class="thumb active" onclick="changeImage(this)" alt="Satellite NDVI">
+                    <img src="https://images.unsplash.com/photo-1501290838620-0c5c5c5c5c5c?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="Crop Grid Analysis">
+                    <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c5c?auto=format&fit=crop&w=200" 
+                         class="thumb" onclick="changeImage(this)" alt="Random Forest Results">
+                </div>
+            </div>
+
+            <!-- Overview -->
+            <div class="section">
+                <h2><i class="fas fa-satellite"></i> Project Overview</h2>
+                <p>
+                    This project leverages satellite remote sensing and machine learning to identify and monitor cereal crops by analyzing their <strong>phenological fingerprint</strong> — the unique pattern of growth throughout the season.
+                </p>
+                <p>
+                    Using <strong>Sentinel-2</strong> imagery processed through <strong>Google Earth Engine</strong>, the system extracts NDVI time-series data and compares agricultural patches against a healthy reference crop using a trained Random Forest model.
+                </p>
+            </div>
+
+            <!-- Methodology -->
+            <div class="section">
+                <h2><i class="fas fa-project-diagram"></i> Methodology</h2>
+                <ul>
+                    <li>Extracted multi-temporal Sentinel-2 imagery over target agricultural regions.</li>
+                    <li>Computed NDVI time-series for each patch.</li>
+                    <li>Divided the study area into a <strong>10×10 grid</strong> (100 patches).</li>
+                    <li>Defined a labeled reference region with known healthy cereal crop growth.</li>
+                    <li>Extracted key phenological features: Peak greenness, growth rate (rising slope), and decline rate (falling slope).</li>
+                    <li>Trained a <strong>Random Forest</strong> model to compute similarity scores (0 to 1) for each patch.</li>
+                </ul>
+            </div>
+
+            <!-- Results -->
+            <div class="section">
+                <h2><i class="fas fa-chart-bar"></i> Results & Visualization</h2>
+                <p>
+                    The model generates a color-coded grid where:
+                </p>
+                <ul>
+                    <li><strong>🟢 Green</strong>: High similarity to healthy crop phenology.</li>
+                    <li><strong>🔴 Red</strong>: Low similarity (potential stress, different crop, or anomaly).</li>
+                </ul>
+                <p>
+                    This approach enables efficient large-scale crop monitoring, early stress detection, and supports precision agriculture decisions.
+                </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2><i class="fas fa-brain"></i> Skills Developed</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-satellite"></i></div>
+                        <h4>Remote Sensing</h4>
+                        <p>Sentinel-2 data processing & NDVI analysis</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Time-Series Analysis</h4>
+                        <p>Phenological feature extraction</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+                        <h4>Precision Agriculture</h4>
+                        <p>Crop monitoring & anomaly detection</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-tree"></i></div>
+                        <h4>Machine Learning</h4>
+                        <p>Random Forest classification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Project Info -->
+            <div class="info-card">
+                <h3>Project Details</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Category</span>
+                    <span class="detail-value">AI & Remote Sensing</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Platform</span>
+                    <span class="detail-value">Google Earth Engine</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Model</span>
+                    <span class="detail-value">Random Forest</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Data Source</span>
+                    <span class="detail-value">Sentinel-2</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Year</span>
+                    <span class="detail-value">2026</span>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="info-card">
+                <h3>Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Google Earth Engine</span>
+                    <span class="tech-tag">Random Forest</span>
+                    <span class="tech-tag">NDVI Analysis</span>
+                    <span class="tech-tag">Pandas / NumPy</span>
+                    <span class="tech-tag">Matplotlib / Seaborn</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        function changeImage(thumb) {
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+            document.getElementById('mainImage').src = thumb.src.replace('w=200', 'w=1200');
+        }
+    </script>
+</body>
+</html>
