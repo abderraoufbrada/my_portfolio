@@ -1060,8 +1060,7 @@ function showCategories() {
         </div>
     </section>
 
-
-    <!-- Visits & Discovery Section -->
+<!-- Visits & Discovery Section -->
 <section id="visits" class="visits section-padding bg-dark">
     <div class="container">
         <div class="section-header light">
@@ -1069,9 +1068,42 @@ function showCategories() {
             <h2 class="section-title">Academic <span class="highlight">Visits</span></h2>
             <p class="section-subtitle">Discovering institutions, techniques, and real-world applications</p>
         </div>
-        
+       
         <div class="visits-timeline">
-            
+
+            <!-- NEW VISIT: Seawater Desalination Plant - Fouka -->
+            <article class="visit-node" onclick="loadVisitModal('visits/fouka-desalination.html')">
+                <div class="visit-marker">
+                    <span class="visit-dot"></span>
+                    <span class="visit-line"></span>
+                </div>
+                <div class="visit-card">
+                    <div class="visit-date-badge">
+                        <span class="month">JUL</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="visit-visual">
+                        <img src="visits/fouka-desalination.jpg" alt="Fouka Desalination Plant">
+                        <div class="visit-overlay">
+                            <i class="fas fa-water"></i>
+                        </div>
+                    </div>
+                    <div class="visit-content">
+                        <h3 class="visit-org">Seawater Desalination Plant — Fouka, Tipaza</h3>
+                        <p class="visit-type">Field Trip — Industrial Visit</p>
+                        <p class="visit-desc">A field trip organized by the Higher School of Nanoscience and Nanotechnology to a seawater desalination plant in Fouka, Tipaza Province. We learned about the various sections of the station and the multi-stage chemical and physical desalination process.</p>
+                        <div class="visit-tags">
+                            <span>Desalination</span>
+                            <span>Water Treatment</span>
+                            <span>Industrial Process</span>
+                        </div>
+                        <div class="visit-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
             <!-- VISIT 1: PVD Research Center -->
             <article class="visit-node" onclick="loadVisitModal('visits/pvd-research.html')">
                 <div class="visit-marker">
@@ -1105,40 +1137,8 @@ function showCategories() {
                 </div>
             </article>
 
-        <!-- VISIT 2: Condor Academy Field Visit -->
-<article class="visit-node" onclick="loadVisitModal('visits/condor.html')">
-    <div class="visit-marker">
-        <span class="visit-dot"></span>
-        <span class="visit-line"></span>
-    </div>
-    <div class="visit-card">
-        <div class="visit-date-badge">
-            <span class="month">FEB</span>
-            <span class="year">2026</span>
-        </div>
-        <div class="visit-visual">
-            <img src="visits/1000030347.jpg" alt="Condor Academy Visit">
-            <div class="visit-overlay">
-                <i class="fas fa-industry"></i>
-            </div>
-        </div>
-        <div class="visit-content">
-            <h3 class="visit-org">Condor Academy & Condor Group</h3>
-            <p class="visit-type">Field Visit — Academia & Industry</p>
-            <p class="visit-desc">Bridging theory and practice through a tour of Condor Academy and an industrial branch producing air conditioners, refrigerators, and televisions in Bordj Bou Arréridj.</p>
-            <div class="visit-tags">
-                <span>Nanotechnology</span>
-                <span>Industry4_0</span>
-                <span>Manufacturing</span>
-            </div>
-            <div class="visit-arrow">
-                <i class="fas fa-arrow-right"></i>
-            </div>
-        </div>
-    </div>
-</article>
-               <!-- VISIT 2: Template for next visit -->
-            <article class="visit-node" onclick="loadVisitModal('visits/example.html')">
+            <!-- VISIT 2: Condor Academy Field Visit -->
+            <article class="visit-node" onclick="loadVisitModal('visits/condor.html')">
                 <div class="visit-marker">
                     <span class="visit-dot"></span>
                     <span class="visit-line"></span>
@@ -1149,18 +1149,19 @@ function showCategories() {
                         <span class="year">2026</span>
                     </div>
                     <div class="visit-visual">
-                        <img src="images/visit-photo.jpg" alt="Visit">
+                        <img src="visits/1000030347.jpg" alt="Condor Academy Visit">
                         <div class="visit-overlay">
                             <i class="fas fa-industry"></i>
                         </div>
                     </div>
                     <div class="visit-content">
-                        <h3 class="visit-org">Institution Name</h3>
-                        <p class="visit-type">Type of Visit</p>
-                        <p class="visit-desc">Brief description of what you discovered and learned during this visit.</p>
+                        <h3 class="visit-org">Condor Academy & Condor Group</h3>
+                        <p class="visit-type">Field Visit — Academia & Industry</p>
+                        <p class="visit-desc">Bridging theory and practice through a tour of Condor Academy and an industrial branch producing air conditioners, refrigerators, and televisions in Bordj Bou Arréridj.</p>
                         <div class="visit-tags">
-                            <span>Tag1</span>
-                            <span>Tag2</span>
+                            <span>Nanotechnology</span>
+                            <span>Industry4_0</span>
+                            <span>Manufacturing</span>
                         </div>
                         <div class="visit-arrow">
                             <i class="fas fa-arrow-right"></i>
@@ -1169,39 +1170,10 @@ function showCategories() {
                 </div>
             </article>
 
-
-               <!-- VISIT 2: Template for next visit -->
-            <article class="visit-node" onclick="loadVisitModal('visits/example.html')">
-                <div class="visit-marker">
-                    <span class="visit-dot"></span>
-                    <span class="visit-line"></span>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-date-badge">
-                        <span class="month">FEB</span>
-                        <span class="year">2026</span>
-                    </div>
-                    <div class="visit-visual">
-                        <img src="images/visit-photo.jpg" alt="Visit">
-                        <div class="visit-overlay">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                    </div>
-                    <div class="visit-content">
-                        <h3 class="visit-org">Institution Name</h3>
-                        <p class="visit-type">Type of Visit</p>
-                        <p class="visit-desc">Brief description of what you discovered and learned during this visit.</p>
-                        <div class="visit-tags">
-                            <span>Tag1</span>
-                            <span>Tag2</span>
-                        </div>
-                        <div class="visit-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
+        </div>
+    </div>
+</section></article>
+            
         </div> <!-- end visits-timeline -->
         
         <!-- Modal for visit details -->
