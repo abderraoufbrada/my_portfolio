@@ -3284,4 +3284,38 @@ body {
     text-align: left;    /* Align text properly */
 }
 
+/* تنسيقات النافذة المنبثقة */
+.internship-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* مخفية افتراضياً */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
+.internship-modal.active {
+    display: flex; /* تظهر فقط عند إضافة كلاس active بواسطة الجافاسكريبت */
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1001;
+    animation: fadeInUp 0.3s ease-out;
+}
