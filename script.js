@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(2, 6, 23, 0.95)';
         navbar.style.boxShadow = '0 10px 40px rgba(14, 165, 233, 0.1)';
-        navbar.style.padding = '1rem 5%';
+        navbar.style.padding = '0.8rem 5%';
     } else {
         navbar.style.background = 'rgba(2, 6, 23, 0.7)';
         navbar.style.boxShadow = 'none';
@@ -53,7 +53,6 @@ window.addEventListener('scroll', () => {
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (scrollY >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
@@ -393,7 +392,6 @@ window.addEventListener('load', () => {
             loader.style.display = 'none';
         }, 500);
     }
-    
     revealOnScroll();
 });
 
@@ -435,8 +433,6 @@ timelineItems.forEach((item, index) => {
         item.style.transform = 'translateX(30px)';
     }
 });
-
-window.addEventListener('scroll', animateTimeline);
 
 // ===== TEXT SCRAMBLE EFFECT FOR SECTION TITLES =====
 class TextScramble {
@@ -539,19 +535,17 @@ window.addEventListener('scroll', debounce(() => {
 }, 10));
 
 console.log('%c🌊 Abderraouf Brada Portfolio Loaded', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
-console.log('%cNano Technology Engineering | Digital Twins | Predictive Maintenance', 'color: #06b6d4; font-size: 12px;');
 
 // ============================================
-// UPDATED INTERNSHIP MODAL FUNCTIONS
+// INTERNSHIP MODAL FUNCTIONS
 // ============================================
 
-// Load internship modal content from external HTML file
 async function loadInternshipModal(filePath) {
     const modal = document.getElementById('internship-modal');
     const container = document.getElementById('modal-content');
     
     if (!modal || !container) {
-        console.error('Modal container not found. Make sure you have: <div id="internship-modal"> with <div id="modal-content"> inside');
+        console.error('Modal structures missing.');
         return;
     }
     
@@ -564,7 +558,7 @@ async function loadInternshipModal(filePath) {
         document.body.style.overflow = 'hidden';
     } catch (error) {
         console.error('Error loading internship:', error);
-        alert('Failed to load internship details. Please check the file path.');
+        alert('Failed to load internship details.');
     }
 }
 
@@ -573,7 +567,6 @@ function closeInternshipModal() {
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        // Clear content after animation
         setTimeout(() => {
             const container = document.getElementById('modal-content');
             if (container) container.innerHTML = '';
@@ -587,7 +580,6 @@ function changeGalleryImage(thumb) {
     });
     
     thumb.classList.add('active');
-    
     const mainImg = document.getElementById('gallery-main-img');
     if (mainImg) {
         mainImg.style.opacity = '0';
@@ -599,23 +591,18 @@ function changeGalleryImage(thumb) {
     }
 }
 
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeInternshipModal();
-    }
-});
-
-// Prevent modal content clicks from closing the modal
-document.addEventListener('click', function(e) {
-    const container = document.getElementById('modal-content');
-    if (container && container.contains(e.target)) {
+// Prevent container clicks from closing internship modal
+const modalContentContainer = document.getElementById('modal-content');
+if (modalContentContainer) {
+    modalContentContainer.addEventListener('click', function(e) {
         e.stopPropagation();
-    }
-});
+    });
+}
 
+// ============================================
+// VISIT MODAL FUNCTIONS
+// ============================================
 
-// Visit Modal Functions
 function loadVisitModal(url) {
     fetch(url)
         .then(response => response.text())
@@ -626,7 +613,6 @@ function loadVisitModal(url) {
         })
         .catch(error => {
             console.error('Error loading visit details:', error);
-            // Fallback content
             document.getElementById('visit-modal-content').innerHTML = `
                 <div style="padding: 3rem; text-align: center;">
                     <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: #ff6b6b; margin-bottom: 1rem;"></i>
@@ -642,17 +628,16 @@ function closeVisitModal() {
     document.getElementById('visit-modal').classList.remove('active');
     document.body.style.overflow = '';
 }
-// Accordion Toggle Function
+
+// ===== ACCORDION TOGGLE FUNCTION =====
 function toggleAccordion(trigger) {
     const item = trigger.parentElement;
     const isActive = item.classList.contains('active');
 
-    // Close all other accordion items
     document.querySelectorAll('.accordion-item').forEach(acc => {
         acc.classList.remove('active');
     });
 
-    // Toggle current item
     if (!isActive) {
         item.classList.add('active');
     }
@@ -667,28 +652,10 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(2, 6, 23, 0.9)';
-        navbar.style.padding = '0.8rem 5%';
-    } else {
-        navbar.style.background = 'rgba(2, 6, 23, 0.7)';
-        navbar.style.padding = '1.2rem 5%';
+// Universal Escape Key for both Modals
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeInternshipModal();
+        closeVisitModal();
     }
 });
