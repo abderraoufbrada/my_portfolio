@@ -4,7 +4,6 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navLinksItems = document.querySelectorAll('.nav-links a');
 
-// Navbar scroll effect with glassmorphism intensify
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(2, 6, 23, 0.95)';
@@ -17,7 +16,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile menu toggle with animation
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
@@ -34,7 +32,6 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-// Close mobile menu when clicking a link
 navLinksItems.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -46,7 +43,7 @@ navLinksItems.forEach(link => {
     });
 });
 
-// Active nav link on scroll with smooth transition
+// Active nav link on scroll
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section[id]');
@@ -84,7 +81,6 @@ if (window.innerWidth > 768) {
         }, 50);
     });
 
-    // Cursor grow on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .project-card, .mini-card, .skill-category, .tech-item');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -103,7 +99,7 @@ if (window.innerWidth > 768) {
     if (cursorDot) cursorDot.style.display = 'none';
 }
 
-// ===== SCROLL REVEAL ANIMATION =====
+// ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll('.reveal, .project-card, .mini-card, .skill-category, .timeline-item, .publication-card, .tech-item');
 
 const revealOnScroll = () => {
@@ -120,7 +116,6 @@ const revealOnScroll = () => {
     });
 };
 
-// Initialize reveal elements
 revealElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -130,7 +125,7 @@ revealElements.forEach(el => {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// ===== PROFESSIONAL TYPEWRITER EFFECT =====
+// ===== TYPEWRITER =====
 const typewriterElement = document.querySelector('.typewriter');
 
 if (typewriterElement) {
@@ -168,7 +163,7 @@ if (typewriterElement) {
     setTimeout(type, 1000);
 }
 
-// ===== COUNTER ANIMATION WITH EASING =====
+// ===== COUNTERS =====
 const counters = document.querySelectorAll('.stat-number');
 const speed = 200;
 
@@ -201,7 +196,7 @@ if (aboutSection) {
     observer.observe(aboutSection);
 }
 
-// ===== SKILL BARS ANIMATION WITH GLOW =====
+// ===== SKILL BARS =====
 const skillBars = document.querySelectorAll('.skill-progress');
 
 const animateSkillBars = () => {
@@ -227,30 +222,7 @@ if (skillsSection) {
     skillsObserver.observe(skillsSection);
 }
 
-// ===== 3D TILT EFFECT ENHANCED =====
-const tiltCards = document.querySelectorAll('[data-tilt]');
-
-tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 15;
-        const rotateY = (centerX - x) / 15;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        card.style.transition = 'transform 0.1s ease';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-    });
-});
-
-// ===== CONTACT FORM WITH BLUE-MARINE THEME =====
+// ===== CONTACT FORM =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -265,12 +237,10 @@ if (contactForm) {
         setTimeout(() => {
             submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
             submitBtn.style.background = 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)';
-            submitBtn.style.boxShadow = '0 10px 30px rgba(20, 184, 166, 0.3)';
             
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.background = '';
-                submitBtn.style.boxShadow = '';
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 contactForm.reset();
@@ -294,252 +264,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== PARTICLE BACKGROUND EFFECT =====
-const createParticles = () => {
-    const canvas = document.createElement('canvas');
-    canvas.className = 'particles';
-    document.body.appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const particleCount = window.innerWidth < 768 ? 25 : 50;
-    
-    const resize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    };
-    
-    resize();
-    window.addEventListener('resize', resize);
-    
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2 + 0.5;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.1;
-        }
-        
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
-        }
-        
-        draw() {
-            ctx.fillStyle = `rgba(14, 165, 233, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-    
-    const init = () => {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-    };
-    
-    const animate = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        particles.forEach(particle => {
-            particle.update();
-            particle.draw();
-        });
-        
-        particles.forEach((a, index) => {
-            particles.slice(index + 1).forEach(b => {
-                const dx = a.x - b.x;
-                const dy = a.y - b.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 150) {
-                    ctx.strokeStyle = `rgba(14, 165, 233, ${0.1 * (1 - distance / 150)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(a.x, a.y);
-                    ctx.lineTo(b.x, b.y);
-                    ctx.stroke();
-                }
-            });
-        });
-        
-        requestAnimationFrame(animate);
-    };
-    
-    init();
-    animate();
-};
-
-if (window.innerWidth > 768) {
-    createParticles();
-}
-
-// ===== LOADING SCREEN =====
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-    if (loader) {
-        loader.style.opacity = '0';
-        setTimeout(() => { 
-            loader.style.display = 'none';
-        }, 500);
-    }
-    revealOnScroll();
-});
-
-// ===== PARALLAX EFFECT FOR HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBg = document.querySelector('.hero-bg img');
-    const heroText = document.querySelector('.hero-content');
-    
-    if (heroBg && scrolled < window.innerHeight) {
-        heroBg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.1)`;
-    }
-    
-    if (heroText && scrolled < window.innerHeight) {
-        heroText.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroText.style.opacity = 1 - (scrolled / window.innerHeight);
-    }
-});
-
-// ===== TIMELINE ANIMATION =====
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-const animateTimeline = () => {
-    timelineItems.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            item.style.opacity = '1';
-            item.style.transform = 'translateX(0)';
-        }
-    });
-};
-
-timelineItems.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transition = `all 0.6s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.1}s`;
-    if (index % 2 === 0) {
-        item.style.transform = 'translateX(-30px)';
-    } else {
-        item.style.transform = 'translateX(30px)';
-    }
-});
-
-// ===== TEXT SCRAMBLE EFFECT FOR SECTION TITLES =====
-class TextScramble {
-    constructor(el) {
-        this.el = el;
-        this.chars = '!<>-_\\/[]{}—=+*^?#________';
-        this.update = this.update.bind(this);
-    }
-    
-    setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => this.resolve = resolve);
-        this.queue = [];
-        
-        for (let i = 0; i < length; i++) {
-            const from = oldText[i] || '';
-            const to = newText[i] || '';
-            const start = Math.floor(Math.random() * 40);
-            const end = start + Math.floor(Math.random() * 40);
-            this.queue.push({ from, to, start, end });
-        }
-        
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-    }
-    
-    update() {
-        let output = '';
-        let complete = 0;
-        
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-            let { from, to, start, end, char } = this.queue[i];
-            
-            if (this.frame >= end) {
-                complete++;
-                output += to;
-            } else if (this.frame >= start) {
-                if (!char || Math.random() < 0.28) {
-                    char = this.randomChar();
-                    this.queue[i].char = char;
-                }
-                output += `<span class="dud">${char}</span>`;
-            } else {
-                output += from;
-            }
-        }
-        
-        this.el.innerHTML = output;
-        
-        if (complete === this.queue.length) {
-            this.resolve();
-        } else {
-            this.frameRequest = requestAnimationFrame(this.update);
-            this.frame++;
-        }
-    }
-    
-    randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
-    }
-}
-
-document.querySelectorAll('.section-title').forEach(title => {
-    const fx = new TextScramble(title);
-    const originalText = title.innerText;
-    
-    title.parentElement.addEventListener('mouseenter', () => {
-        fx.setText(originalText);
-    });
-});
-
-// ===== MARINE GLOW EFFECT ON SCROLL =====
-const addMarineGlow = () => {
-    const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    const hue = 190 + (scrollPercent * 20);
-    document.documentElement.style.setProperty('--primary-color', `hsl(${hue}, 90%, 50%)`);
-};
-
-window.addEventListener('scroll', addMarineGlow);
-
-// ===== PERFORMANCE: DEBOUNCE SCROLL EVENTS =====
-const debounce = (func, wait) => {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-};
-
-window.addEventListener('scroll', debounce(() => {
-    revealOnScroll();
-    animateTimeline();
-}, 10));
-
-console.log('%c🌊 Abderraouf Brada Portfolio Loaded', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
-
-// ============================================
-// INTERNSHIP MODAL FUNCTIONS
-// ============================================
-
+// ===== INTERNSHIP MODAL =====
 async function loadInternshipModal(filePath) {
     const modal = document.getElementById('internship-modal');
     const container = document.getElementById('modal-content');
@@ -558,7 +283,15 @@ async function loadInternshipModal(filePath) {
         document.body.style.overflow = 'hidden';
     } catch (error) {
         console.error('Error loading internship:', error);
-        alert('Failed to load internship details.');
+        container.innerHTML = `
+            <div style="padding: 3rem; text-align: center; color: #fff;">
+                <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: #ff6b6b;"></i>
+                <h3>تعذر تحميل التفاصيل</h3>
+                <p>حاول مرة أخرى لاحقاً.</p>
+            </div>
+        `;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -574,62 +307,46 @@ function closeInternshipModal() {
     }
 }
 
-function changeGalleryImage(thumb) {
-    document.querySelectorAll('.gallery-thumbs img').forEach(img => {
-        img.classList.remove('active');
-    });
-    
-    thumb.classList.add('active');
-    const mainImg = document.getElementById('gallery-main-img');
-    if (mainImg) {
-        mainImg.style.opacity = '0';
-        setTimeout(() => {
-            mainImg.src = thumb.src;
-            mainImg.alt = thumb.alt;
-            mainImg.style.opacity = '1';
-        }, 200);
-    }
-}
-
-// Prevent container clicks from closing internship modal
-const modalContentContainer = document.getElementById('modal-content');
-if (modalContentContainer) {
-    modalContentContainer.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-}
-
-// ============================================
-// VISIT MODAL FUNCTIONS
-// ============================================
-
+// ===== VISIT MODAL =====
 function loadVisitModal(url) {
+    const modal = document.getElementById('visit-modal');
+    const content = document.getElementById('visit-modal-content');
+    
+    if (!modal || !content) return;
+
     fetch(url)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
         .then(html => {
-            document.getElementById('visit-modal-content').innerHTML = html;
-            document.getElementById('visit-modal').classList.add('active');
+            content.innerHTML = html;
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         })
         .catch(error => {
             console.error('Error loading visit details:', error);
-            document.getElementById('visit-modal-content').innerHTML = `
-                <div style="padding: 3rem; text-align: center;">
+            content.innerHTML = `
+                <div style="padding: 3rem; text-align: center; color: #fff;">
                     <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: #ff6b6b; margin-bottom: 1rem;"></i>
-                    <h3>Content Loading...</h3>
-                    <p>Details for this visit will be available soon.</p>
+                    <h3>المحتوى قيد التحميل...</h3>
+                    <p>تفاصيل هذه الزيارة ستكون متاحة قريباً.</p>
                 </div>
             `;
-            document.getElementById('visit-modal').classList.add('active');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
 }
 
 function closeVisitModal() {
-    document.getElementById('visit-modal').classList.remove('active');
-    document.body.style.overflow = '';
+    const modal = document.getElementById('visit-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
-// ===== ACCORDION TOGGLE FUNCTION =====
+// ===== ACCORDION =====
 function toggleAccordion(trigger) {
     const item = trigger.parentElement;
     const isActive = item.classList.contains('active');
@@ -643,19 +360,37 @@ function toggleAccordion(trigger) {
     }
 }
 
-// Close accordion when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.accordion-item')) {
-        document.querySelectorAll('.accordion-item').forEach(acc => {
-            acc.classList.remove('active');
-        });
-    }
-});
-
-// Universal Escape Key for both Modals
+// Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeInternshipModal();
         closeVisitModal();
     }
 });
+
+// Timeline animation
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const animateTimeline = () => {
+    timelineItems.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+        }
+    });
+};
+
+timelineItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transition = `all 0.6s cubic-bezier(0.23, 1, 0.32, 1) ${index * 0.1}s`;
+    item.style.transform = index % 2 === 0 ? 'translateX(-30px)' : 'translateX(30px)';
+});
+
+window.addEventListener('scroll', animateTimeline);
+window.addEventListener('load', () => {
+    revealOnScroll();
+    animateTimeline();
+});
+
+console.log('%c🌊 Abderraouf Brada Portfolio Loaded', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
