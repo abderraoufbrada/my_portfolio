@@ -47,7 +47,7 @@
             <div class="hero-text">
                 <p class="greeting">Hello, I'm</p>
                 <h1 class="typewriter">Abderraouf Brada</h1>
-                <h2 class="typing-text">Micro & Nanosensors Engineering Student</h2>
+                <h2 class="typing-text">Micro & Nanosensors and electronics Engineering Student</h2>
                 <p class="hero-desc">Designing sensors and instrumentation from nanomaterials to embedded systems.</p>
                 <div class="hero-buttons">
                     <a href="projects.html" class="btn btn-primary">View Projects</a>
@@ -196,73 +196,156 @@
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="featured-projects section-padding" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Technical <span class="highlight">Highlights</span></h2>
-            </div>
+  ```html
+<!-- Featured Projects Section -->
+<section class="featured-projects section-padding" id="projects">
+    <div class="container">
 
-            <div id="category-view" class="categories-grid">
-                <div class="category-card" onclick="showProjects('simulation')">
-                    <div class="category-icon"><i class="fas fa-wave-square"></i></div>
-                    <h3>Simulation</h3>
-                    <p>Physics modeling, numerical analysis, and system simulation projects</p>
-                    <span class="project-count">3 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <div class="category-card" onclick="showProjects('design')">
-                    <div class="category-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h3>Design</h3>
-                    <p>CAD modeling, PCB layout, and architectural design projects</p>
-                    <span class="project-count">4 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <div class="category-card" onclick="showProjects('hardware')">
-                    <div class="category-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>Hardware</h3>
-                    <p>Embedded systems, IoT devices, and electronic circuit projects</p>
-                    <span class="project-count">2 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <div class="category-card" onclick="showProjects('coding')">
-                    <div class="category-icon"><i class="fas fa-code"></i></div>
-                    <h3>Coding</h3>
-                    <p>Software development, algorithms, and application projects</p>
-                    <span class="project-count">5 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <div class="category-card" onclick="showProjects('ai-ml')">
-                    <div class="category-icon"><i class="fas fa-brain"></i></div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Neural networks, computer vision, and predictive models</p>
-                    <span class="project-count">3 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <div class="category-card" onclick="showProjects('measurements')">
-                    <div class="category-icon"><i class="fas fa-ruler-combined"></i></div>
-                    <h3>Measurements</h3>
-                    <p>Instrumentation, data acquisition, and testing systems</p>
-                    <span class="project-count">2 Projects</span>
-                    <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-            </div>
-
-            <div id="projects-list-view" class="projects-list-container" style="display: none;">
-                <button class="back-btn" onclick="showCategories()">
-                    <i class="fas fa-arrow-left"></i> Back to Categories
-                </button>
-                <h3 id="category-title" class="list-title">Category Name</h3>
-                <div id="projects-grid" class="projects-grid"></div>
-            </div>
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">
+                Technical <span class="highlight">Highlights</span>
+            </h2>
         </div>
-    </section>
+
+        <!-- CATEGORY VIEW -->
+        <div id="category-view" class="categories-grid">
+
+            <div class="category-card" onclick="showProjects('simulation')">
+                <div class="category-icon">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+
+                <h3>Simulation</h3>
+                <p>
+                    Physics modeling, numerical analysis, and system simulation projects
+                </p>
+
+                <span class="project-count">3 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="category-card" onclick="showProjects('design')">
+                <div class="category-icon">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+
+                <h3>Design</h3>
+                <p>
+                    CAD modeling, PCB layout, and architectural design projects
+                </p>
+
+                <span class="project-count">4 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="category-card" onclick="showProjects('hardware')">
+                <div class="category-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+
+                <h3>Hardware</h3>
+                <p>
+                    Embedded systems, IoT devices, and electronic circuit projects
+                </p>
+
+                <span class="project-count">2 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="category-card" onclick="showProjects('coding')">
+                <div class="category-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <h3>Coding</h3>
+                <p>
+                    Software development, algorithms, and application projects
+                </p>
+
+                <span class="project-count">5 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="category-card" onclick="showProjects('ai-ml')">
+                <div class="category-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+
+                <h3>AI &amp; Machine Learning</h3>
+                <p>
+                    Neural networks, computer vision, and predictive models
+                </p>
+
+                <span class="project-count">3 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="category-card" onclick="showProjects('measurements')">
+                <div class="category-icon">
+                    <i class="fas fa-ruler-combined"></i>
+                </div>
+
+                <h3>Measurements</h3>
+                <p>
+                    Instrumentation, data acquisition, and testing systems
+                </p>
+
+                <span class="project-count">2 Projects</span>
+
+                <div class="category-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT LIST VIEW -->
+        <div id="projects-list-view" class="projects-list-container" style="display: none;">
+
+            <button class="back-btn" onclick="showCategories()">
+                <i class="fas fa-arrow-left"></i>
+                Back to Categories
+            </button>
+
+            <h3 id="category-title" class="list-title">
+                Category Name
+            </h3>
+
+            <div id="projects-grid" class="projects-grid">
+                <!-- Projects are inserted here by projects.js -->
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Projects JavaScript -->
+<script src="projects.js"></script>
+```
+
 
     <!-- Skills Section -->
     <section id="skills" class="skills section-padding bg-dark">
