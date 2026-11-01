@@ -183,6 +183,12 @@ button.use:hover{border-color:var(--acid)}
 .sp{position:absolute;inset:0;margin:0;border-radius:12px;overflow:hidden;background:#0e1630;border:1.5px solid #2a3c78;display:grid;place-items:center;color:var(--mute);font-size:15px;transform-origin:bottom left;z-index:calc(10 - var(--k));opacity:calc(1 - var(--k)*.2);transform:translate(calc(var(--k)*20px),calc(var(--k)*-14px)) rotate(calc(var(--k)*2.5deg)) scale(calc(1 - var(--k)*.04));box-shadow:0 14px 30px -18px rgba(0,0,0,.8);transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s}
 .sp img{width:100%;height:100%;object-fit:cover}
 .cnt{position:absolute;left:12px;bottom:12px;z-index:20;font:500 13px var(--head);padding:3px 11px;border-radius:999px;background:rgba(5,7,13,.75);color:var(--text)}
+/* INNER SCROLL: when a tab has more than 3 cards, the list scrolls inside its own box (set by the script) */
+.cards.scroll{max-height:clamp(380px,62vh,600px);overflow-y:auto;overflow-x:hidden;padding:4px 10px 4px 4px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--cobalt) transparent}
+/* PHOTO FIX: photos now fill their frame exactly (a big photo can no longer stretch or crop its frame) */
+.ph,.logo{position:relative}
+.ph img,.sp img,.me img,.logo img{position:absolute;inset:0;width:100%;height:100%}
+.me img{object-fit:cover;object-position:50% 15%}
 /* RESPONSIVE rules (tablet and phone) and reduced-motion setting. No need to edit. */
 @media(max-width:980px){.about{grid-template-columns:240px 1fr}.focus{grid-column:1/-1}}
 @media(max-width:760px){.about{grid-template-columns:1fr}nav a:nth-child(1){display:none}}
@@ -304,12 +310,36 @@ const DATA = {
   // Remove photo or gh from a card to hide that part.
   // To add a card: copy one { ... } block, paste it after a comma, then change the text.
   "Projects": [
-    {t:"Capacitive displacement sensor", m:"Hardware and readout electronics",
+    {t:"Passive Acoustic Homing System", m:"Electronics and signal processing",
+     d:"A system that listens to sound with microphones and works out the direction of the source, so a device can steer toward it without sending any signal of its own.",
+     tags:["Microphones","Signal processing","Direction finding"],photo:"",gh:"https://github.com/your-username/passive-acoustic-homing"},
+    {t:"Capacitive Displacement Sensor", m:"Hardware and readout electronics",
      d:"A variable-capacitor sensor built from FR4 PCB plates. An ESP32 comparator measures the charge time, which changes with the gap between the plates. It now senses gaps up to 3 cm.",
      tags:["FR4 PCB","ESP32","Capacitive sensing"],photo:"",gh:"https://github.com/your-username/capacitive-sensor"},
-    {t:"Cereal crop identification", m:"Remote sensing and machine learning",
+    {t:"Command Transmission via Infrared Frequency Discrimination", m:"Communication and electronics",
+     d:"Commands are sent with infrared light at different frequencies, and the receiver tells them apart by frequency to trigger the matching action.",
+     tags:["Infrared","Frequency discrimination","Filters"],photo:"",gh:"https://github.com/your-username/infrared-frequency-command"},
+    {t:"Delay Activation System After Flow Cessation", m:"Control circuits",
+     d:"A circuit that detects when a flow stops and, after a set delay, switches on an output such as a pump, a valve or an alarm.",
+     tags:["Flow sensing","Timer","Control circuit"],photo:"",gh:"https://github.com/your-username/flow-stop-delay-activation"},
+    {t:"Satellite Attitude Control System", m:"Control and instrumentation",
+     d:"A control system that keeps a satellite pointed in the right direction by measuring its orientation and correcting it with actuators.",
+     tags:["Control systems","Attitude sensing","Actuators"],photo:"",gh:"https://github.com/your-username/satellite-attitude-control"},
+    {t:"Cereal Crop Identification via Phenological Fingerprinting", m:"Remote sensing and machine learning",
      d:"Identifies cereal crops from the seasonal NDVI curve of Sentinel-2 images, using Google Earth Engine and a Random Forest classifier.",
      tags:["Sentinel-2","Google Earth Engine","Random Forest"],photo:"",gh:"https://github.com/your-username/cereal-ndvi"},
+    {t:"Color Detector", m:"Optical sensing",
+     d:"A sensor-based device that measures the light reflected by an object and identifies its color.",
+     tags:["Color sensing","Optical sensor","Electronics"],photo:"",gh:"https://github.com/your-username/color-detector"},
+    {t:"Digital Addition Calculator Simulation in Proteus", m:"Simulation",
+     d:"A digital adder circuit built from logic gates and simulated in Proteus to add binary numbers and show the result.",
+     tags:["Proteus","Digital logic","Simulation"],photo:"",gh:"https://github.com/your-username/proteus-digital-adder"},
+    {t:"Submarine Depth Detection System", m:"Instrumentation",
+     d:"A system that measures how deep a submarine is and shows the depth reading.",
+     tags:["Depth sensing","Instrumentation"],photo:"",gh:"https://github.com/your-username/submarine-depth-detection"},
+    {t:"AC to DC Converter Simulation Using MATLAB/Simulink", m:"Simulation and power electronics",
+     d:"A model of an AC to DC converter built and simulated in MATLAB/Simulink, showing how the output voltage is rectified and smoothed.",
+     tags:["MATLAB","Simulink","Power electronics"],photo:"",gh:"https://github.com/your-username/ac-dc-converter-simulink"},
     {t:"Stepper motor with gears", m:"Embedded control",
      d:"An ESP32 drives a stepper motor through an L298N driver. The motor turns a half circle right, then left, with a calibrated step count.",
      tags:["ESP32","L298N","Arduino C++"],photo:"",gh:"https://github.com/your-username/stepper-gears"}
@@ -345,6 +375,22 @@ const DATA = {
     {t:"Add your certificate", m:"Issuer · Year",
      d:"Say what the course covered and add a link to the credential.",
      tags:["Topic"]}
+  ],
+  // Competitions, workshops and presentations. Same fields as the visit cards (photos = photo stack, logo = institution or event logo).
+  "Competitions": [
+    {t:"Add your competition", m:"Organizer · Year",
+     d:"Describe the challenge, your team and your result.",
+     tags:["Teamwork","Challenge"],photos:["","",""],logo:""}
+  ],
+  "Workshops": [
+    {t:"Add your workshop", m:"Organizer · Date",
+     d:"Say what the workshop covered and what you built or learned.",
+     tags:["Hands-on","Skill"],photos:["","",""],logo:""}
+  ],
+  "Presentations": [
+    {t:"Add your presentation", m:"Event · Date",
+     d:"Give the title, the audience and the main message of your talk.",
+     tags:["Talk","Slides"],photos:["","",""],logo:""}
   ]
 };
 /* ================================== */
@@ -353,7 +399,7 @@ const DATA = {
 const tabsEl=document.querySelector('.tabs'),panel=document.getElementById('panel');
 function show(name){
   [...tabsEl.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.n===name));
-  panel.innerHTML='';
+  panel.innerHTML='';panel.scrollTop=0;
   DATA[name].forEach((c,i)=>{
     const el=document.createElement('article');el.className='card';
     el.innerHTML=`<button aria-expanded="false" aria-controls="m${i}"><span><h3></h3><div class="meta"></div></span><span class="plus" aria-hidden="true"></span></button>
@@ -382,9 +428,13 @@ function show(name){
     btn.onclick=()=>{const o=el.classList.toggle('open');btn.setAttribute('aria-expanded',o)};
     panel.append(el);
   });
+  panel.classList.toggle('scroll',DATA[name].length>3); // more than 3 cards: scroll inside the box
 }
 // ICONS: small drawings used by the tabs and by the Skills panel.
 const IC={
+ trophy:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><path d='M8 4h8v5a4 4 0 0 1-8 0z'/><path d='M8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4M12 13v4M8 21h8M10 17h4'/></svg>`,
+ gear:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='3'/><path d='M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1'/></svg>`,
+ board:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='4' width='18' height='12' rx='1'/><path d='M12 16v4M8 20h8M7 12l3-3 3 2 4-4'/></svg>`,
  factory:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><path d='M3 21V9l6 4V9l6 4V4h4v17z'/><path d='M7 17h2M13 17h2'/></svg>`,
  flask:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><path d='M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3'/></svg>`,
  pin:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z'/><circle cx='12' cy='10' r='2.5'/></svg>`,
@@ -392,7 +442,7 @@ const IC={
  award:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='9' r='6'/><path d='M8.5 14L7 21l5-3 5 3-1.5-7'/></svg>`
 };
 // Tab name -> icon. If you rename a tab in DATA, rename it here too (otherwise that tab shows no icon).
-const TAB_ICONS={"Projects":IC.flask,"Industrial visits":IC.factory,"Research visits":IC.pin,"Internships":IC.bag,"Certificates":IC.award};
+const TAB_ICONS={"Projects":IC.flask,"Industrial visits":IC.factory,"Research visits":IC.pin,"Internships":IC.bag,"Certificates":IC.award,"Competitions":IC.trophy,"Workshops":IC.gear,"Presentations":IC.board};
 Object.keys(DATA).forEach((n,i)=>{
   const b=document.createElement('button');b.className='tab';b.role='tab';b.dataset.n=n;b.innerHTML=(TAB_ICONS[n]||'')+'<span></span>';b.lastChild.textContent=n;
   b.onclick=()=>show(n);tabsEl.append(b);
@@ -408,16 +458,16 @@ show(Object.keys(DATA)[0]);
    ================================================================== */
 const SKILLS={
   "Sensors and electronics":[
-    {s:"Capacitive sensing",use:["Capacitive displacement sensor"]},
-    {s:"PCB design (FR4)",use:["Capacitive displacement sensor"]},
-    {s:"ESP32",use:["Capacitive displacement sensor","Stepper motor with gears"]},
+    {s:"Capacitive sensing",use:["Capacitive Displacement Sensor"]},
+    {s:"PCB design (FR4)",use:["Capacitive Displacement Sensor"]},
+    {s:"ESP32",use:["Capacitive Displacement Sensor","Stepper motor with gears"]},
     {s:"Motor drivers (L298N)",use:["Stepper motor with gears"]}
   ],
   "Software and data":[
-    {s:"Arduino C++",use:["Capacitive displacement sensor","Stepper motor with gears"]},
-    {s:"Remote sensing (NDVI)",use:["Cereal crop identification"]},
-    {s:"Google Earth Engine",use:["Cereal crop identification"]},
-    {s:"Random Forest",use:["Cereal crop identification"]}
+    {s:"Arduino C++",use:["Capacitive Displacement Sensor","Stepper motor with gears"]},
+    {s:"Remote sensing (NDVI)",use:["Cereal Crop Identification via Phenological Fingerprinting"]},
+    {s:"Google Earth Engine",use:["Cereal Crop Identification via Phenological Fingerprinting"]},
+    {s:"Random Forest",use:["Cereal Crop Identification via Phenological Fingerprinting"]}
   ]
 };
 // SKILLS BUILDER: no need to edit below this line.
@@ -425,7 +475,7 @@ const skillList=document.getElementById('skillList'),usedEl=document.getElementB
 // Finds a card in DATA by its title (looks in every tab).
 function findCard(title){for(const tab in DATA){const i=DATA[tab].findIndex(c=>c.t===title);if(i>-1)return{tab,i,c:DATA[tab][i]}}return null}
 // Opens the Work section on the right tab and opens the card.
-function goTo(tab,i){show(tab);document.getElementById('work').scrollIntoView({behavior:'smooth'});panel.children[i].querySelector('button').click()}
+function goTo(tab,i){show(tab);document.getElementById('work').scrollIntoView({behavior:'smooth'});panel.children[i].querySelector('button').click();panel.scrollTop+=panel.children[i].getBoundingClientRect().top-panel.getBoundingClientRect().top-8}
 function showUsed(sk,btn){
   skillList.querySelectorAll('.sk').forEach(b=>b.setAttribute('aria-pressed',b===btn));
   usedEl.innerHTML='<h3></h3><div></div>';
