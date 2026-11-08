@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Abderraouf Brada – Micro and Nano Sensors Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&family=Anton&display=swap" rel="stylesheet">
 <!-- ===== STYLES (CSS): colors, fonts, layout and animations ===== -->
 <style>
 /* COLORS and FONTS: change the hex values here to restyle the whole site */
@@ -52,7 +52,7 @@ section{padding:clamp(64px,10vw,120px) clamp(18px,5vw,64px);max-width:1180px;mar
 h2{font:700 clamp(30px,4.5vw,52px)/1.05 var(--head);margin:0 0 14px;letter-spacing:-.02em}
 .lead{color:var(--mute);max-width:38em;margin:0 0 40px}
 /* ABOUT section */
-.about{display:grid;grid-template-columns:minmax(200px,280px) 1.3fr 1fr;gap:clamp(28px,5vw,70px);align-items:start}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(28px,5vw,70px);align-items:start}
 .about p{margin:0 0 16px;color:#c7cee3}
 .focus{border-left:3px solid var(--acid);padding-left:22px;display:grid;gap:18px}
 .focus div{font:500 19px/1.3 var(--head)}
@@ -184,13 +184,47 @@ button.use:hover{border-color:var(--acid)}
 .sp img{width:100%;height:100%;object-fit:cover}
 .cnt{position:absolute;left:12px;bottom:12px;z-index:20;font:500 13px var(--head);padding:3px 11px;border-radius:999px;background:rgba(5,7,13,.75);color:var(--text)}
 /* INNER SCROLL: when a tab has more than 3 cards, the list scrolls inside its own box (set by the script) */
-.cards.scroll{max-height:clamp(380px,62vh,600px);overflow-y:auto;overflow-x:hidden;padding:4px 10px 4px 4px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--cobalt) transparent}
+.cards.scroll{max-height:clamp(380px,62vh,600px);overflow-y:auto;overflow-x:hidden;padding:4px 10px 4px 4px;scrollbar-width:thin;scrollbar-color:var(--cobalt) transparent}
 /* PHOTO FIX: photos now fill their frame exactly (a big photo can no longer stretch or crop its frame) */
 .ph,.logo{position:relative}
 .ph img,.sp img,.me img,.logo img{position:absolute;inset:0;width:100%;height:100%}
 .me img{object-fit:cover;object-position:50% 15%}
+/* FIRST PAGE: gradient over the whole page, the huge iron word, the photo with light effect, texts and chips */
+:root{--display:"Anton",Impact,"Arial Narrow",sans-serif}
+body{background:linear-gradient(180deg,#0a1f6b 0%,#081545 18%,#060d2c 45%,var(--ink) 80%)}
+.hero{display:block;max-width:none;position:relative;padding:20px 0 0;overflow-x:clip;min-height:calc(100vh - 64px)}
+.hero .mega{font:400 clamp(60px,24vw,380px)/.84 var(--display);text-transform:uppercase;text-align:center;white-space:nowrap;margin:0;position:relative;z-index:1;color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%),repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 5px),linear-gradient(180deg,#f4f7fb 0%,#c4cbd6 20%,#838b9a 42%,#434a5a 66%,#05070d 100%);background-size:250% 100%,auto,auto;background-repeat:no-repeat,repeat,no-repeat;filter:drop-shadow(0 -1px 0 rgba(255,255,255,.4)) drop-shadow(0 8px 22px rgba(33,82,255,.35));opacity:0;animation:fade 1.2s .3s forwards,iron 7s ease-in-out 1.5s infinite}
+@keyframes iron{0%{background-position:140% 0,0 0,0 0}100%{background-position:-40% 0,0 0,0 0}}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:clamp(16px,3vw,48px);max-width:1180px;margin:clamp(-190px,-12vw,-60px) auto 0;padding:0 clamp(18px,5vw,64px)}
+.intro{position:relative;z-index:3;padding-bottom:7vh}
+.hero .intro p{margin:0;max-width:none}
+.hero .hello{font:500 clamp(17px,1.8vw,22px)/1.2 var(--head);color:var(--acid)}
+.hero .name{font:400 clamp(46px,6.2vw,88px)/.98 var(--display);text-transform:uppercase;color:var(--text);margin-top:8px!important}
+.hero .name span{display:block}
+.hero .role{font:400 clamp(20px,2.1vw,30px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--acid);margin-top:14px!important}
+.hero .bio{font-size:15.5px;line-height:1.6;color:var(--mute);margin-top:14px!important;max-width:28em}
+.hero .cta{margin-top:22px;gap:10px}
+.hero .intro .btn{padding:11px 22px;font-size:15px}
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:22px!important;font-size:14px;color:var(--mute)}
+.hero .status{font-size:14px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--acid);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(182,255,26,.55)}70%,100%{box-shadow:0 0 0 10px rgba(182,255,26,0)}}
+.portrait{position:relative;justify-self:center;width:min(430px,100%);margin:0;aspect-ratio:3/4;z-index:2;opacity:0;animation:fade 1s .2s forwards}
+.portrait::before{content:'';position:absolute;inset:-12% -35% -2%;z-index:-1;background:radial-gradient(ellipse at 50% 42%,rgba(150,185,255,.55),rgba(33,82,255,.28) 38%,transparent 68%);filter:blur(14px)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom;filter:grayscale(1) contrast(1.15) brightness(1.05) drop-shadow(0 0 18px rgba(120,160,255,.45));-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.portrait::after{content:'';position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.55) 50%,transparent 62%);background-size:260% 100%;animation:sheen 6s ease-in-out infinite;-webkit-mask-image:var(--img);mask-image:var(--img);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:bottom;mask-position:bottom}
+.portrait svg{position:absolute;inset:0;margin:auto;width:70%;height:auto}
+@keyframes sheen{0%{background-position:130% 0}100%{background-position:-30% 0}}
+.chip{position:absolute;z-index:4;left:var(--x);top:var(--y);display:flex;align-items:center;gap:7px;font:500 13px var(--head);padding:6px 12px;border-radius:8px;background:rgba(10,16,32,.78);border:1px solid var(--line);color:var(--text);backdrop-filter:blur(6px);opacity:0;animation:fade .8s var(--d) forwards,bob 5s ease-in-out infinite}
+.chip::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--acid)}
+.chip:nth-child(even)::before{background:var(--cobalt-soft)}
+@keyframes bob{50%{translate:0 -10px}}
+.about .chain{max-width:460px;width:100%;margin:0 auto}
+.about .focus{margin-top:30px}
+@media(max-width:760px){.hero-in{grid-template-columns:1fr;margin-top:-5vw}.portrait{order:1;width:min(320px,76vw)}.intro{order:2;text-align:center;padding-bottom:0}.hero .cta{justify-content:center}.hero .bio{margin-inline:auto!important}.chip{display:none}}
+@media(prefers-reduced-motion:reduce){.portrait,.hero .mega,.chip{opacity:1;animation:none}}
 /* RESPONSIVE rules (tablet and phone) and reduced-motion setting. No need to edit. */
-@media(max-width:980px){.about{grid-template-columns:240px 1fr}.focus{grid-column:1/-1}}
+@media(max-width:980px){.about{grid-template-columns:1fr}}
 @media(max-width:760px){.about{grid-template-columns:1fr}nav a:nth-child(1){display:none}}
 @media(max-width:760px){.hero,.cv{grid-template-columns:1fr}.me{max-width:280px}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}.hero h1 span i{transform:none}.hero p,.cta{opacity:1}}
@@ -210,30 +244,43 @@ button.use:hover{border-color:var(--acid)}
 
 <!-- ============ PAGE CONTENT ============ -->
 <main>
-  <!-- HERO: edit the title (h1) and the intro text (p) below.
-     The empty div id='chain' on the right is filled by the script with the animated sensing-chain diagram. -->
-<section class="hero" id="top"><div class='hero-text'>
-    <h1><span><i>Sensing the</i></span><span><i>small scale.</i></span></h1>
-    <p>I’m Abderraouf Brada, a fourth-year engineering student in micro and nano sensors and instrumentation. I design, simulate and build devices that turn tiny physical changes into clean signals.</p>
-    <div class="cta"><a class="btn main" href="#work">See my work</a><a class="btn" href="#contact">Get in touch</a></div></div>
-    <div class='chain' id='chain'></div>
+  <!-- HERO (first page): the huge word "Portfolio" is behind your photo (black and white with a light effect).
+     Left: greeting, name, role, short bio, buttons. Small floating chips around the photo. Edit the texts here.
+     The photo comes from PHOTOS.hero (or PHOTOS.me if hero is empty) in the script. -->
+<section class="hero" id="top">
+    <h1 class="mega">Portfolio</h1>
+    <div class="hero-in">
+      <div class="intro">
+        <p class="hello">Hello, I am</p>
+        <p class="name"><span>Abderraouf</span><span>Brada</span></p>
+        <p class="role">Micro and nano sensors engineer</p>
+        <p class="bio">Fourth-year student at the National School of Nanosciences and Nanotechnology. I design, simulate and build devices that turn tiny physical changes into clean signals.</p>
+        <div class="cta"><a class="btn main" href="#work">See my work</a><a class="btn" href="#contact">Get in touch</a></div>
+        <p class="status"><i></i>Open to internships and research visits</p>
+      </div>
+      <figure class="portrait" id="portrait">
+        <span class="chip" style="--x:-10%;--y:24%;--d:1.2s">Sensors</span>
+        <span class="chip" style="--x:76%;--y:12%;--d:1.4s">ESP32</span>
+        <span class="chip" style="--x:-6%;--y:62%;--d:1.6s">Simulink</span>
+        <span class="chip" style="--x:78%;--y:56%;--d:1.8s">PCB design</span>
+      </figure>
+    </div>
   </section>
 
   <!-- ABOUT: edit the two paragraphs and the three focus items.
-     The figure id='me' is your photo frame, filled by the script (see PHOTOS.me). -->
+     The animated sensing-chain diagram (div id='chain') is filled in by the script. -->
 <section id="about">
     <h2>About me</h2>
     <div class="about">
-      <figure class='me' id='me'></figure>
       <div>
         <p>I study at the National School of Nanosciences and Nanotechnology in Algeria. My work sits between the sensor itself and the software around it: modelling a device, building it, reading it out and making sense of the data.</p>
         <p>I’m building a career as a sensors engineer, with a strong focus on simulation and PC software for instrumentation.</p>
-      </div>
-      <div class="focus">
+        <div class="focus">
         <div>Sensor design<small>Capacitive and MEMS devices</small></div>
         <div>Simulation<small>Modelling before building</small></div>
-        <div>Instrumentation<small>Readout electronics with ESP32</small></div>
+        <div>Instrumentation<small>Readout electronics with ESP32</small></div></div>
       </div>
+      <div class="chain" id="chain"></div>
     </div>
   </section>
 
@@ -448,6 +495,12 @@ Object.keys(DATA).forEach((n,i)=>{
   b.onclick=()=>show(n);tabsEl.append(b);
 });
 show(Object.keys(DATA)[0]);
+// SCROLL CONTINUES: when the cards box is scrolled to its end (or its start), the mouse wheel keeps scrolling the page.
+panel.addEventListener('wheel',e=>{
+  if(!panel.classList.contains('scroll'))return;
+  const atEnd=panel.scrollTop+panel.clientHeight>=panel.scrollHeight-1,atTop=panel.scrollTop<=0;
+  if((e.deltaY>0&&atEnd)||(e.deltaY<0&&atTop)){window.scrollBy({top:e.deltaY*(e.deltaMode===1?40:1),behavior:'instant'});e.preventDefault()}
+},{passive:false});
 
 /* ==================================================================
    SKILLS: edit this object.
@@ -509,7 +562,8 @@ if(firstSkill)firstSkill.click();
    >>> PHOTOS: REPLACE YOUR IMAGES HERE <<<
    Put the file name between the quotes.
    The image file must be in the SAME folder as this index.html file.
-     me      : your photo with no background (PNG), shown in the About section
+     me      : your photo with no background (PNG), shown on the first page
+     hero    : (optional) another photo for the first page. Leave "" to use the 'me' photo there too.
      cvLink  : your CV file, for example "cv.pdf" (used by the Download CV button)
    Example:
      const PHOTOS={me:"me.png",cvLink:"cv.pdf"};
@@ -517,7 +571,7 @@ if(firstSkill)firstSkill.click();
    Project photos are NOT here: set photo:"..." inside each project in DATA (above).
    Visit photos and institution logos are NOT here either: set photos:[...] and logo:"..." inside each visit card in DATA.
    ================================================================== */
-const PHOTOS={me:"photo_2026-10-30_11-47-17.jpg",cvLink:"#"};
+const PHOTOS={me:"photo_2026-10-30_11-47-17.jpg",hero:"",cvLink:"#"};
 /* HERO DIAGRAM: animated sensing chain.
    physical quantity > sensor > amplifier > ADC > computer
    No need to edit. To change a label, edit the STAGES list below. */
@@ -564,10 +618,10 @@ document.getElementById('chain').innerHTML=`<svg viewBox='0 0 360 500' role='img
   ${flows}${rows}
   <g class='dot'><circle class='halo' cx='60' cy='50' r='9'/><circle cx='60' cy='50' r='4.5'/></g>
 </svg>`;
-// About photo: uses PHOTOS.me if set, otherwise a dashed silhouette placeholder.
-const meEl=document.getElementById('me');
-if(PHOTOS.me){const im=new Image();im.src=PHOTOS.me;im.alt='Abderraouf Brada';meEl.append(im)}
-else meEl.innerHTML=`<svg viewBox='0 0 120 150' fill='none' stroke='#3d6bff' stroke-width='2.5' stroke-dasharray='6 6'><circle cx='60' cy='50' r='24'/><path d='M12 150c0-32 22-52 48-52s48 20 48 52'/></svg><span>Your photo<br>(PNG, background removed)</span>`;
+// HERO PORTRAIT: your photo in black and white with a light effect (uses PHOTOS.hero, or PHOTOS.me if hero is empty).
+const portrait=document.getElementById('portrait'),heroSrc=PHOTOS.hero||PHOTOS.me;
+if(heroSrc){const im=new Image();im.src=heroSrc;im.alt='Abderraouf Brada';portrait.append(im);portrait.style.setProperty('--img',`url("${heroSrc}")`)}
+else portrait.innerHTML=`<svg viewBox='0 0 120 150' fill='none' stroke='#3d6bff' stroke-width='2.5' stroke-dasharray='6 6'><circle cx='60' cy='50' r='24'/><path d='M12 150c0-32 22-52 48-52s48 20 48 52'/></svg>`;
 // CV paper: a click (or Enter / Space) opens and closes it. The Download button uses PHOTOS.cvLink.
 const cvEl=document.getElementById('cv'),paper=document.getElementById('paper'),hint=document.getElementById('hint');
 document.getElementById('cvdl').href=PHOTOS.cvLink;
