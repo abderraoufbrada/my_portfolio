@@ -228,6 +228,8 @@ body{background:linear-gradient(180deg,#0a1f6b 0%,#081545 18%,#060d2c 45%,var(--
 @media(max-width:760px){.about{grid-template-columns:1fr}nav a:nth-child(1){display:none}}
 @media(max-width:760px){.hero,.cv{grid-template-columns:1fr}.me{max-width:280px}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}.hero h1 span i{transform:none}.hero p,.cta{opacity:1}}
+/* Show the whole photo inside its frame (no cropping) */
+.sp img,.ph img{object-fit:contain}
 </style>
 </head>
 <body>
