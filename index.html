@@ -553,7 +553,7 @@ const DATA = {
     photos: [
       "more/photo_2026-11-11_13-16-19 (2).jpg",
       "more/photo_2026-11-11_13-16-20.jpg",
-      "more/photo_2026-11-11_13-16-20.jpg",
+      "more/photo_2026-11-11_13-16-19.jpg",
       "more/photo_2025-10-26_07-14-42.jpg"
     ],
     logo: "images/one-million-trees-logo.png",
@@ -581,6 +581,15 @@ function show(name){
     const ph=el.querySelector('.ph'),gh=el.querySelector('.gh');
     if(c.photo!==undefined){if(c.photo){ph.append(img(c.photo,c.t))}else ph.textContent='Project photo'}else ph.remove();
     if(c.gh){gh.href=c.gh}else gh.remove();
+        if(c.link){
+      const a = document.createElement('a');
+      a.className = 'btn gh';
+      a.href = c.link;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = 'View LinkedIn Post';
+      el.querySelector('.in').append(a);
+    }
     // Institution logo (in the card header). Set logo:"file.png" in DATA. "" = placeholder box.
     if(c.logo!==undefined){const lg=document.createElement('div');lg.className='logo';if(c.logo){lg.append(img(c.logo,c.t+' logo'))}else lg.textContent='Logo';el.querySelector('button').prepend(lg)}
     // Photo stack: the first photo is in front and the others are behind it. Click it to bring the next photo forward.
@@ -614,7 +623,18 @@ const IC={
  award:`<svg class='ic' viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='9' r='6'/><path d='M8.5 14L7 21l5-3 5 3-1.5-7'/></svg>`
 };
 // Tab name -> icon. If you rename a tab in DATA, rename it here too (otherwise that tab shows no icon).
-const TAB_ICONS={"Projects":IC.flask,"Industrial visits":IC.factory,"Research visits":IC.pin,"Internships":IC.bag,"Certificates":IC.award,"Competitions":IC.trophy,"Workshops":IC.gear,"Conferences":IC.mic,"Presentations":IC.board};
+const TAB_ICONS={
+  "Projects":IC.flask,
+  "Industrial visits":IC.factory,
+  "Research visits":IC.pin,
+  "Internships":IC.bag,
+  "Certificates":IC.award,
+  "Competitions":IC.trophy,
+  "Workshops":IC.gear,
+  "Conferences":IC.mic,
+  "Presentations":IC.board,
+  "Environmental Initiatives":IC.pin
+};
 Object.keys(DATA).forEach((n,i)=>{
   const b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.dataset.n=n;b.innerHTML=(TAB_ICONS[n]||'')+'<span></span>';b.lastChild.textContent=n;
   b.onclick=()=>show(n);tabsEl.append(b);
