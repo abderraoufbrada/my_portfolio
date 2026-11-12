@@ -407,14 +407,36 @@ const DATA = {
   // Industrial visits. Extra fields used by the visit cards:
   //   photos = list of photo file names. The first one is in front, the others are behind it (click the stack to see the next one).
   //   logo = logo file name of the institution ("" = placeholder box).
-  "Industrial visits": [
-    {t:"Condor", m:"Industrial visit · Add the date",
-     d:"A visit to Condor, a large Algerian electronics and home-appliance manufacturer. I saw how components are assembled on the production lines and how finished products are tested and quality-checked.",
-     tags:["Production line","Quality control","Electronics assembly"],photos:["","",""],logo:""},
-    {t:"Water desalination station", m:"Industrial visit · Add the date",
-     d:"A visit to a seawater desalination station. I followed the water from the intake to the filters and the reverse-osmosis membranes, and saw how sensors monitor pressure, flow and salinity.",
-     tags:["Reverse osmosis","Process sensors","Water treatment"],photos:["","",""],logo:""}
-  ],
+ "Industrial visits": [
+  {
+    t: "Condor",
+    m: "Industrial visit · Add the date",
+    d: "A visit to Condor, a large Algerian electronics and home-appliance manufacturer. I saw how components are assembled on the production lines and how finished products are tested and quality-checked.",
+    tags: ["Production line", "Quality control", "Electronics assembly"],
+    photos: ["", "", ""],
+    logo: ""
+  },
+  {
+    t: "Fouka Seawater Desalination Plant",
+    m: "Industrial visit · July 3, 2024 · Fouka, Tipaza, Algeria",
+    d: `A field trip organized by the Higher School of Nanoscience and Nanotechnology to the seawater desalination plant in Fouka, Tipaza Province, Algeria.
+
+    During the visit, we explored the different sections of the plant and learned about the seawater desalination process, including its various stages and the chemical and physical protocols involved in water treatment.
+
+    Special thanks to the General Manager, Mr. Mohammed Khatib, who personally accompanied us throughout the different departments of the facility, provided detailed explanations, and answered our questions.
+
+    It was a valuable opportunity to discover the industrial applications of engineering and understand the processes behind seawater desalination.`,
+    tags: [
+      "Water desalination",
+      "Industrial processes",
+      "Water treatment",
+      "Chemical engineering",
+      "Field trip"
+    ],
+    photos: ["", "", ""],
+    logo: ""
+  }
+],
   // Research visits. Same fields as the industrial visits above.
   "Research visits": [
     {t:"CDTA research centre", m:"Research visit · Centre for the Development of Advanced Technologies",
@@ -425,34 +447,118 @@ const DATA = {
      tags:["Semiconductors","Material characterisation"],photos:["","",""],logo:""}
   ],
   // Replace the example card with your real internships.
-  "Internships": [
-    {t:"BOMARE", m:"Research visit · Centre for the Development of Advanced Technologies",
-     d:"description",
-     tags:["Advanced technologies","Research laboratories"],photos:["photo_2026-04-21_20-13-53.jpg","photo_2025-11-17_12-34-51.jpg",""],logo:""},
-  ],
+"Internships": [
+  {
+    t: "Satellite Development Center (CDS) – ASAL",
+    m: "Immersion Internship · September 1–15, 2026 · Bir El Djir, Oran, Algeria",
+    d: `Completed a two-week immersion internship at the Satellite Development Center (CDS), under the Algerian Space Agency (ASAL), focusing on Satellite Attitude Determination and Control Systems (ADCS).
+
+    My work focused on:
+    • Studying attitude determination sensors: Sun sensors, magnetometers, gyroscopes, Earth/horizon sensors, and star trackers.
+    • Understanding satellite actuators: reaction wheels, magnetorquers, and thrusters.
+    • Modeling satellite rotational dynamics using quaternions and rigid-body equations.
+    • Implementing a closed-loop attitude control system using a PID controller in MATLAB/Simulink.
+    • Visiting the clean room and optoelectronics laboratory at CDS.
+
+    This internship allowed me to connect my background in Micro and Nano Sensors and Instrumentation with real-world space applications.
+
+    Special thanks to my supervisor, Mr. Elhassen Benfriha, for his guidance, and to the entire CDS team for their warm welcome and knowledge sharing. I am also grateful to the Algerian Space Agency and my school, the National Higher School of Nanosciences and Nanotechnology (ENSNN).
+
+    This experience strengthened my interest in space sensors, ADCS, and satellite systems.`,
+    tags: [
+      "Satellite Systems",
+      "ADCS",
+      "Attitude Determination",
+      "MATLAB/Simulink",
+      "PID Control",
+      "Space Sensors"
+    ],
+    photos: ["", "", ""],
+    logo: "",
+    link: "YOUR_LINKEDIN_POST_URL"
+  },
+  {
+    t: "BOMARE",
+    m: "Research visit · Centre for the Development of Advanced Technologies",
+    d: "Description",
+    tags: ["Advanced technologies", "Research laboratories"],
+    photos: [
+      "photo_2026-04-21_20-13-53.jpg",
+      "photo_2025-11-17_12-34-51.jpg",
+      ""
+    ],
+    logo: ""
+  }
+],
   // Replace the example card with your real certificates.
   "Certificates": [
     {t:"Add your certificate", m:"Issuer · Year",
      d:"Say what the course covered and add a link to the credential.",
      tags:["Topic"]}
   ],
-  // Competitions, workshops and presentations. Same fields as the visit cards (photos = photo stack, logo = institution or event logo).
-  "Competitions": [
-    {t:"Add your competition", m:"Organizer · Year",
-     d:"Describe the challenge, your team and your result.",
-     tags:["Teamwork","Challenge"],photos:["","",""],logo:""}
-  ],
+// Competitions, workshops and presentations. Same fields as the visit cards
+// (photos = photo stack, logo = institution or event logo).
+"Competitions": [
+  {
+    t: "1st Place – Space Science Competition",
+    m: "NSNN Sports and Cultural Club · Astronight Event · 2026",
+    d: `Proud to share that my team and I achieved 1st place 🏆 in a space science competition organized during Astronight at the Higher School of Nanoscience and Nanotechnology.
+
+    The event featured scientific lectures delivered by members of the Algerian Space Agency 🛰️, interactive activities, telescope observations 🔭, and an immersive 3D room exploring space-related scenes 🌌.
+
+    This experience highlighted the importance of teamwork, scientific thinking, and curiosity for discovery. Proud of my team and grateful to everyone who contributed to organizing this inspiring event.`,
+    tags: [
+      "1st Place",
+      "Space Science",
+      "Teamwork",
+      "Astronomy",
+      "STEM"
+    ],
+    photos: [
+      "images/astronight-1.jpg",
+      "images/astronight-2.jpg",
+      "images/astronight-3.jpg"
+    ],
+    logo: "images/astronight-logo.png",
+    link: "YOUR_LINKEDIN_POST_URL"
+  }
+],
+  
   "Workshops": [
     {t:"Add your workshop", m:"Organizer · Date",
      d:"Say what the workshop covered and what you built or learned.",
      tags:["Hands-on","Skill"],photos:["","",""],logo:""}
   ],
-  "Presentations": [
-    {t:"Add your presentation", m:"Event · Date",
-     d:"Give the title, the audience and the main message of your talk.",
-     tags:["Talk","Slides"],photos:["","",""],logo:""}
-  ]
-};
+ // Environmental initiatives and volunteering activities.
+"Environmental Initiatives": [
+  {
+    t: "One Million Trees in One Day – National Reforestation Campaign",
+    m: "Ministry of Agriculture & General Directorate of Forests · October 2025",
+    d: `Honored to have participated in Algeria's national "One Million Trees in One Day" campaign, launched on October 25, 2025.
+
+    This nationwide initiative aimed to plant one million tree seedlings across all provinces of Algeria in a single day.
+
+    I participated in the planting activities at Mektaa Khira Forest (مقطع خيرة), in the Sidi Abd-ellah area (Municipality of Maâlama / M'halma), Algiers, where approximately 12,000 trees were planted.
+
+    It was inspiring to join volunteers, public-sector representatives, civil-society actors, and environmental advocates in this collective effort.
+
+    This experience highlighted the importance of environmental stewardship, climate resilience, teamwork, and sustainable development.`,
+    tags: [
+      "Volunteering",
+      "Reforestation",
+      "Environment",
+      "Sustainability",
+      "Algeria"
+    ],
+    photos: [
+      "images/reforestation-1.jpg",
+      "images/reforestation-2.jpg",
+      "images/reforestation-3.jpg"
+    ],
+    logo: "images/one-million-trees-logo.png",
+    link: "YOUR_LINKEDIN_POST_URL"
+  }
+],
 /* ================================== */
 
 /* CARDS BUILDER: creates the tabs and the expandable cards from DATA. No need to edit. */
