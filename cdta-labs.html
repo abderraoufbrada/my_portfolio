@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside CDTA | Abderraouf Brada</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500&family=Anton&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink:#05070d;
+  --panel:#0a1020;
+  --line:#1a2540;
+  --blue:#2152ff;
+  --blue-soft:#3d6bff;
+  --acid:#b6ff1a;
+  --text:#e9edf8;
+  --mute:#8f99b3;
+  --head:"Space Grotesk",sans-serif;
+  --body:"IBM Plex Sans",sans-serif;
+  --display:"Anton",Impact,sans-serif;
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  background:
+    radial-gradient(ellipse at 50% 0%,#10276d 0%,transparent 45%),
+    var(--ink);
+  color:var(--text);
+  font:16px/1.7 var(--body);
+}
+
+a {color:inherit;text-decoration:none}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:17px clamp(18px,5vw,65px);
+  background:rgba(5,7,13,.85);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.logo {
+  font:700 19px var(--head);
+}
+
+.logo span {color:var(--acid)}
+
+nav {display:flex;gap:25px;align-items:center}
+
+nav a {
+  color:var(--mute);
+  font:500 14px var(--head);
+  transition:.2s;
+}
+
+nav a:hover {color:var(--acid)}
+
+.back {
+  border:1px solid var(--blue);
+  border-radius:30px;
+  padding:8px 16px;
+}
+
+main {overflow:hidden}
+
+section {
+  max-width:1180px;
+  margin:auto;
+  padding:85px clamp(18px,5vw,65px);
+}
+
+/* COVER */
+
+.cover {
+  max-width:none;
+  padding-top:65px;
+  padding-bottom:55px;
+  text-align:center;
+}
+
+.eyebrow {
+  color:var(--acid);
+  font:500 13px var(--head);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.cover h1 {
+  font:400 clamp(65px,15vw,190px)/.9 var(--display);
+  text-transform:uppercase;
+  margin:25px 0;
+  color:transparent;
+  background:linear-gradient(
+    180deg,#fff 5%,#aebbd5 40%,#46516a 75%,#101522 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  filter:drop-shadow(0 10px 25px rgba(33,82,255,.3));
+}
+
+.cover h2 {
+  color:var(--blue-soft);
+  font:600 clamp(20px,3vw,32px) var(--head);
+  margin:0;
+}
+
+.cover p {
+  color:var(--mute);
+  max-width:600px;
+  margin:22px auto;
+}
+
+.cover-image {
+  position:relative;
+  margin:55px auto 0;
+  width:100%;
+  max-width:1000px;
+  aspect-ratio:16/7;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:5px;
+  background:linear-gradient(120deg,#10204a,#080d1b);
+}
+
+.cover-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.8;
+}
+
+.cover-image::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(5,7,13,.8),transparent 65%);
+  pointer-events:none;
+}
+
+.cover-caption {
+  position:absolute;
+  z-index:2;
+  bottom:20px;
+  left:25px;
+  color:white;
+  font:500 13px var(--head);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.intro h2,.section-title {
+  font:700 clamp(30px,5vw,50px)/1.1 var(--head);
+  margin:0 0 20px;
+}
+
+.intro p {color:#c7cee3}
+
+.intro-note {
+  border-left:3px solid var(--acid);
+  padding:20px 25px;
+  background:rgba(10,16,32,.7);
+  align-self:center;
+}
+
+.intro-note strong {
+  color:var(--acid);
+  display:block;
+  margin-bottom:10px;
+  font-family:var(--head);
+}
+
+/* MAGAZINE LAB FEATURES */
+
+.lab {
+  border-bottom:1px solid var(--line);
+}
+
+.lab-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.lab-number {
+  color:var(--acid);
+  font:400 65px/.9 var(--display);
+  opacity:.85;
+}
+
+.lab h2 {
+  font:700 clamp(28px,4vw,43px)/1.1 var(--head);
+  margin:8px 0;
+}
+
+.lab-subtitle {
+  color:var(--blue-soft);
+  font:500 13px var(--head);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.lab-layout {
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:25px;
+  align-items:stretch;
+}
+
+.lab-photo {
+  min-height:340px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 50% 40%,#1b3572,#0a1020 70%);
+}
+
+.lab-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:340px;
+  object-fit:cover;
+  transition:transform .6s;
+}
+
+.lab-photo:hover img {transform:scale(1.035)}
+
+.lab-description {
+  padding:27px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.lab-description p {
+  color:#b7c1d8;
+  margin:0 0 20px;
+}
+
+.lab-description h3 {
+  font:600 18px var(--head);
+  margin:0 0 12px;
+  color:var(--acid);
+}
+
+.topics {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.topics span {
+  padding:5px 11px;
+  font:500 12px var(--head);
+  color:#a9bcff;
+  background:rgba(33,82,255,.16);
+  border:1px solid rgba(33,82,255,.2);
+  border-radius:3px;
+}
+
+/* SECONDARY PHOTO STRIP */
+
+.gallery {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
+}
+
+.gallery figure {
+  margin:0;
+  height:210px;
+  overflow:hidden;
+  background:var(--panel);
+  border:1px solid var(--line);
+}
+
+.gallery img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.gallery figure:hover img {transform:scale(1.04)}
+
+.gallery figcaption {
+  color:var(--mute);
+  font-size:12px;
+  padding:8px 0;
+}
+
+/* FINAL EDITORIAL */
+
+.quote {
+  text-align:center;
+  padding-top:110px;
+  padding-bottom:110px;
+}
+
+.quote p {
+  font:500 clamp(25px,4.5vw,45px)/1.25 var(--head);
+  max-width:850px;
+  margin:20px auto;
+}
+
+.quote span {color:var(--acid)}
+
+.quote small {
+  color:var(--mute);
+  letter-spacing:.15em;
+}
+
+.site-link {
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 24px;
+  background:var(--acid);
+  color:var(--ink);
+  border:1px solid var(--acid);
+  border-radius:30px;
+  font:600 14px var(--head);
+  transition:.25s;
+}
+
+.site-link:hover {
+  background:var(--blue);
+  border-color:var(--blue);
+  color:white;
+  transform:translateY(-3px);
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  color:var(--mute);
+  font-size:13px;
+  border-top:1px solid var(--line);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px) {
+  nav {gap:12px}
+  nav a:not(.back) {display:none}
+  section {padding-top:60px;padding-bottom:60px}
+  .intro,.lab-layout {grid-template-columns:1fr}
+  .lab-heading {align-items:start}
+  .lab-number {font-size:48px}
+  .cover-image {aspect-ratio:4/3}
+  .lab-photo,.lab-photo img {min-height:240px}
+  .gallery figure {height:145px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">A. <span>BRADA</span></a>
+  <nav>
+    <a href="#introduction">Introduction</a>
+    <a href="#microelectronics">Microelectronics</a>
+    <a href="#photonics">Photonics</a>
+    <a href="#lasers">Lasers</a>
+    <a class="back" href="index.html#work">← Portfolio</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- MAGAZINE COVER -->
+
+<section class="cover">
+  <div class="eyebrow">Research visit / Algeria / CDTA</div>
+
+  <h1>INSIDE<br>CDTA</h1>
+
+  <h2>Research Laboratories & Advanced Technologies</h2>
+
+  <p>
+    A closer look at the scientific environment,
+    research activities and technological platforms
+    of the Centre for the Development of Advanced Technologies.
+  </p>
+
+  <div class="cover-image">
+    <!-- Replace with your best CDTA laboratory photograph -->
+    <img src="more/cdta-cover.jpg"
+         alt="CDTA research laboratory">
+    <div class="cover-caption">
+      Centre for the Development of Advanced Technologies
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro" id="introduction">
+  <div>
+    <div class="eyebrow">01 / The experience</div>
+    <h2>Beyond the classroom.</h2>
+
+    <p>
+      Visiting CDTA offered an opportunity to discover
+      the research environment behind advanced technologies
+      and to see how scientific concepts are developed
+      through experimental work and technological platforms.
+    </p>
+
+    <p>
+      The centre brings together different research fields,
+      including microelectronics, nanotechnology, optics,
+      photonics, laser technologies and robotics.
+    </p>
+  </div>
+
+  <div class="intro-note">
+    <strong>ABOUT CDTA</strong>
+    The Centre for the Development of Advanced Technologies
+    is a public scientific and technological institution
+    dedicated to scientific research, technological
+    innovation, development and training.
+  </div>
+</section>
+
+<!-- LAB 01 -->
+
+<section class="lab" id="microelectronics">
+
+  <div class="lab-heading">
+    <div>
+      <div class="eyebrow">Research area / 01</div>
+      <h2>Microelectronics & Nanotechnology</h2>
+      <div class="lab-subtitle">
+        Semiconductor devices / Integrated circuits / MEMS
+      </div>
+    </div>
+    <div class="lab-number">01</div>
+  </div>
+
+  <div class="lab-layout">
+    <div class="lab-photo">
+      <!-- Replace with an actual microelectronics lab photo -->
+      <img src="more/cdta-microelectronics.jpg"
+           alt="Microelectronics research laboratory">
+    </div>
+
+    <div class="lab-description">
+      <h3>Engineering at the microscopic scale</h3>
+
+      <p>
+        This research area focuses on the design,
+        fabrication and characterization of electronic
+        devices and integrated circuits.
+      </p>
+
+      <p>
+        Its activities include semiconductor device
+        characterization, analog and RF integrated circuits,
+        VLSI design, MEMS and sensor microsystems.
+      </p>
+
+      <div class="topics">
+        <span>Semiconductors</span>
+        <span>MEMS</span>
+        <span>RF Circuits</span>
+        <span>Sensors</span>
+        <span>VLSI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <figure>
+      <img src="more/cdta-cleanroom.jpg"
+           alt="Microfabrication cleanroom">
+    </figure>
+    <figure>
+      <img src="more/cdta-characterization.jpg"
+           alt="Electrical characterization equipment">
+    </figure>
+  </div>
+</section>
+
+<!-- LAB 02 -->
+
+<section class="lab" id="photonics">
+
+  <div class="lab-heading">
+    <div>
+      <div class="eyebrow">Research area / 02</div>
+      <h2>Optics & Photonics</h2>
+      <div class="lab-subtitle">
+        Light / Optical systems / Photonic devices
+      </div>
+    </div>
+    <div class="lab-number">02</div>
+  </div>
+
+  <div class="lab-layout">
+    <div class="lab-photo">
+      <img src="more/cdta-photonics.jpg"
+           alt="Optics and photonics laboratory">
+    </div>
+
+    <div class="lab-description">
+      <h3>Exploring the science of light</h3>
+
+      <p>
+        Research in optics and photonics involves the
+        study and development of optical systems,
+        light-based technologies and photonic devices.
+      </p>
+
+      <p>
+        These technologies have applications in sensing,
+        measurement, imaging and advanced instrumentation.
+      </p>
+
+      <div class="topics">
+        <span>Optical Systems</span>
+        <span>Photonics</span>
+        <span>Light</span>
+        <span>Optical Sensing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAB 03 -->
+
+<section class="lab" id="lasers">
+
+  <div class="lab-heading">
+    <div>
+      <div class="eyebrow">Research area / 03</div>
+      <h2>Ionized Media & Lasers</h2>
+      <div class="lab-subtitle">
+        Plasma physics / Laser technologies / Materials
+      </div>
+    </div>
+    <div class="lab-number">03</div>
+  </div>
+
+  <div class="lab-layout">
+    <div class="lab-photo">
+      <img src="more/cdta-lasers.jpg"
+           alt="Laser research laboratory">
+    </div>
+
+    <div class="lab-description">
+      <h3>Interaction between light and matter</h3>
+
+      <p>
+        This research field investigates laser systems,
+        plasma diagnostics and the interaction of laser
+        radiation with materials.
+      </p>
+
+      <p>
+        Research activities also include material
+        synthesis, physicochemical characterization
+        and laser-based material processing.
+      </p>
+
+      <div class="topics">
+        <span>Laser Systems</span>
+        <span>Plasma</span>
+        <span>Materials Science</span>
+        <span>LIBS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAB 04 -->
+
+<section class="lab" id="robotics">
+
+  <div class="lab-heading">
+    <div>
+      <div class="eyebrow">Research area / 04</div>
+      <h2>Robotics & Industrial Automation</h2>
+      <div class="lab-subtitle">
+        Control / Embedded Systems / Automation
+      </div>
+    </div>
+    <div class="lab-number">04</div>
+  </div>
+
+  <div class="lab-layout">
+    <div class="lab-photo">
+      <img src="more/cdta-robotics.jpg"
+           alt="Robotics research environment">
+    </div>
+
+    <div class="lab-description">
+      <h3>From intelligent systems to real applications</h3>
+
+      <p>
+        Research activities cover robotics, autonomous
+        navigation, dynamic system control and automated
+        production systems.
+      </p>
+
+      <p>
+        These fields combine mechanical systems,
+        electronics, embedded computing and control
+        engineering.
+      </p>
+
+      <div class="topics">
+        <span>Robotics</span>
+        <span>Automation</span>
+        <span>Embedded Systems</span>
+        <span>Control</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+
+<section class="quote">
+  <div class="eyebrow">A research perspective</div>
+
+  <p>
+    "Understanding technology is not only about
+    studying how it works, but also about seeing
+    <span>how it is developed.</span>"
+  </p>
+
+  <small>ABDERraouf BRADA / CDTA RESEARCH VISIT</small>
+
+  <br>
+
+  <a class="site-link" href="index.html#work">
+    ← Back to my portfolio
+  </a>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Abderraouf Brada · CDTA Research Visit
+</footer>
+
+</body>
+</html>
